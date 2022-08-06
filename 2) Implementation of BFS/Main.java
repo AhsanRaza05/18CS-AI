@@ -1,4 +1,3 @@
-import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Arrays;
@@ -35,11 +34,8 @@ class BFSTraversal{
 
    static String traverse(Node rootNode, int size){
 
-        Node next;
-
-        //Stack <Node> que = new <Node> Stack(); 
         Queue <Node> que = new LinkedList<Node>();
-        // 
+     
         Node CN = rootNode;
 
         String vst[] = new String[size];
@@ -47,9 +43,6 @@ class BFSTraversal{
         int a = 0;
 
         vst[a] = CN.item;
-
-        // que.add(CN);
-        //que.push(CN);
 
         int step = 1;
 
@@ -69,7 +62,6 @@ class BFSTraversal{
                     
                     que.add(CN.child[i]);
                     vst[++a] = CN.child[i].item;
-                    ///CN = CN.child[i];
 
                     System.out.println("Step # " + step);
                     System.out.println("Current Node: " + CN);
@@ -96,84 +88,6 @@ class BFSTraversal{
         return Arrays.toString(vst);
 
     }
-
-    static String limitedTraverse(Node rootNode, int size, int level){
-
-        Node next;
-
-        Stack <Node> que = new <Node> Stack(); 
-
-        int countLevel = 0;
-        Node CN = rootNode;
-
-        String vst[] = new String[size];
-
-        int a = 0;
-
-        vst[a] = CN.item;
-
-        que.push(CN);
-
-        int step = 1;
-
-        System.out.println("Step # " + step);
-        System.out.println("Current Node: " + CN);
-        System.out.println("Queue: " + que);
-        System.out.println("Visited: " + Arrays.toString(vst));
-        System.out.println();
-
-        l:while(!que.isEmpty()){
-
-            step++;
-
-            for(int i = 0; i < CN.child.length;i++){
-
-                if(!isVisited(CN.child[i].item, vst) && countLevel < level){
-    
-                    que.push(CN.child[i]);
-                    countLevel++;
-                    vst[++a] = CN.child[i].item;
-                    CN = CN.child[i];
-
-                    System.out.println("Step # " + step);
-                    System.out.println("Current Node: " + CN);
-                    System.out.println("Queue: " + que);
-                    System.out.println("Visited: " + Arrays.toString(vst));
-                    System.out.println();
-
-                    continue l;
-                    
-                }
-    
-            }
-    
-            if (!que.isEmpty()) {
-                que.pop();
-                
-                // CN = que.pop();
-            }
-
-            if (!que.isEmpty()) {
-                // que.pop();
-                CN = que.pop();
-                que.push(CN);
-                countLevel--;
-            }
-            //CN = que.pop();
-           // que.remove(CN);
-    
-           System.out.println("Step # " + step);
-           System.out.println("Current Node: " + CN);
-           System.out.println("Queue: " + que);
-           System.out.println("Visited: " + Arrays.toString(vst));
-           System.out.println();
-
-        }
-
-        return Arrays.toString(vst);
-
-    }
-
 
     static boolean isVisited(String n, String vst[]){
 
@@ -223,8 +137,7 @@ public class Main{
         size = 9;
 
         System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(f, size));
-        // //System.out.println(" Final Limited TRAVERSING ORDER: " + BFSTraversal.limitedTraverse(f, size,2));
-
+    
         // // Sec
         // // Create Nodes
         // Node rootNode = new Node("S");
@@ -255,9 +168,7 @@ public class Main{
 
         // size = 6;
         // //System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(rootNode, size));
-        // System.out.println(" Final Limited TRAVERSING ORDER: " + BFSTraversal.limitedTraverse(rootNode, size,2));
-
-
+    
         
         // THIRD Problem
         // Node f = new Node("F");
