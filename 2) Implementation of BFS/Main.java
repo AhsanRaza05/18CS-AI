@@ -3,20 +3,18 @@ import java.util.LinkedList;
 import java.util.Arrays;
 
 // import java.util.*;
+
+// Define the Node
 class Node{
 
-    public String toString(){
+    private String item;
+    private Node children[];
 
-        return item;
-    }
-
-    String item;
-    Node child[];
-
-    Node(String item, Node child[]){
+    // Constructors
+    Node(String item, Node children[]){
 
         this.item = item;
-        this.child = child;
+        this.children = children;
     }
 
     Node(String item){
@@ -24,9 +22,31 @@ class Node{
         this(item, null);
     }
 
-    void setAllChild(Node child[]){
+    // Setters
+    void setItem(String item){
 
-        this.child = child;
+        this.item = item;
+    }
+
+    void setAllchildren(Node children[]){
+
+        this.children = children;
+    }
+    
+    // Getters
+    public String getItem(){
+
+        return item;
+    }
+
+    public Node[] getchildren(){
+
+        return children;
+    }
+
+    public String toString(){
+
+        return item;
     }
 }
 
@@ -34,39 +54,42 @@ class BFSTraversal{
 
    static String traverse(Node rootNode, int size){
 
-        Queue <Node> que = new LinkedList<Node>();
+        Queue <Node> queue = new LinkedList<Node>();
      
-        Node CN = rootNode;
+        Node currentNode;
 
-        String vst[] = new String[size];
+        String visitedNodes[] = new String[size];
 
-        int a = 0;
+        int index = 0;
 
-        vst[a] = CN.item;
+        // Choose the root node, mark it as visited, make it current node.
+        visitedNodes[index] = rootNode.getItem();
+        currentNode = rootNode;
 
         int step = 1;
 
         System.out.println("Step # " + step);
-        System.out.println("Current Node: " + CN);
-        System.out.println("Queue: " + que);
-        System.out.println("Visited: " + Arrays.toString(vst));
+        System.out.println("Current Node: " + currentNode);
+        System.out.println("Queue: " + queue);
+        System.out.println("Visited: " + Arrays.toString(visitedNodes));
         System.out.println();
 
         l:do{
 
             step++;
 
-            for(int i = 0; i < CN.child.length;i++){
+            // Find adjacent unvisited node of current node, place it in Queue and mark it visited.
+            for(int i = 0; i < currentNode.getchildren().length;i++){
 
-                if(!isVisited(CN.child[i].item, vst)){
+                if(!isVisited(currentNode.getchildren()[i].getItem(), visitedNodes)){
                     
-                    que.add(CN.child[i]);
-                    vst[++a] = CN.child[i].item;
+                    queue.add(currentNode.getchildren()[i]);
+                    visitedNodes[++index] = currentNode.getchildren()[i].getItem();
 
                     System.out.println("Step # " + step);
-                    System.out.println("Current Node: " + CN);
-                    System.out.println("Queue: " + que);
-                    System.out.println("Visited: " + Arrays.toString(vst));
+                    System.out.println("Current Node: " + currentNode);
+                    System.out.println("Queue: " + queue);
+                    System.out.println("Visited: " + Arrays.toString(visitedNodes));
                     System.out.println();
 
                     continue l;
@@ -75,25 +98,27 @@ class BFSTraversal{
     
             }
 
-            CN = que.poll();
+            // If no unvisited adjacent node found, dequeue node from Queue and make it current node.
+            currentNode = queue.poll();
         
            System.out.println("Step # " + step);
-           System.out.println("Current Node: " + CN);
-           System.out.println("Queue: " + que);
-           System.out.println("Visited: " + Arrays.toString(vst));
+           System.out.println("Current Node: " + currentNode);
+           System.out.println("Queue: " + queue);
+           System.out.println("Visited: " + Arrays.toString(visitedNodes));
            System.out.println();
 
-        } while(CN != null);
-
-        return Arrays.toString(vst);
+        // Repeat Loop until Queue is empty
+        } while(!queue.isEmpty());
+        
+        return Arrays.toString(visitedNodes);
 
     }
 
-    static boolean isVisited(String n, String vst[]){
+    static boolean isVisited(String n, String visitedNodes[]){
 
-        for(int i = 0; i < vst.length; i++){
+        for(int i = 0; i < visitedNodes.length; i++){
 
-            if(n.equalsIgnoreCase(vst[i])){
+            if(n.equalsIgnoreCase(visitedNodes[i])){
 
                 return true;
             }
@@ -124,15 +149,15 @@ public class Main{
         Node e = new Node("E");
         Node h = new Node("H");
         
-        f.setAllChild(new Node[]{b,g});
-        b.setAllChild(new Node[]{a,d});
-        g.setAllChild(new Node[]{i});
-        a.setAllChild(new Node[]{});
-        d.setAllChild(new Node[]{c,e});
-        i.setAllChild(new Node[]{h});
-        c.setAllChild(new Node[]{});
-        e.setAllChild(new Node[]{});
-        h.setAllChild(new Node[]{});
+        f.setAllchildren(new Node[]{b,g});
+        b.setAllchildren(new Node[]{a,d});
+        g.setAllchildren(new Node[]{i});
+        a.setAllchildren(new Node[]{});
+        d.setAllchildren(new Node[]{c,e});
+        i.setAllchildren(new Node[]{h});
+        c.setAllchildren(new Node[]{});
+        e.setAllchildren(new Node[]{});
+        h.setAllchildren(new Node[]{});
         
         size = 9;
 
@@ -152,19 +177,19 @@ public class Main{
 
         // Node siNode = new Node("G");
 
-        // // Set Children
-        // rootNode.setAllChild(new Node[] {sNode, tNode, fNode});
+        // // Set childrenren
+        // rootNode.setAllchildren(new Node[] {sNode, tNode, fNode});
 
-        // sNode.setAllChild(new Node[]{fiNode, tNode});
+        // sNode.setAllchildren(new Node[]{fiNode, tNode});
 
-        // tNode.setAllChild(new Node[]{fNode, siNode});
+        // tNode.setAllchildren(new Node[]{fNode, siNode});
 
-        // fNode.setAllChild(new Node[]{siNode});
+        // fNode.setAllchildren(new Node[]{siNode});
 
         // // siNode, tNode
-        // fiNode.setAllChild(new Node[]{ siNode, tNode});
+        // fiNode.setAllchildren(new Node[]{ siNode, tNode});
 
-        // siNode.setAllChild(new Node[]{});
+        // siNode.setAllchildren(new Node[]{});
 
         // size = 6;
         // //System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(rootNode, size));
@@ -185,19 +210,19 @@ public class Main{
         // Node l = new Node("L");
         // Node m = new Node("M");
 
-        // a.setAllChild(new Node[]{b,c,d});
-        // b.setAllChild(new Node[]{e});
-        // c.setAllChild(new Node[]{f,g,h});
-        // d.setAllChild(new Node[]{i,j});
-        // e.setAllChild(new Node[]{k,l});
-        // f.setAllChild(new Node[]{});
-        // g.setAllChild(new Node[]{});
-        // h.setAllChild(new Node[]{m});
-        // i.setAllChild(new Node[]{});
-        // j.setAllChild(new Node[]{});
-        // k.setAllChild(new Node[]{});
-        // l.setAllChild(new Node[]{});
-        // m.setAllChild(new Node[]{});
+        // a.setAllchildren(new Node[]{b,c,d});
+        // b.setAllchildren(new Node[]{e});
+        // c.setAllchildren(new Node[]{f,g,h});
+        // d.setAllchildren(new Node[]{i,j});
+        // e.setAllchildren(new Node[]{k,l});
+        // f.setAllchildren(new Node[]{});
+        // g.setAllchildren(new Node[]{});
+        // h.setAllchildren(new Node[]{m});
+        // i.setAllchildren(new Node[]{});
+        // j.setAllchildren(new Node[]{});
+        // k.setAllchildren(new Node[]{});
+        // l.setAllchildren(new Node[]{});
+        // m.setAllchildren(new Node[]{});
         
         // size = 13;
 
@@ -213,15 +238,15 @@ public class Main{
         // Node sev = new Node("7");
         // Node thn = new Node("13");
 
-        // eig.setAllChild(new Node[]{thr,ten});
-        // thr.setAllChild(new Node[]{one, six});
-        // ten.setAllChild(new Node[]{ftn});
-        // one.setAllChild(new Node[]{});
-        // six.setAllChild(new Node[]{fou, sev});
-        // ftn.setAllChild(new Node[]{thn});
-        // fou.setAllChild(new Node[]{});
-        // sev.setAllChild(new Node[]{});
-        // thn.setAllChild(new Node[]{});
+        // eig.setAllchildren(new Node[]{thr,ten});
+        // thr.setAllchildren(new Node[]{one, six});
+        // ten.setAllchildren(new Node[]{ftn});
+        // one.setAllchildren(new Node[]{});
+        // six.setAllchildren(new Node[]{fou, sev});
+        // ftn.setAllchildren(new Node[]{thn});
+        // fou.setAllchildren(new Node[]{});
+        // sev.setAllchildren(new Node[]{});
+        // thn.setAllchildren(new Node[]{});
         
         // size = 9;
 
