@@ -52,13 +52,13 @@ class Node{
 
 class BFSTraversal{
 
-   static String traverse(Node rootNode, int size){
+   static String traverse(Node rootNode, int totalNodes){
 
         Queue <Node> queue = new LinkedList<Node>();
      
         Node currentNode;
 
-        String visitedNodes[] = new String[size];
+        String visitedNodes[] = new String[totalNodes];
 
         int index = 0;
 
@@ -68,10 +68,10 @@ class BFSTraversal{
 
         int step = 1;
 
-        System.out.println("Step # " + step);
-        System.out.println("Current Node: " + currentNode);
-        System.out.println("Queue: " + queue);
-        System.out.println("Visited: " + Arrays.toString(visitedNodes));
+        System.out.println("\tStep # " + step);
+        System.out.println("\tCurrent Node: " + currentNode);
+        System.out.println("\tQueue: " + queue);
+        System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
         System.out.println();
 
         l:do{
@@ -86,10 +86,10 @@ class BFSTraversal{
                     queue.add(currentNode.getchildren()[i]);
                     visitedNodes[++index] = currentNode.getchildren()[i].getItem();
 
-                    System.out.println("Step # " + step);
-                    System.out.println("Current Node: " + currentNode);
-                    System.out.println("Queue: " + queue);
-                    System.out.println("Visited: " + Arrays.toString(visitedNodes));
+                    System.out.println("\tStep # " + step);
+                    System.out.println("\tCurrent Node: " + currentNode);
+                    System.out.println("\tQueue: " + queue);
+                    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
                     System.out.println();
 
                     continue l;
@@ -101,10 +101,10 @@ class BFSTraversal{
             // If no unvisited adjacent node found, dequeue node from Queue and make it current node.
             currentNode = queue.poll();
         
-           System.out.println("Step # " + step);
-           System.out.println("Current Node: " + currentNode);
-           System.out.println("Queue: " + queue);
-           System.out.println("Visited: " + Arrays.toString(visitedNodes));
+           System.out.println("\tStep # " + step);
+           System.out.println("\tCurrent Node: " + currentNode);
+           System.out.println("\tQueue: " + queue);
+           System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
            System.out.println();
 
         // Repeat Loop until Queue is empty
@@ -136,9 +136,11 @@ public class Main{
     public static void main(String args[]){
 
         
-        int size = 0;
+        int totalNodes = 0;
 
-        // First Problem # 1
+        // Problem # 1
+
+        // Define Nodes
         Node f = new Node("F");
         Node b = new Node("B");
         Node g = new Node("G");
@@ -149,6 +151,7 @@ public class Main{
         Node e = new Node("E");
         Node h = new Node("H");
         
+        // Set Children
         f.setAllchildren(new Node[]{b,g});
         b.setAllchildren(new Node[]{a,d});
         g.setAllchildren(new Node[]{i});
@@ -159,100 +162,145 @@ public class Main{
         e.setAllchildren(new Node[]{});
         h.setAllchildren(new Node[]{});
         
-        size = 9;
-
-        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(f, size));
+        totalNodes = 9;
+        System.out.println("\n*********** Problem # 1 *********** ");
+        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(f, totalNodes));
     
-        // // Sec
-        // // Create Nodes
-        // Node rootNode = new Node("S");
+        // Problem # 2
 
-        // Node sNode = new Node("Q");
+        // Define Nodes
+        Node rootNode = new Node("S");
+
+        Node sNode = new Node("Q");
         
-        // Node tNode = new Node("W");
+        Node tNode = new Node("W");
 
-        // Node fNode = new Node("T");
+        Node fNode = new Node("T");
 
-        // Node fiNode = new Node("R");
+        Node fiNode = new Node("R");
 
-        // Node siNode = new Node("G");
+        Node siNode = new Node("G");
 
-        // // Set childrenren
-        // rootNode.setAllchildren(new Node[] {sNode, tNode, fNode});
+        // Set children
+        rootNode.setAllchildren(new Node[] {sNode, tNode, fNode});
 
-        // sNode.setAllchildren(new Node[]{fiNode, tNode});
+        sNode.setAllchildren(new Node[]{fiNode, tNode});
 
-        // tNode.setAllchildren(new Node[]{fNode, siNode});
+        tNode.setAllchildren(new Node[]{fNode, siNode});
 
-        // fNode.setAllchildren(new Node[]{siNode});
+        fNode.setAllchildren(new Node[]{siNode});
 
-        // // siNode, tNode
-        // fiNode.setAllchildren(new Node[]{ siNode, tNode});
+        // siNode, tNode
+        fiNode.setAllchildren(new Node[]{ siNode, tNode});
 
-        // siNode.setAllchildren(new Node[]{});
+        siNode.setAllchildren(new Node[]{});
 
-        // size = 6;
-        // //System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(rootNode, size));
+        totalNodes = 6;
+        System.out.println("\n\n*********** Problem # 2 *********** ");
+        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(rootNode, totalNodes));
     
         
-        // THIRD Problem
-        // Node f = new Node("F");
-        // Node b = new Node("B");
-        // Node g = new Node("G");
-        // Node a = new Node("A");
-        // Node d = new Node("D");
-        // Node i = new Node("I");
-        // Node c = new Node("C");
-        // Node e = new Node("E");
-        // Node h = new Node("H");
-        // Node j = new Node("J");
-        // Node k = new Node("K");
-        // Node l = new Node("L");
-        // Node m = new Node("M");
+        // Problem # 3
 
-        // a.setAllchildren(new Node[]{b,c,d});
-        // b.setAllchildren(new Node[]{e});
-        // c.setAllchildren(new Node[]{f,g,h});
-        // d.setAllchildren(new Node[]{i,j});
-        // e.setAllchildren(new Node[]{k,l});
-        // f.setAllchildren(new Node[]{});
-        // g.setAllchildren(new Node[]{});
-        // h.setAllchildren(new Node[]{m});
-        // i.setAllchildren(new Node[]{});
-        // j.setAllchildren(new Node[]{});
-        // k.setAllchildren(new Node[]{});
-        // l.setAllchildren(new Node[]{});
-        // m.setAllchildren(new Node[]{});
+        // Define Nodes
+        f = new Node("F");
+        b = new Node("B");
+        g = new Node("G");
+        a = new Node("A");
+        d = new Node("D");
+        i = new Node("I");
+        c = new Node("C");
+        e = new Node("E");
+        h = new Node("H");
+        Node j = new Node("J");
+        Node k = new Node("K");
+        Node l = new Node("L");
+        Node m = new Node("M");
+
+        // Set Children
+        a.setAllchildren(new Node[]{b,c,d});
+        b.setAllchildren(new Node[]{e});
+        c.setAllchildren(new Node[]{f,g,h});
+        d.setAllchildren(new Node[]{i,j});
+        e.setAllchildren(new Node[]{k,l});
+        f.setAllchildren(new Node[]{});
+        g.setAllchildren(new Node[]{});
+        h.setAllchildren(new Node[]{m});
+        i.setAllchildren(new Node[]{});
+        j.setAllchildren(new Node[]{});
+        k.setAllchildren(new Node[]{});
+        l.setAllchildren(new Node[]{});
+        m.setAllchildren(new Node[]{});
+       
+        totalNodes = 13;
+        System.out.println("\n\n*********** Problem # 3 *********** ");
+        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(a, totalNodes));
+
+        // No Solution in Slides 
+        // Problem # 4
+
+        // Define Nodes
+        Node eig = new Node("8");
+        Node thr = new Node("3");
+        Node ten = new Node("10");
+        Node one = new Node("1");
+        Node six = new Node("6");
+        Node ftn = new Node("14");
+        Node fou = new Node("4");
+        Node sev = new Node("7");
+        Node thn = new Node("13");
+
+        // Set Chidren
+        eig.setAllchildren(new Node[]{thr,ten});
+        thr.setAllchildren(new Node[]{one, six});
+        ten.setAllchildren(new Node[]{ftn});
+        one.setAllchildren(new Node[]{});
+        six.setAllchildren(new Node[]{fou, sev});
+        ftn.setAllchildren(new Node[]{thn});
+        fou.setAllchildren(new Node[]{});
+        sev.setAllchildren(new Node[]{});
+        thn.setAllchildren(new Node[]{});
         
-        // size = 13;
+        totalNodes = 9;
+        System.out.println("\n\n*********** Problem # 4 *********** ");
+        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(eig, totalNodes));
 
-        // // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(a, size));
+        // Problem # 5
 
-        // Node eig = new Node("8");
-        // Node thr = new Node("3");
-        // Node ten = new Node("10");
-        // Node one = new Node("1");
-        // Node six = new Node("6");
-        // Node ftn = new Node("14");
-        // Node fou = new Node("4");
-        // Node sev = new Node("7");
-        // Node thn = new Node("13");
+        // Define Nodes
+        one = new Node("1");
+        Node two = new Node("2");
+        thr = new Node("3");
+        fou = new Node("4");
+        Node fiv = new Node("5");
+        six = new Node("6");
+        sev = new Node("7");
+        eig = new Node("8");
+        Node nin = new Node("9");
+        ten = new Node("10");
+        Node ele = new Node("11");
+        Node twe = new Node("12");
 
-        // eig.setAllchildren(new Node[]{thr,ten});
-        // thr.setAllchildren(new Node[]{one, six});
-        // ten.setAllchildren(new Node[]{ftn});
-        // one.setAllchildren(new Node[]{});
-        // six.setAllchildren(new Node[]{fou, sev});
-        // ftn.setAllchildren(new Node[]{thn});
-        // fou.setAllchildren(new Node[]{});
-        // sev.setAllchildren(new Node[]{});
-        // thn.setAllchildren(new Node[]{});
+        // Set Chidren
+        one.setAllchildren(new Node[]{two, thr, fou});
+        two.setAllchildren(new Node[]{fiv, six});
+        thr.setAllchildren(new Node[]{});
+        fou.setAllchildren(new Node[]{sev, eig});
+        fiv.setAllchildren(new Node[]{nin, ten});
+        six.setAllchildren(new Node[]{});
+        sev.setAllchildren(new Node[]{ele, twe});
+        eig.setAllchildren(new Node[]{});
+        nin.setAllchildren(new Node[]{});
+        ten.setAllchildren(new Node[]{});
+        ele.setAllchildren(new Node[]{});
+        twe.setAllchildren(new Node[]{});
+       
         
-        // size = 9;
+        totalNodes = 12;
+        System.out.println("\n\n*********** Problem # 5 *********** ");
+        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(one, totalNodes));
 
-        // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(eig, size));
-
-
+        
         
     }
 
