@@ -1,22 +1,19 @@
 import java.util.Stack;
-
 import java.util.Arrays;
 
 // import java.util.*;
+
+// Define the Node
 class Node{
 
-    public String toString(){
+    private String item;
+    private Node children[];
 
-        return item;
-    }
-
-    String item;
-    Node child[];
-
-    Node(String item, Node child[]){
+    // Constructors
+    Node(String item, Node children[]){
 
         this.item = item;
-        this.child = child;
+        this.children = children;
     }
 
     Node(String item){
@@ -24,9 +21,31 @@ class Node{
         this(item, null);
     }
 
-    void setAllChild(Node child[]){
+    // Setters
+    void setItem(String item){
 
-        this.child = child;
+        this.item = item;
+    }
+
+    void setAllChildren(Node children[]){
+
+        this.children = children;
+    }
+    
+    // Getters
+    public String getItem(){
+
+        return item;
+    }
+
+    public Node[] getChildren(){
+
+        return children;
+    }
+
+    public String toString(){
+
+        return item;
     }
 }
 
@@ -34,45 +53,45 @@ class DFSTraversal{
 
    static String traverse(Node rootNode, int size){
 
-        Node next;
+        Stack <Node> stack = new Stack<Node>(); 
 
-        Stack <Node> stk = new <Node> Stack(); 
+        Node currentNode;
 
-        // 
-        Node CN = rootNode;
+        String visitedNodes[] = new String[size];
 
-        String vst[] = new String[size];
-
-        int a = 0;
-
-        vst[a] = CN.item;
-
-        stk.push(CN);
+        int index = 0;
+        
+        // Choose the starting node, mark it as visited, push it on Stack and make it current node
+        visitedNodes[index] = rootNode.getItem();
+        stack.push(rootNode);
+        currentNode = rootNode;
 
         int step = 1;
 
         System.out.println("Step # " + step);
-        System.out.println("Current Node: " + CN);
-        System.out.println("Stack: " + stk);
-        System.out.println("Visited: " + Arrays.toString(vst));
+        System.out.println("Current Node: " + currentNode);
+        System.out.println("Stack: " + stack);
+        System.out.println("Visited: " + Arrays.toString(visitedNodes));
         System.out.println();
 
-        l:while(!stk.isEmpty()){
+        // Repeat Loop until Stack is empty
+        l:while(!stack.isEmpty()){
 
             step++;
 
-            for(int i = 0; i < CN.child.length;i++){
+            // Find adjacent unvisited node of current node, push it on Stack, mark it visited and make it current node.
+            for(int i = 0; i < currentNode.getChildren().length;i++){
 
-                if(!isVisited(CN.child[i].item, vst)){
+                if(!isVisited(currentNode.getChildren()[i].getItem(), visitedNodes)){
     
-                    stk.push(CN.child[i]);
-                    vst[++a] = CN.child[i].item;
-                    CN = CN.child[i];
+                    stack.push(currentNode.getChildren()[i]);
+                    visitedNodes[++index] = currentNode.getChildren()[i].getItem();
+                    currentNode = currentNode.getChildren()[i];
 
                     System.out.println("Step # " + step);
-                    System.out.println("Current Node: " + CN);
-                    System.out.println("Stack: " + stk);
-                    System.out.println("Visited: " + Arrays.toString(vst));
+                    System.out.println("Current Node: " + currentNode);
+                    System.out.println("Stack: " + stack);
+                    System.out.println("Visited: " + Arrays.toString(visitedNodes));
                     System.out.println();
 
                     continue l;
@@ -81,73 +100,81 @@ class DFSTraversal{
     
             }
     
-            if (!stk.isEmpty()) {
-                stk.pop();
-                // CN = stk.pop();
+            // If no unvisited adjacent node found, pop out node from Stack and make top of the stack as current node.
+
+            if (!stack.isEmpty()) {
+                stack.pop();
+                // currentNode = stack.pop();
             }
 
-            if (!stk.isEmpty()) {
-                // stk.pop();
-                CN = stk.pop();
-                stk.push(CN);
+            if (!stack.isEmpty()) {
+                // // stack.pop();
+                
+                // currentNode = stack.pop();
+                // stack.push(currentNode);
+
+                currentNode = stack.peek();
+
             }
-            //CN = stk.pop();
-           // stk.remove(CN);
+            //currentNode = stack.pop();
+           // stack.remove(currentNode);
     
            System.out.println("Step # " + step);
-           System.out.println("Current Node: " + CN);
-           System.out.println("Stack: " + stk);
-           System.out.println("Visited: " + Arrays.toString(vst));
+           System.out.println("Current Node: " + currentNode);
+           System.out.println("Stack: " + stack);
+           System.out.println("Visited: " + Arrays.toString(visitedNodes));
            System.out.println();
 
         }
 
-        return Arrays.toString(vst);
+        return Arrays.toString(visitedNodes);
 
     }
 
-    static String limitedTraverse(Node rootNode, int size, int level){
+    static String limitedDFSTraverse(Node rootNode, int size, int level){
 
-        Node next;
-
-        Stack <Node> stk = new <Node> Stack(); 
+        Stack <Node> stack = new Stack<Node>(); 
 
         int countLevel = 0;
-        Node CN = rootNode;
+        Node currentNode;
 
-        String vst[] = new String[size];
+        String visitedNodes[] = new String[size];
 
-        int a = 0;
+        int index = 0;
 
-        vst[a] = CN.item;
-
-        stk.push(CN);
+        // Choose the starting node, mark it as visited, push it on Stack and make it current node.
+        visitedNodes[index] = rootNode.getItem();
+        stack.push(rootNode);
+        currentNode = rootNode;
 
         int step = 1;
 
         System.out.println("Step # " + step);
-        System.out.println("Current Node: " + CN);
-        System.out.println("Stack: " + stk);
-        System.out.println("Visited: " + Arrays.toString(vst));
+        System.out.println("Current Node: " + currentNode);
+        System.out.println("Stack: " + stack);
+        System.out.println("Visited: " + Arrays.toString(visitedNodes));
         System.out.println();
 
-        l:while(!stk.isEmpty()){
+        // Repeat Loop until Stack is empty
+        l:while(!stack.isEmpty()){
 
             step++;
 
-            for(int i = 0; i < CN.child.length;i++){
+            //  Find adjacent unvisited node of current node of given level, push it on Stack, mark it visited and make it current node.
 
-                if(!isVisited(CN.child[i].item, vst) && countLevel < level){
+            for(int i = 0; i < currentNode.getChildren().length;i++){
+
+                if(!isVisited(currentNode.getChildren()[i].getItem(), visitedNodes) && countLevel < level){
     
-                    stk.push(CN.child[i]);
+                    stack.push(currentNode.getChildren()[i]);
                     countLevel++;
-                    vst[++a] = CN.child[i].item;
-                    CN = CN.child[i];
+                    visitedNodes[++index] = currentNode.getChildren()[i].getItem();
+                    currentNode = currentNode.getChildren()[i];
 
                     System.out.println("Step # " + step);
-                    System.out.println("Current Node: " + CN);
-                    System.out.println("Stack: " + stk);
-                    System.out.println("Visited: " + Arrays.toString(vst));
+                    System.out.println("Current Node: " + currentNode);
+                    System.out.println("Stack: " + stack);
+                    System.out.println("Visited: " + Arrays.toString(visitedNodes));
                     System.out.println();
 
                     continue l;
@@ -155,40 +182,43 @@ class DFSTraversal{
                 }
     
             }
+            // If no unvisited adjacent node found, pop out node from Stack and make top of the stack as current node.
     
-            if (!stk.isEmpty()) {
-                stk.pop();
+            if (!stack.isEmpty()) {
+                stack.pop();
                 
-                // CN = stk.pop();
+                // currentNode = stack.pop();
             }
 
-            if (!stk.isEmpty()) {
-                // stk.pop();
-                CN = stk.pop();
-                stk.push(CN);
+            if (!stack.isEmpty()) {
+                // stack.pop();
+                //currentNode = stack.pop();
+                //stack.push(currentNode);
+
+                currentNode = stack.peek();
                 countLevel--;
             }
-            //CN = stk.pop();
-           // stk.remove(CN);
+            //currentNode = stack.pop();
+           // stack.remove(currentNode);
     
            System.out.println("Step # " + step);
-           System.out.println("Current Node: " + CN);
-           System.out.println("Stack: " + stk);
-           System.out.println("Visited: " + Arrays.toString(vst));
+           System.out.println("Current Node: " + currentNode);
+           System.out.println("Stack: " + stack);
+           System.out.println("Visited: " + Arrays.toString(visitedNodes));
            System.out.println();
 
         }
 
-        return Arrays.toString(vst);
+        return Arrays.toString(visitedNodes);
 
     }
 
 
-    static boolean isVisited(String n, String vst[]){
+    static boolean isVisited(String n, String visitedNodes[]){
 
-        for(int i = 0; i < vst.length; i++){
+        for(int i = 0; i < visitedNodes.length; i++){
 
-            if(n.equalsIgnoreCase(vst[i])){
+            if(n.equalsIgnoreCase(visitedNodes[i])){
 
                 return true;
             }
@@ -212,22 +242,22 @@ public class Main{
         Node f = new Node("F");
         Node b = new Node("B");
         Node g = new Node("G");
-        Node a = new Node("A");
+        Node index = new Node("index");
         Node d = new Node("D");
         Node i = new Node("I");
         Node c = new Node("C");
         Node e = new Node("E");
         Node h = new Node("H");
         
-        f.setAllChild(new Node[]{b,g});
-        b.setAllChild(new Node[]{a,d});
-        g.setAllChild(new Node[]{i});
-        a.setAllChild(new Node[]{});
-        d.setAllChild(new Node[]{c,e});
-        i.setAllChild(new Node[]{h});
-        c.setAllChild(new Node[]{});
-        e.setAllChild(new Node[]{});
-        h.setAllChild(new Node[]{});
+        f.setAllChildren(new Node[]{b,g});
+        b.setAllChildren(new Node[]{index,d});
+        g.setAllChildren(new Node[]{i});
+        index.setAllChildren(new Node[]{});
+        d.setAllChildren(new Node[]{c,e});
+        i.setAllChildren(new Node[]{h});
+        c.setAllChildren(new Node[]{});
+        e.setAllChildren(new Node[]{});
+        h.setAllChildren(new Node[]{});
         
         size = 9;
 
@@ -249,22 +279,23 @@ public class Main{
         Node siNode = new Node("G");
 
         // Set Children
-        rootNode.setAllChild(new Node[] {sNode, tNode, fNode});
+        rootNode.setAllChildren(new Node[] {sNode, tNode, fNode});
 
-        sNode.setAllChild(new Node[]{fiNode, tNode});
+        sNode.setAllChildren(new Node[]{fiNode, tNode});
 
-        tNode.setAllChild(new Node[]{fNode, siNode});
+        tNode.setAllChildren(new Node[]{fNode, siNode});
 
-        fNode.setAllChild(new Node[]{siNode});
+        fNode.setAllChildren(new Node[]{siNode});
 
         // siNode, tNode
-        fiNode.setAllChild(new Node[]{ siNode, tNode});
+        fiNode.setAllChildren(new Node[]{ siNode, tNode});
 
-        siNode.setAllChild(new Node[]{});
+        siNode.setAllChildren(new Node[]{});
 
         size = 6;
-        //System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(rootNode, size));
-        System.out.println(" Final Limited TRAVERSING ORDER: " + DFSTraversal.limitedTraverse(rootNode, size,2));
+        System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(rootNode, size));
+
+        System.out.println(" Final Limited TRAVERSING ORDER: " + DFSTraversal.limitedDFSTraverse(rootNode, size,2));
 
 
         
@@ -272,7 +303,7 @@ public class Main{
         // Node f = new Node("F");
         // Node b = new Node("B");
         // Node g = new Node("G");
-        // Node a = new Node("A");
+        // Node index = new Node("index");
         // Node d = new Node("D");
         // Node i = new Node("I");
         // Node c = new Node("C");
@@ -283,23 +314,23 @@ public class Main{
         // Node l = new Node("L");
         // Node m = new Node("M");
 
-        // a.setAllChild(new Node[]{b,c,d});
-        // b.setAllChild(new Node[]{e});
-        // c.setAllChild(new Node[]{f,g,h});
-        // d.setAllChild(new Node[]{i,j});
-        // e.setAllChild(new Node[]{k,l});
-        // f.setAllChild(new Node[]{});
-        // g.setAllChild(new Node[]{});
-        // h.setAllChild(new Node[]{m});
-        // i.setAllChild(new Node[]{});
-        // j.setAllChild(new Node[]{});
-        // k.setAllChild(new Node[]{});
-        // l.setAllChild(new Node[]{});
-        // m.setAllChild(new Node[]{});
+        // index.setAllChildren(new Node[]{b,c,d});
+        // b.setAllChildren(new Node[]{e});
+        // c.setAllChildren(new Node[]{f,g,h});
+        // d.setAllChildren(new Node[]{i,j});
+        // e.setAllChildren(new Node[]{k,l});
+        // f.setAllChildren(new Node[]{});
+        // g.setAllChildren(new Node[]{});
+        // h.setAllChildren(new Node[]{m});
+        // i.setAllChildren(new Node[]{});
+        // j.setAllChildren(new Node[]{});
+        // k.setAllChildren(new Node[]{});
+        // l.setAllChildren(new Node[]{});
+        // m.setAllChildren(new Node[]{});
         
         // size = 13;
 
-        // // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(a, size));
+        // // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(index, size));
 
         // Node eig = new Node("8");
         // Node thr = new Node("3");
@@ -311,15 +342,15 @@ public class Main{
         // Node sev = new Node("7");
         // Node thn = new Node("13");
 
-        // eig.setAllChild(new Node[]{thr,ten});
-        // thr.setAllChild(new Node[]{one, six});
-        // ten.setAllChild(new Node[]{ftn});
-        // one.setAllChild(new Node[]{});
-        // six.setAllChild(new Node[]{fou, sev});
-        // ftn.setAllChild(new Node[]{thn});
-        // fou.setAllChild(new Node[]{});
-        // sev.setAllChild(new Node[]{});
-        // thn.setAllChild(new Node[]{});
+        // eig.setAllChildren(new Node[]{thr,ten});
+        // thr.setAllChildren(new Node[]{one, six});
+        // ten.setAllChildren(new Node[]{ftn});
+        // one.setAllChildren(new Node[]{});
+        // six.setAllChildren(new Node[]{fou, sev});
+        // ftn.setAllChildren(new Node[]{thn});
+        // fou.setAllChildren(new Node[]{});
+        // sev.setAllChildren(new Node[]{});
+        // thn.setAllChildren(new Node[]{});
         
         // size = 9;
 
