@@ -67,9 +67,9 @@ class Node{
     }
 }
 
-class BFSTraversal{
+class UniformCostSearch{
 
-   static String traverse(Node rootNode, int totalNodes, String goalState){
+   static String search(Node rootNode, int totalNodes, String goalState){
 
     List <MyQueue> priorityQueue = new ArrayList<MyQueue>();
 
@@ -103,12 +103,10 @@ class BFSTraversal{
     
             priorityQueue.add(temp);
         }
-
-        // System.out.println(priorityQueue);
     
-        Collections.sort(priorityQueue,new PriorityComparator());
-        
-        // System.out.println(priorityQueue);
+        // Collections.sort(priorityQueue,new PriorityComparator());
+
+        Collections.sort(priorityQueue, Comparator.comparing(MyQueue::getCost));
 
         System.out.println("\t Priority Queue" + priorityQueue);
 
@@ -122,103 +120,16 @@ class BFSTraversal{
         //System.out.println(priorityQueue.get(0).getPath()[0].getItem());
     }while(! currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState));
     //}while(a < 4);
-    System.out.println("\nShortest Path = " + currentMyQueue);
-    // priorityQueue.add(new MyQueue(1, new Node[]{sNode, rootNode}));
-    // priorityQueue.add(new MyQueue(7, new Node[]{fNode, rootNode}));
-    // priorityQueue.add(new MyQueue(6, new Node[]{tNode, rootNode}));
     
-    // System.out.println(priorityQueue);
-    
-    // Collections.sort(priorityQueue,new PriorityComparator());
-
-    // System.out.println(priorityQueue);
-
-    //priorityQueue <Node> priorityQueue = new LinkedList<Node>();
-    
-    /*PriorityQueue<MyQueue> priorityQueue = new PriorityQueue<MyQueue>(2, Comparator.comparing(MyQueue::getCost));
-
-    Node currentNode;
-
-    String visitedNodes[] = new String[totalNodes];
-
-    int index = 0;
-
-    // Choose the root node, mark it as visited, make it current node.
-    visitedNodes[index] = rootNode.getItem();
-    currentNode = rootNode;
-
-    int step = 1;
-
-    System.out.println("\tStep # " + step);
-    System.out.println("\tCurrent Node: " + currentNode);
-    System.out.println("\tQueue: " + priorityQueue);
-    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-    System.out.println();
-
-    l:do{
-
-        step++;
-
-        // Find adjacent unvisited node of current node, place it in priorityQueue and mark it visited.
-        for(int i = 0; i < currentNode.getchildren().length;i++){
-
-            if(!isVisited(currentNode.getchildren()[i].getItem(), visitedNodes)){
-                
-                priorityQueue.add(currentNode.getchildren()[i]);
-                visitedNodes[++index] = currentNode.getchildren()[i].getItem();
-
-                System.out.println("\tStep # " + step);
-                System.out.println("\tCurrent Node: " + currentNode);
-                System.out.println("\tQueue: " + priorityQueue);
-                System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-                System.out.println();
-
-                continue l;
-                
-            }
-
-        }
-
-        // If no unvisited adjacent node found, dequeue node from priorityQueue and make it current node.
-        currentNode = priorityQueue.poll();
-    
-        System.out.println("\tStep # " + step);
-        System.out.println("\tCurrent Node: " + currentNode);
-        System.out.println("\tQueue: " + priorityQueue);
-        System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-        System.out.println();
-
-    // Repeat Loop until priorityQueue is empty
-    } while(currentNode!= null);
-    // } while(!priorityQueue.isEmpty());
-    
-    return Arrays.toString(visitedNodes);
-    */
-    return "";
+   
+    return ("\nShortest Path = " + currentMyQueue);
 
     }
-
-    static boolean isVisited(String n, String visitedNodes[]){
-
-        for(int i = 0; i < visitedNodes.length; i++){
-
-            if(n.equalsIgnoreCase(visitedNodes[i])){
-
-                return true;
-            }
-        }
-
-        return false;
-
-    }
-    
-
 }
 
 public class UCSMain{
 
     public static void main(String args[]){
-
         
         int totalNodes = 0;
 
@@ -281,25 +192,7 @@ public class UCSMain{
 
         totalNodes = 6;
         System.out.println("\n\n*********** Problem # 1 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(rootNode, totalNodes, "G"));
-       
-        // PriorityQueue<MyQueue> priorityQueue = new PriorityQueue<MyQueue>(2, Comparator.comparing(MyQueue::getCost ));
-        
-        // PriorityQueue<MyQueue> priorityQueue = new PriorityQueue<MyQueue>();
-
-        // PriorityQueue<MyQueue> priorityQueue = new PriorityQueue<MyQueue>(2, new PriorityComparator());
-
-        // List <MyQueue> priorityQueue = new ArrayList<MyQueue>();
-
-        // priorityQueue.add(new MyQueue(1, new Node[]{sNode, rootNode}));
-        // priorityQueue.add(new MyQueue(7, new Node[]{fNode, rootNode}));
-        // priorityQueue.add(new MyQueue(6, new Node[]{tNode, rootNode}));
-        
-        // System.out.println(priorityQueue);
-        
-        // Collections.sort(priorityQueue,new PriorityComparator());
-
-        // System.out.println(priorityQueue);
+        System.out.println(UniformCostSearch.search(rootNode, totalNodes, "G"));
         
         // // Problem # 3
 
