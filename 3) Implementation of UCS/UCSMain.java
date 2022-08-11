@@ -101,7 +101,10 @@ class UniformCostSearch{
             
             temp = new MyQueue(cost, path);
     
-            priorityQueue.add(temp);
+            if(!isCycle(temp)){
+                priorityQueue.add(temp);
+            }
+            
         }
     
         // Collections.sort(priorityQueue,new PriorityComparator());
@@ -125,6 +128,21 @@ class UniformCostSearch{
     return ("\nShortest Path = " + currentMyQueue);
 
     }
+
+    
+    static boolean isCycle(MyQueue temp){
+
+        System.out.println(temp.getPath()[0] == temp.getPath()[temp.getPath().length -1 ]);
+
+        if(temp.getPath()[0] == temp.getPath()[temp.getPath().length-1]){
+
+            return true;
+        }
+
+        return false;
+
+    }
+
 }
 
 public class UCSMain{
@@ -161,7 +179,7 @@ public class UCSMain{
         // System.out.println("\n*********** Problem # 1 *********** ");
         // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(f, totalNodes));
     
-        // Problem # 2
+        // Problem # 1
 
         // Define Nodes
         Node rootNode = new Node("S",new Integer[]{1,6,7});
@@ -191,44 +209,61 @@ public class UCSMain{
         siNode.setAllchildren(new Node[]{});
 
         totalNodes = 6;
-        System.out.println("\n\n*********** Problem # 1 *********** ");
-        System.out.println(UniformCostSearch.search(rootNode, totalNodes, "G"));
+        // System.out.println("\n\n*********** Problem # 1 *********** ");
+        // System.out.println(UniformCostSearch.search(rootNode, totalNodes, "G"));
         
-        // // Problem # 3
+        // Problem # 2
 
-        // // Define Nodes
-        // f = new Node("F");
-        // b = new Node("B");
-        // g = new Node("G");
-        // a = new Node("A");
-        // d = new Node("D");
-        // i = new Node("I");
-        // c = new Node("C");
-        // e = new Node("E");
-        // h = new Node("H");
-        // Node j = new Node("J");
-        // Node k = new Node("K");
-        // Node l = new Node("L");
-        // Node m = new Node("M");
+        // Define Nodes
+        Node b = new Node("B", new Integer[]{10});
+        Node a = new Node("A", new Integer[]{12,60});
+        Node c = new Node("C", new Integer[]{20,32});
+        Node d = new Node("D", new Integer[]{});
+        Node e = new Node("E", new Integer[]{7});
+        
+        // Set Children
 
-        // // Set Children
-        // a.setAllchildren(new Node[]{b,c,d});
-        // b.setAllchildren(new Node[]{e});
-        // c.setAllchildren(new Node[]{f,g,h});
-        // d.setAllchildren(new Node[]{i,j});
-        // e.setAllchildren(new Node[]{k,l});
-        // f.setAllchildren(new Node[]{});
-        // g.setAllchildren(new Node[]{});
-        // h.setAllchildren(new Node[]{m});
-        // i.setAllchildren(new Node[]{});
-        // j.setAllchildren(new Node[]{});
-        // k.setAllchildren(new Node[]{});
-        // l.setAllchildren(new Node[]{});
-        // m.setAllchildren(new Node[]{});
-       
-        // totalNodes = 13;
-        // System.out.println("\n\n*********** Problem # 3 *********** ");
-        // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(a, totalNodes));
+        b.setAllchildren(new Node[]{a});
+        a.setAllchildren(new Node[]{c,d});
+        c.setAllchildren(new Node[]{b,d});
+        d.setAllchildren(new Node[]{});
+        e.setAllchildren(new Node[]{a});
+        
+        totalNodes = 5;
+        System.out.println("\n*********** Problem # 2 *********** ");
+        System.out.println(UniformCostSearch.search(b, totalNodes, "D"));
+
+
+        // Problem # 3
+
+        // Define Nodes
+        Node f = new Node("F", new Integer[]{2,6});
+        b = new Node("B", new Integer[]{7,1});
+        Node g = new Node("G", new Integer[]{9});
+        a = new Node("A", new Integer[]{8,2,7});
+        d = new Node("D", new Integer[]{2,6});
+        Node i = new Node("I", new Integer[]{9});
+        c = new Node("C", new Integer[]{10,7,2});
+        e = new Node("E", new Integer[]{6, 9});
+        Node h = new Node("H", new Integer[]{3,8});
+        Node j = new Node("J", new Integer[]{3,8});
+        
+
+        // Set Children
+        a.setAllchildren(new Node[]{b,d,e});
+        b.setAllchildren(new Node[]{c,e});
+        c.setAllchildren(new Node[]{b,f,j});
+        d.setAllchildren(new Node[]{a,h});
+        e.setAllchildren(new Node[]{a,d});
+        f.setAllchildren(new Node[]{b,i});
+        g.setAllchildren(new Node[]{c});
+        h.setAllchildren(new Node[]{e,i});
+        i.setAllchildren(new Node[]{e});
+        j.setAllchildren(new Node[]{g,i});
+
+        totalNodes = 10;
+        System.out.println("\n\n*********** Problem # 3 *********** ");
+        System.out.println(UniformCostSearch.search(d, totalNodes, "G"));
 
         // // No Solution in Slides 
         // // Problem # 4
@@ -366,3 +401,6 @@ class MyQueue{
     }
 
 }
+
+// Change Cyclic Function whether there is a cycle or a repetation of Nodes in Priority Queue
+// Check Weight for Problem # 3 (Slide and Code result is different)
