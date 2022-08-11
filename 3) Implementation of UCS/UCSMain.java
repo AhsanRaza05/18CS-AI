@@ -139,6 +139,21 @@ class UniformCostSearch{
             return true;
         }
 
+        else{
+
+            for (int i = 0; i <temp.getPath().length - 1; i++){
+
+                for(int  j = i + 1; j < temp.getPath().length - 1; j++){
+
+                    if(temp.getPath()[i] == temp.getPath()[j]){
+
+                        return true;
+                    }
+                }
+
+            }
+        }
+
         return false;
 
     }
