@@ -107,9 +107,9 @@ class UniformCostSearch{
             
         }
     
-        // Collections.sort(priorityQueue,new PriorityComparator());
+        Collections.sort(priorityQueue,new PriorityComparator());
 
-        Collections.sort(priorityQueue, Comparator.comparing(MyQueue::getCost));
+        //Collections.sort(priorityQueue, Comparator.comparing(MyQueue::getCost));
 
         System.out.println("\t Priority Queue" + priorityQueue);
 
@@ -358,13 +358,12 @@ class PriorityComparator implements Comparator{
         MyQueue n1=(MyQueue)o1;  
         MyQueue n2=(MyQueue)o2;  
 
-        if(n1.getCost() == n2.getCost())  
-        return 0;  
+        // if(n1.getCost() == n2.getCost())  
+        // return 0;  
 
-        else if(n1.getCost() > n2.getCost())  
-        return 1;  
+        if(n1.getCost() > n2.getCost())  
+            return 1;  
 
-        else  
         return -1;  
     }  
 }  
@@ -419,3 +418,4 @@ class MyQueue{
 
 // Change Cyclic Function whether there is a cycle or a repetation of Nodes in Priority Queue
 // Check Weight for Problem # 3 (Slide and Code result is different)
+// Change Priority Queue both MyQueue is same then that Myqueue will come which was firsrt IN.when Cost of 
