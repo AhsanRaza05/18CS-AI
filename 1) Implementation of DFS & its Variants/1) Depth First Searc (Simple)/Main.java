@@ -1,5 +1,6 @@
 import java.util.Stack;
 
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -77,12 +78,6 @@ class DFSTraversal{
 
         result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
 
-        // System.out.println("\tStep # " + step);
-        // System.out.println("\tCurrent Node: " + currentNode);
-        // System.out.println("\tStack: " + stack);
-        // System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-        System.out.println();
-
         // Repeat Loop until Stack is empty
         l:while(!stack.isEmpty()){
 
@@ -96,12 +91,6 @@ class DFSTraversal{
                     stack.push(currentNode.getChildren()[i]);
                     visitedNodes[++index] = currentNode.getChildren()[i].getItem();
                     currentNode = currentNode.getChildren()[i];
-
-                    // System.out.println("\tStep # " + step);
-                    // System.out.println("\tCurrent Node: " + currentNode);
-                    // System.out.println("\tStack: " + stack);
-                    // System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-                    // System.out.println();
 
                     result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n" ;
 
@@ -129,12 +118,6 @@ class DFSTraversal{
             }
             //currentNode = stack.pop();
            // stack.remove(currentNode);
-    
-        //    System.out.println("\tStep # " + step);
-        //    System.out.println("\tCurrent Node: " + currentNode);
-        //    System.out.println("\tStack: " + stack);
-        //    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-        //    System.out.println();
 
            result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n" ;
 
@@ -166,7 +149,16 @@ public class Main{
 
     public static void main(String args[]){
 
-        
+        // create a JTextArea
+        JTextArea textArea = new JTextArea(38,45);
+        textArea.setEditable(false);
+
+        JDialog dialgoue;
+
+        JOptionPane pane;
+
+        JScrollPane scrollPane;
+
         int size = 0;
 
         // PROBLEM # 1
@@ -194,9 +186,21 @@ public class Main{
         h.setAllChildren(new Node[]{});
         
         size = 9;
-        System.out.println("\n*********** PROBLEM # 1 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(f, size));
-        //System.out.println("FINAL Limited TRAVERSING ORDER: " + DFSTraversal.limitedTraverse(f, size,2));
+        // System.out.println("\n*********** PROBLEM # 1 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(f, size));
+
+        // Display Result in Dialogue Box
+        textArea.setText(DFSTraversal.traverse(f, size));
+
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+        
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "PROBLEM # 1");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
 
         // PROBLEM # 2
         
@@ -228,8 +232,21 @@ public class Main{
         siNode.setAllChildren(new Node[]{});
 
         size = 6;
-        System.out.println("\n*********** PROBLEM # 2 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(rootNode, size));
+        // System.out.println("\n*********** PROBLEM # 2 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(rootNode, size));
+
+        // Display Result in Dialogue Box
+        textArea.setText(DFSTraversal.traverse(rootNode, size));
+        
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+        
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "PROBLEM # 2");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
 
         // PROBLEM # 3
 
@@ -264,8 +281,21 @@ public class Main{
         m.setAllChildren(new Node[]{});
         
         size = 13;
-        System.out.println("\n*********** PROBLEM # 3 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(a, size));
+        // System.out.println("\n*********** PROBLEM # 3 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(a, size));
+        
+        // Display Result in Dialogue Box
+        textArea.setText(DFSTraversal.traverse(a, size));
+        
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+        
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "PROBLEM # 3");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
 
         // PROBLEM # 4
 
@@ -292,8 +322,21 @@ public class Main{
         thn.setAllChildren(new Node[]{});
         
         size = 9;
-        System.out.println("\n*********** PROBLEM # 4 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(eig, size));
+        // System.out.println("\n*********** PROBLEM # 4 *********** ");
+
+        // Display Result in Dialogue Box
+        textArea.setText(DFSTraversal.traverse(eig, size));
+        
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+        
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "PROBLEM # 4");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
+
 
         // No Solution in Slides 
 
@@ -328,35 +371,20 @@ public class Main{
         twe.setAllChildren(new Node[]{});
 
         size = 12;
-        System.out.println("\n*********** PROBLEM # 5 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(one, size));
+        // System.out.println("\n*********** PROBLEM # 5 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(one, size));
         // DFSTraversal.traverse(one, size);
 
-        // // create a JTextArea
-        // JTextArea textArea = new JTextArea(38,45);
-        // textArea.setText(DFSTraversal.traverse(one, size));
-        // textArea.setEditable(false);
+        // Display Result in Dialogue Box
+        textArea.setText(DFSTraversal.traverse(one, size));
         
-        // // wrap a scrollpane around it
-        // JScrollPane scrollPane = new JScrollPane(textArea);
-        
-        // // display them in a message dialog
-        // JOptionPane.showMessageDialog(null, scrollPane,"PROBLEM # 5",JOptionPane.INFORMATION_MESSAGE);
-        //JOptionPane.showMessageDialog(null, DFSTraversal.traverse(one, size), "PROBLEM # 5",JOptionPane.INFORMATION_MESSAGE);
-        // try
-        // { 
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
 
-        //     Runtime.getRuntime().exec("cmd.exe /k start echo " + DFSTraversal.traverse(one, size));
+        dialgoue = pane.createDialog(null, "PROBLEM # 5");
+        dialgoue.setVisible(true);
 
-        // }
-        // catch (Exception ec)
-        // {
-        //     System.out.println("HEY Buddy ! U r Doing Something Wrong ");
-        //     ec.printStackTrace();
-        // }
-        
+        System.exit(0);        
     }
 
 }
-
-// hello & echo.world
