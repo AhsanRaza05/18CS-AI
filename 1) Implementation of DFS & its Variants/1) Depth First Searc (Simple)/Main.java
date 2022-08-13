@@ -1,4 +1,9 @@
 import java.util.Stack;
+
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 import java.util.Arrays;
 
 // import java.util.*;
@@ -61,6 +66,8 @@ class DFSTraversal{
 
         int index = 0;
         
+        String result = "";
+
         // Choose the starting node, mark it as visited, push it on Stack and make it current node
         visitedNodes[index] = rootNode.getItem();
         stack.push(rootNode);
@@ -68,11 +75,12 @@ class DFSTraversal{
 
         int step = 1;
 
-        System.out.println("\tStep # " + step);
-        System.out.println("\tCurrent Node: " + currentNode);
-        System.out.println("\tStack: " + stack);
-        System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-        
+        result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+
+        // System.out.println("\tStep # " + step);
+        // System.out.println("\tCurrent Node: " + currentNode);
+        // System.out.println("\tStack: " + stack);
+        // System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
         System.out.println();
 
         // Repeat Loop until Stack is empty
@@ -89,11 +97,13 @@ class DFSTraversal{
                     visitedNodes[++index] = currentNode.getChildren()[i].getItem();
                     currentNode = currentNode.getChildren()[i];
 
-                    System.out.println("\tStep # " + step);
-                    System.out.println("\tCurrent Node: " + currentNode);
-                    System.out.println("\tStack: " + stack);
-                    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-                    System.out.println();
+                    // System.out.println("\tStep # " + step);
+                    // System.out.println("\tCurrent Node: " + currentNode);
+                    // System.out.println("\tStack: " + stack);
+                    // System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
+                    // System.out.println();
+
+                    result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n" ;
 
                     continue l;
                     
@@ -120,15 +130,18 @@ class DFSTraversal{
             //currentNode = stack.pop();
            // stack.remove(currentNode);
     
-           System.out.println("\tStep # " + step);
-           System.out.println("\tCurrent Node: " + currentNode);
-           System.out.println("\tStack: " + stack);
-           System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-           System.out.println();
+        //    System.out.println("\tStep # " + step);
+        //    System.out.println("\tCurrent Node: " + currentNode);
+        //    System.out.println("\tStack: " + stack);
+        //    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
+        //    System.out.println();
+
+           result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n" ;
 
         }
 
-        return Arrays.toString(visitedNodes);
+        result += "\n****************** FINAL TRAVERSING ORDER: " + Arrays.toString(visitedNodes) + " ******************";
+        return result;
 
     }
 
@@ -317,9 +330,33 @@ public class Main{
         size = 12;
         System.out.println("\n*********** PROBLEM # 5 *********** ");
         System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(one, size));
+        // DFSTraversal.traverse(one, size);
 
+        // // create a JTextArea
+        // JTextArea textArea = new JTextArea(38,45);
+        // textArea.setText(DFSTraversal.traverse(one, size));
+        // textArea.setEditable(false);
+        
+        // // wrap a scrollpane around it
+        // JScrollPane scrollPane = new JScrollPane(textArea);
+        
+        // // display them in a message dialog
+        // JOptionPane.showMessageDialog(null, scrollPane,"PROBLEM # 5",JOptionPane.INFORMATION_MESSAGE);
+        //JOptionPane.showMessageDialog(null, DFSTraversal.traverse(one, size), "PROBLEM # 5",JOptionPane.INFORMATION_MESSAGE);
+        // try
+        // { 
 
+        //     Runtime.getRuntime().exec("cmd.exe /k start echo " + DFSTraversal.traverse(one, size));
+
+        // }
+        // catch (Exception ec)
+        // {
+        //     System.out.println("HEY Buddy ! U r Doing Something Wrong ");
+        //     ec.printStackTrace();
+        // }
         
     }
 
 }
+
+// hello & echo.world
