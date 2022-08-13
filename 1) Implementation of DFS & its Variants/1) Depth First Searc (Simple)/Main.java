@@ -132,89 +132,7 @@ class DFSTraversal{
 
     }
 
-    static String limitedDepthSearchTraverse(Node rootNode, int size, int level){
-
-        Stack <Node> stack = new Stack<Node>(); 
-
-        int countLevel = 0;
-        Node currentNode;
-
-        String visitedNodes[] = new String[size];
-
-        int index = 0;
-
-        // Choose the starting node, mark it as visited, push it on Stack and make it current node.
-        visitedNodes[index] = rootNode.getItem();
-        stack.push(rootNode);
-        currentNode = rootNode;
-
-        int step = 1;
-
-        System.out.println("\tStep # " + step);
-        System.out.println("\tCurrent Node: " + currentNode);
-        System.out.println("\tStack: " + stack);
-        System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-        System.out.println();
-
-        // Repeat Loop until Stack is empty
-        l:while(!stack.isEmpty()){
-
-            step++;
-
-            //  Find adjacent unvisited node of current node of given level, push it on Stack, mark it visited and make it current node.
-
-            for(int i = 0; i < currentNode.getChildren().length;i++){
-
-                if(!isVisited(currentNode.getChildren()[i].getItem(), visitedNodes) && countLevel < level){
     
-                    stack.push(currentNode.getChildren()[i]);
-                    countLevel++;
-                    visitedNodes[++index] = currentNode.getChildren()[i].getItem();
-                    currentNode = currentNode.getChildren()[i];
-
-                    System.out.println("\tStep # " + step);
-                    System.out.println("\tCurrent Node: " + currentNode);
-                    System.out.println("\tStack: " + stack);
-                    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-                    System.out.println();
-
-                    continue l;
-                    
-                }
-    
-            }
-            // If no unvisited adjacent node found, pop out node from Stack and make top of the stack as current node.
-    
-            if (!stack.isEmpty()) {
-                stack.pop();
-                
-                // currentNode = stack.pop();
-            }
-
-            if (!stack.isEmpty()) {
-                // stack.pop();
-                //currentNode = stack.pop();
-                //stack.push(currentNode);
-
-                currentNode = stack.peek();
-                countLevel--;
-            }
-            //currentNode = stack.pop();
-           // stack.remove(currentNode);
-    
-           System.out.println("\tStep # " + step);
-           System.out.println("\tCurrent Node: " + currentNode);
-           System.out.println("\tStack: " + stack);
-           System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-           System.out.println();
-
-        }
-
-        return Arrays.toString(visitedNodes);
-
-    }
-
-
     static boolean isVisited(String n, String visitedNodes[]){
 
         for(int i = 0; i < visitedNodes.length; i++){
@@ -229,7 +147,6 @@ class DFSTraversal{
 
     }
     
-
 }
 
 public class Main{
@@ -402,46 +319,6 @@ public class Main{
         System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(one, size));
 
 
-        // ##############################################################
-        System.out.println("\n\n*************************** DEPTH LIMITED SEARCH ***************************");
-        
-        // PROBLEM # 1
-
-        // Set Children
-        f.setAllChildren(new Node[]{b,g});
-        b.setAllChildren(new Node[]{a,d});
-        g.setAllChildren(new Node[]{i});
-        a.setAllChildren(new Node[]{});
-        d.setAllChildren(new Node[]{c,e});
-        i.setAllChildren(new Node[]{h});
-        c.setAllChildren(new Node[]{});
-        e.setAllChildren(new Node[]{});
-        h.setAllChildren(new Node[]{});
-
-        size = 9;
-        System.out.println("\n*********** PROBLEM # 1 *********** ");
-        System.out.println("FINAL Limited TRAVERSING ORDER: " + DFSTraversal.limitedDepthSearchTraverse(f, size,2));
-   
-
-        // PROBLEM # 2
-
-        // Set Children
-        rootNode.setAllChildren(new Node[] {sNode, tNode, fNode});
-
-        sNode.setAllChildren(new Node[]{fiNode, tNode});
-
-        tNode.setAllChildren(new Node[]{fNode, siNode});
-
-        fNode.setAllChildren(new Node[]{siNode});
-
-        // siNode, tNode
-        fiNode.setAllChildren(new Node[]{ siNode, tNode});
-
-        siNode.setAllChildren(new Node[]{});
-
-        size = 6;
-        System.out.println("\n*********** PROBLEM # 2 *********** ");
-        System.out.println(" Final Limited TRAVERSING ORDER: " + DFSTraversal.limitedDepthSearchTraverse(rootNode, size,2));
         
     }
 
