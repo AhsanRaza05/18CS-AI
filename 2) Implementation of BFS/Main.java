@@ -107,8 +107,9 @@ class BFSTraversal{
            System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
            System.out.println();
 
-        // Repeat Loop until Queue is empty
-        } while(currentNode!= null && !queue.isEmpty());
+        // Repeat Loop until Queue is empty and Current Node is null
+        } while(!(currentNode == null && queue.isEmpty()));
+        // } while(currentNode != null || !queue.isEmpty());
         // } while(!queue.isEmpty());
         
         return Arrays.toString(visitedNodes);
