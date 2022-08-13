@@ -120,12 +120,20 @@ class UniformCostSearch{
 
         steps++;
         
+        //  If the minimum path is goal, stop algorithm you found the solution.
+        
         //System.out.println(priorityQueue.get(0).getPath()[0].getItem());
-    }while(! currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState));
+
+        if(currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState)){
+            return ("\nShortest Path = " + currentMyQueue);
+        }
+
+    // Repeat until Queue is empty  
+    }while( !priorityQueue.isEmpty());
     //}while(a < 4);
     
    
-    return ("\nShortest Path = " + currentMyQueue);
+    return ("\nGoal Does not Exist!");
 
     }
 
@@ -278,7 +286,7 @@ public class UCSMain{
 
         totalNodes = 10;
         System.out.println("\n\n*********** Problem # 3 *********** ");
-        System.out.println(UniformCostSearch.search(d, totalNodes, "G"));
+        System.out.println(UniformCostSearch.search(d, totalNodes, "X"));
 
         // // No Solution in Slides 
         // // Problem # 4
