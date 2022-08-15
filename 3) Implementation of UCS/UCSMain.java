@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Collections;
 
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 // import java.util.*;
 
 // Define the Node
@@ -83,10 +88,7 @@ class UniformCostSearch{
     String result= "";
 
     do{
-        
-        // System.out.println("\n Step # %s \n\tFrom the path we have:".formatted(steps));
-        // System.out.println("\t    " + currentMyQueue);
-
+    
         result += "\n Step # %s \n\tFrom the path we have:".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
 
         List<Node> list ;
@@ -113,10 +115,7 @@ class UniformCostSearch{
     
         Collections.sort(priorityQueue,new PriorityComparator());
 
-        //Collections.sort(priorityQueue, Comparator.comparing(MyQueue::getCost));
-
         result += "\t Priority Queue" + priorityQueue + "\n";
-        // System.out.println("\t Priority Queue" + priorityQueue);
 
         currentMyQueue = priorityQueue.get(0);
         priorityQueue.remove(0);
@@ -131,17 +130,12 @@ class UniformCostSearch{
 
         if(currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState)){
 
-            //result += "\nShortest Path = " + currentMyQueue;
             return ("\nShortest Path: " + currentMyQueue + result);
-
-            // return ("\nShortest Path = " + currentMyQueue);
 
         }
 
     // Repeat until Queue is empty  
     }while( !priorityQueue.isEmpty());
-    //}while(a < 4);
-    
    
     return ("\nGoal Does not Exist!" + result);
 
@@ -149,8 +143,6 @@ class UniformCostSearch{
 
     
     static boolean isCycle(MyQueue temp){
-
-        // System.out.println(temp.getPath()[0] == temp.getPath()[temp.getPath().length -1 ]);
 
         if(temp.getPath()[0] == temp.getPath()[temp.getPath().length-1]){
 
@@ -182,6 +174,16 @@ public class UCSMain{
 
     public static void main(String args[]){
         
+        // create a JTextArea
+        JTextArea textArea = new JTextArea(38,45);
+        textArea.setEditable(false);
+
+        JDialog dialgoue;
+
+        JOptionPane pane;
+
+        JScrollPane scrollPane;
+
         int totalNodes = 0;
 
         // // Problem # 1
@@ -242,9 +244,22 @@ public class UCSMain{
         siNode.setAllchildren(new Node[]{});
 
         totalNodes = 6;
-        System.out.println("\n\n*********** Problem # 1 *********** ");
-        System.out.println(UniformCostSearch.search(rootNode, totalNodes, "G"));
-        
+        // System.out.println("\n\n*********** Problem # 1 *********** ");
+        // System.out.println(UniformCostSearch.search(rootNode, totalNodes, "G"));
+
+         // Display Result in Dialogue Box
+         textArea.setText(UniformCostSearch.search(rootNode, totalNodes, "G"));
+
+         // wrap a scrollpane around it
+         scrollPane = new JScrollPane(textArea);
+
+         // display them in a message dialog
+         pane = new JOptionPane(scrollPane);
+
+         dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 1 ***************************************** ");
+         // dialgoue.setLocation(0,0);
+         dialgoue.setVisible(true);
+
         // Problem # 2
 
         // Define Nodes
@@ -263,8 +278,21 @@ public class UCSMain{
         e.setAllchildren(new Node[]{a});
         
         totalNodes = 5;
-        System.out.println("\n*********** Problem # 2 *********** ");
-        System.out.println(UniformCostSearch.search(b, totalNodes, "D"));
+        // System.out.println("\n*********** Problem # 2 *********** ");
+        // System.out.println(UniformCostSearch.search(b, totalNodes, "D"));
+
+        // Display Result in Dialogue Box
+        textArea.setText(UniformCostSearch.search(b, totalNodes, "D"));
+
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 2 ***************************************** ");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
 
 
         // Problem # 3
@@ -295,8 +323,21 @@ public class UCSMain{
         j.setAllchildren(new Node[]{g,i});
 
         totalNodes = 10;
-        System.out.println("\n\n*********** Problem # 3 *********** ");
-        System.out.println(UniformCostSearch.search(d, totalNodes, "X"));
+        // System.out.println("\n\n*********** Problem # 3 *********** ");
+        // System.out.println(UniformCostSearch.search(d, totalNodes, "X"));
+
+        // Display Result in Dialogue Box
+        textArea.setText(UniformCostSearch.search(d, totalNodes, "X"));
+
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 3 ***************************************** ");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
 
         // // No Solution in Slides 
         // // Problem # 4
@@ -372,9 +413,6 @@ class PriorityComparator implements Comparator{
     
         MyQueue n1=(MyQueue)o1;  
         MyQueue n2=(MyQueue)o2;  
-
-        // if(n1.getCost() == n2.getCost())  
-        // return 0;  
 
         if(n1.getCost() > n2.getCost())  
             return 1;  
