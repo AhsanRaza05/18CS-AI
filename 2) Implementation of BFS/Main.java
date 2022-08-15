@@ -68,11 +68,15 @@ class BFSTraversal{
 
         int step = 1;
 
-        System.out.println("\tStep # " + step);
-        System.out.println("\tCurrent Node: " + currentNode);
-        System.out.println("\tQueue: " + queue);
-        System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-        System.out.println();
+        String result = "";
+
+        result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tQueue: " + queue + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+        // result += "\n\tStep # " + step + ":\tCurrent Node: " + currentNode + ",\tQueue: " + queue + ",\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+        // System.out.println("\tStep # " + step);
+        // System.out.println("\tCurrent Node: " + currentNode);
+        // System.out.println("\tQueue: " + queue);
+        // System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
+        // System.out.println();
 
         l:do{
 
@@ -86,11 +90,15 @@ class BFSTraversal{
                     queue.add(currentNode.getchildren()[i]);
                     visitedNodes[++index] = currentNode.getchildren()[i].getItem();
 
-                    System.out.println("\tStep # " + step);
-                    System.out.println("\tCurrent Node: " + currentNode);
-                    System.out.println("\tQueue: " + queue);
-                    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-                    System.out.println();
+                    // result += "\n\tStep # " + step + "\tCurrent Node: " + currentNode + "\tQueue: " + queue + "\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+                    
+                    result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tQueue: " + queue + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+
+                    // System.out.println("\tStep # " + step);
+                    // System.out.println("\tCurrent Node: " + currentNode);
+                    // System.out.println("\tQueue: " + queue);
+                    // System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
+                    // System.out.println();
 
                     continue l;
                     
@@ -101,18 +109,22 @@ class BFSTraversal{
             // If no unvisited adjacent node found, dequeue node from Queue and make it current node.
             currentNode = queue.poll();
         
-           System.out.println("\tStep # " + step);
-           System.out.println("\tCurrent Node: " + currentNode);
-           System.out.println("\tQueue: " + queue);
-           System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
-           System.out.println();
+        //    System.out.println("\tStep # " + step);
+        //    System.out.println("\tCurrent Node: " + currentNode);
+        //    System.out.println("\tQueue: " + queue);
+        //    System.out.println("\tVisited: " + Arrays.toString(visitedNodes));
+        //    System.out.println();
 
+        result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tQueue: " + queue + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+        // result += "\n\tStep # " + step + "\tCurrent Node: " + currentNode + "\tQueue: " + queue + "\tVisited: " + Arrays.toString(visitedNodes) + "\n";
         // Repeat Loop until Queue is empty and Current Node is null
         } while(!(currentNode == null && queue.isEmpty()));
         // } while(currentNode != null || !queue.isEmpty());
         // } while(!queue.isEmpty());
         
-        return Arrays.toString(visitedNodes);
+        // return Arrays.toString(visitedNodes);
+        result += "\n****************** FINAL TRAVERSING ORDER: " + Arrays.toString(visitedNodes) + " ******************";
+        return result;
 
     }
 
@@ -166,7 +178,8 @@ public class Main{
         
         totalNodes = 9;
         System.out.println("\n*********** Problem # 1 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(f, totalNodes));
+        // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(f, totalNodes));
+        System.out.println(BFSTraversal.traverse(f, totalNodes));
     
         // Problem # 2
 
