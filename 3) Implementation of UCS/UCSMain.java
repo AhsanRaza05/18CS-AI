@@ -80,10 +80,14 @@ class UniformCostSearch{
 
     int steps = 1;
 
+    String result= "";
+
     do{
         
-        System.out.println("\n Step # %s \n\tFrom the path we have:".formatted(steps));
-        System.out.println("\t    " + currentMyQueue);
+        // System.out.println("\n Step # %s \n\tFrom the path we have:".formatted(steps));
+        // System.out.println("\t    " + currentMyQueue);
+
+        result += "\n Step # %s \n\tFrom the path we have:".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
 
         List<Node> list ;
 
@@ -111,7 +115,8 @@ class UniformCostSearch{
 
         //Collections.sort(priorityQueue, Comparator.comparing(MyQueue::getCost));
 
-        System.out.println("\t Priority Queue" + priorityQueue);
+        result += "\t Priority Queue" + priorityQueue + "\n";
+        // System.out.println("\t Priority Queue" + priorityQueue);
 
         currentMyQueue = priorityQueue.get(0);
         priorityQueue.remove(0);
@@ -125,7 +130,12 @@ class UniformCostSearch{
         //System.out.println(priorityQueue.get(0).getPath()[0].getItem());
 
         if(currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState)){
-            return ("\nShortest Path = " + currentMyQueue);
+
+            //result += "\nShortest Path = " + currentMyQueue;
+            return ("\nShortest Path: " + currentMyQueue + result);
+
+            // return ("\nShortest Path = " + currentMyQueue);
+
         }
 
     // Repeat until Queue is empty  
@@ -133,14 +143,14 @@ class UniformCostSearch{
     //}while(a < 4);
     
    
-    return ("\nGoal Does not Exist!");
+    return ("\nGoal Does not Exist!" + result);
 
     }
 
     
     static boolean isCycle(MyQueue temp){
 
-        System.out.println(temp.getPath()[0] == temp.getPath()[temp.getPath().length -1 ]);
+        // System.out.println(temp.getPath()[0] == temp.getPath()[temp.getPath().length -1 ]);
 
         if(temp.getPath()[0] == temp.getPath()[temp.getPath().length-1]){
 
@@ -232,8 +242,8 @@ public class UCSMain{
         siNode.setAllchildren(new Node[]{});
 
         totalNodes = 6;
-        // System.out.println("\n\n*********** Problem # 1 *********** ");
-        // System.out.println(UniformCostSearch.search(rootNode, totalNodes, "G"));
+        System.out.println("\n\n*********** Problem # 1 *********** ");
+        System.out.println(UniformCostSearch.search(rootNode, totalNodes, "G"));
         
         // Problem # 2
 
@@ -352,9 +362,6 @@ public class UCSMain{
         // System.out.println("\n\n*********** Problem # 5 *********** ");
         // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(one, totalNodes));
 
-        
-        
-        
     }
 
 }
@@ -417,7 +424,7 @@ class MyQueue{
         }
 
         path = path.substring(0, path.length() - 1);
-        path += "> = %s\n".formatted(this.cost);
+        path += "> = %s (Cost)\n".formatted(this.cost);
 
         return path;
     }
