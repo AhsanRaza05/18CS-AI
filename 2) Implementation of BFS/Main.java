@@ -1,4 +1,10 @@
 import java.util.Queue;
+
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 import java.util.LinkedList;
 import java.util.Arrays;
 
@@ -123,7 +129,7 @@ class BFSTraversal{
         // } while(!queue.isEmpty());
         
         // return Arrays.toString(visitedNodes);
-        result += "\n****************** FINAL TRAVERSING ORDER: " + Arrays.toString(visitedNodes) + " ******************";
+        result = "\n****************** FINAL TRAVERSING ORDER: " + Arrays.toString(visitedNodes) + " ******************\n" + result;
         return result;
 
     }
@@ -149,7 +155,16 @@ public class Main{
 
     public static void main(String args[]){
 
-        
+         // create a JTextArea
+         JTextArea textArea = new JTextArea(38,45);
+         textArea.setEditable(false);
+ 
+         JDialog dialgoue;
+ 
+         JOptionPane pane;
+ 
+         JScrollPane scrollPane;
+
         int totalNodes = 0;
 
         // Problem # 1
@@ -177,10 +192,23 @@ public class Main{
         h.setAllchildren(new Node[]{});
         
         totalNodes = 9;
-        System.out.println("\n*********** Problem # 1 *********** ");
+        // System.out.println("\n*********** Problem # 1 *********** ");
         // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(f, totalNodes));
-        System.out.println(BFSTraversal.traverse(f, totalNodes));
+        // System.out.println(BFSTraversal.traverse(f, totalNodes));
     
+         // Display Result in Dialogue Box
+         textArea.setText(BFSTraversal.traverse(f, totalNodes));
+
+         // wrap a scrollpane around it
+         scrollPane = new JScrollPane(textArea);
+ 
+         // display them in a message dialog
+         pane = new JOptionPane(scrollPane);
+ 
+         dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 1 ***************************************** ");
+         // dialgoue.setLocation(0,0);
+         dialgoue.setVisible(true);
+
         // Problem # 2
 
         // Define Nodes
@@ -211,9 +239,21 @@ public class Main{
         siNode.setAllchildren(new Node[]{});
 
         totalNodes = 6;
-        System.out.println("\n\n*********** Problem # 2 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(rootNode, totalNodes));
+        // System.out.println("\n\n*********** Problem # 2 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(rootNode, totalNodes));
     
+        // Display Result in Dialogue Box
+        textArea.setText(BFSTraversal.traverse(rootNode, totalNodes));
+
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 2 ***************************************** ");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
         
         // Problem # 3
 
@@ -248,8 +288,21 @@ public class Main{
         m.setAllchildren(new Node[]{});
        
         totalNodes = 13;
-        System.out.println("\n\n*********** Problem # 3 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(a, totalNodes));
+        // System.out.println("\n\n*********** Problem # 3 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(a, totalNodes));
+
+         // Display Result in Dialogue Box
+         textArea.setText(BFSTraversal.traverse(a, totalNodes));
+
+         // wrap a scrollpane around it
+         scrollPane = new JScrollPane(textArea);
+ 
+         // display them in a message dialog
+         pane = new JOptionPane(scrollPane);
+ 
+         dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 3 ***************************************** ");
+         // dialgoue.setLocation(0,0);
+         dialgoue.setVisible(true);
 
         // No Solution in Slides 
         // Problem # 4
@@ -277,8 +330,21 @@ public class Main{
         thn.setAllchildren(new Node[]{});
         
         totalNodes = 9;
-        System.out.println("\n\n*********** Problem # 4 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(eig, totalNodes));
+        // System.out.println("\n\n*********** Problem # 4 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(eig, totalNodes));
+
+        // Display Result in Dialogue Box
+        textArea.setText(BFSTraversal.traverse(eig, totalNodes));
+
+        // wrap a scrollpane around it
+        scrollPane = new JScrollPane(textArea);
+
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 4 ***************************************** ");
+        // dialgoue.setLocation(0,0);
+        dialgoue.setVisible(true);
 
         // Problem # 5
 
@@ -312,9 +378,19 @@ public class Main{
        
         
         totalNodes = 12;
-        System.out.println("\n\n*********** Problem # 5 *********** ");
-        System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(one, totalNodes));
+        // System.out.println("\n\n*********** Problem # 5 *********** ");
+        // System.out.println("FINAL TRAVERSING ORDER: " + BFSTraversal.traverse(one, totalNodes));
 
+        // Display Result in Dialogue Box
+        textArea.setText(BFSTraversal.traverse(one, totalNodes));
+
+        // display them in a message dialog
+        pane = new JOptionPane(scrollPane);
+
+        dialgoue = pane.createDialog(null, "***************************************** PROBLEM # 5 ***************************************** ");
+        dialgoue.setVisible(true);
+
+        System.exit(0);
         
         
     }
