@@ -1,151 +1,15 @@
-import java.util.Stack;
+package Application;
 
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import java.util.Arrays;
+import com.uniformsearchalgorithms.depthfirstsearchalgorithm.DepthFirstSearchAlgorithm;
+import com.uniformsearchingalgorithms.node.Node;
 
-// import java.util.*;
+public class DepthFirstSearchAlgorithmMain {
 
-// Define the Node
-class Node{
-
-    private String item;
-    private Node children[];
-
-    // Constructors
-    Node(String item, Node children[]){
-
-        this.item = item;
-        this.children = children;
-    }
-
-    Node(String item){
-
-        this(item, null);
-    }
-
-    // Setters
-    void setItem(String item){
-
-        this.item = item;
-    }
-
-    void setAllChildren(Node children[]){
-
-        this.children = children;
-    }
-    
-    // Getters
-    public String getItem(){
-
-        return item;
-    }
-
-    public Node[] getChildren(){
-
-        return children;
-    }
-
-    public String toString(){
-
-        return item;
-    }
-}
-
-class DFSTraversal{
-
-   static String traverse(Node rootNode, int size){
-
-        Stack <Node> stack = new Stack<Node>(); 
-
-        Node currentNode;
-
-        String visitedNodes[] = new String[size];
-
-        int index = 0;
-        
-        String result = "";
-
-        // Choose the starting node, mark it as visited, push it on Stack and make it current node
-        visitedNodes[index] = rootNode.getItem();
-        stack.push(rootNode);
-        currentNode = rootNode;
-
-        int step = 1;
-
-        result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
-
-        // Repeat Loop until Stack is empty
-        l:while(!stack.isEmpty()){
-
-            step++;
-
-            // Find adjacent unvisited node of current node, push it on Stack, mark it visited and make it current node.
-            for(int i = 0; i < currentNode.getChildren().length;i++){
-
-                if(!isVisited(currentNode.getChildren()[i].getItem(), visitedNodes)){
-    
-                    stack.push(currentNode.getChildren()[i]);
-                    visitedNodes[++index] = currentNode.getChildren()[i].getItem();
-                    currentNode = currentNode.getChildren()[i];
-
-                    result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n" ;
-
-                    continue l;
-                    
-                }
-    
-            }
-    
-            // If no unvisited adjacent node found, pop out node from Stack and make top of the stack as current node.
-
-            if (!stack.isEmpty()) {
-                stack.pop();
-                // currentNode = stack.pop();
-            }
-
-            if (!stack.isEmpty()) {
-                // // stack.pop();
-                
-                // currentNode = stack.pop();
-                // stack.push(currentNode);
-
-                currentNode = stack.peek();
-
-            }
-            //currentNode = stack.pop();
-           // stack.remove(currentNode);
-
-           result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n" ;
-
-        }
-
-        result += "\n****************** FINAL TRAVERSING ORDER: " + Arrays.toString(visitedNodes) + " ******************";
-        return result;
-
-    }
-
-    
-    static boolean isVisited(String n, String visitedNodes[]){
-
-        for(int i = 0; i < visitedNodes.length; i++){
-
-            if(n.equalsIgnoreCase(visitedNodes[i])){
-
-                return true;
-            }
-        }
-
-        return false;
-
-    }
-    
-}
-
-public class Main{
 
     public static void main(String args[]){
 
@@ -190,7 +54,7 @@ public class Main{
         // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(f, size));
 
         // Display Result in Dialogue Box
-        textArea.setText(DFSTraversal.traverse(f, size));
+        textArea.setText(DepthFirstSearchAlgorithm.traverse(f, size));
 
         // wrap a scrollpane around it
         scrollPane = new JScrollPane(textArea);
@@ -236,7 +100,7 @@ public class Main{
         // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(rootNode, size));
 
         // Display Result in Dialogue Box
-        textArea.setText(DFSTraversal.traverse(rootNode, size));
+        textArea.setText(DepthFirstSearchAlgorithm.traverse(rootNode, size));
         
         // wrap a scrollpane around it
         scrollPane = new JScrollPane(textArea);
@@ -285,7 +149,7 @@ public class Main{
         // System.out.println("FINAL TRAVERSING ORDER: " + DFSTraversal.traverse(a, size));
         
         // Display Result in Dialogue Box
-        textArea.setText(DFSTraversal.traverse(a, size));
+        textArea.setText(DepthFirstSearchAlgorithm.traverse(a, size));
         
         // wrap a scrollpane around it
         scrollPane = new JScrollPane(textArea);
@@ -325,7 +189,7 @@ public class Main{
         // System.out.println("\n*********** PROBLEM # 4 *********** ");
 
         // Display Result in Dialogue Box
-        textArea.setText(DFSTraversal.traverse(eig, size));
+        textArea.setText(DepthFirstSearchAlgorithm.traverse(eig, size));
         
         // wrap a scrollpane around it
         scrollPane = new JScrollPane(textArea);
@@ -376,7 +240,7 @@ public class Main{
         // DFSTraversal.traverse(one, size);
 
         // Display Result in Dialogue Box
-        textArea.setText(DFSTraversal.traverse(one, size));
+        textArea.setText(DepthFirstSearchAlgorithm.traverse(one, size));
         
         // display them in a message dialog
         pane = new JOptionPane(scrollPane);
