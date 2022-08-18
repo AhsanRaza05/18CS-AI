@@ -47,10 +47,11 @@ algorithm move onto the next level.
 
 #### Program Output
  
-  <h1 align="center"> Problem # 1</h1>
-
+<h1 align="center"> Problem # 1</h1>
+  
+<p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1" align="center">
-
+</p>
 
 <p align = 'center'>
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_i.png" alt = "Solution # 1_i">
