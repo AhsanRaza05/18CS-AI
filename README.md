@@ -50,7 +50,7 @@ algorithm move onto the next level.
 <h1 align="center"> Problem # 1</h1>
   
 <p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1" align="center">
+  <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1" >
 </p>
 
 <p align = 'center'>
@@ -60,12 +60,13 @@ algorithm move onto the next level.
   
 </p>
 
-##### Problem # 2
-![Problem # 2](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_2.png?raw=true)
+<h1 align="center"> Problem # 2</h1>
 
-![Solution # 2_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_2_i.png?raw=true)
-
-![Solution # 2_ii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png?raw=true)
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/BFS/BF_2.png" alt = "Problem # 2_i" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_i.png" alt = "Problem # 2_ii" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png" alt = "Problem # 2_iii" >
+</p>
 
 ##### Problem # 3
 ![Problem # 3](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_3.png?raw=true)
