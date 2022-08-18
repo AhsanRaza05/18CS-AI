@@ -259,30 +259,6 @@ It maintain a priority Queue.
   <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_iv.png" alt = "Solution # 3_iv">
 </p>
 
-<h2 align="center"> DFS Problem # 4</h2>
-  
-<p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/P_4.png" alt = "Problem # 4" >
-</p>
-
-<p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_i.png" alt = "Solution # 4_i">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_ii.png" alt = "Solution # 4_ii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_iii.png" alt = "Solution # 4_iii">
-</p>
-
-<h2 align="center"> DFS Problem # 5</h2>
-  
-<p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/P_5.png" alt = "Problem # 5" >
-</p>
-
-<p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_i.png" alt = "Solution # 5_i">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_ii.png" alt = "Solution # 5_ii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iii.png" alt = "Solution # 5_iii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iv.png" alt = "Solution # 5_iv">
-</p>
 
 
 
