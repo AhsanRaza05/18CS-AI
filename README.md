@@ -54,9 +54,9 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 
 & "d" = depth
 
-#### Program Output
+<h2 align="center"> <u> Program Output </u> </h2> 
  
-<h2 align="center"> BFS Problem # 1</h1>
+<h2 align="center"> BFS Problem # 1</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_1.png" alt = "Problem # 1" >
@@ -69,7 +69,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   
 </p>
 
-<h2 align="center"> BFS Problem # 2</h1>
+<h2 align="center"> BFS Problem # 2</h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_2.png" alt = "Problem # 2" >
@@ -80,7 +80,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png" alt = "Solution # 2_ii" >
 </p>
 
-<h2 align="center"> BFS Problem # 3 </h1>
+<h2 align="center"> BFS Problem # 3 </h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_3.png" alt = "Problem # 3" >
@@ -93,7 +93,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_iv.png" alt = "Solution # 3_iv" >
 </p>
 
-<h2 align="center"> BFS Problem # 4 </h1>
+<h2 align="center"> BFS Problem # 4 </h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_4.png" alt = "Problem # 4" >
@@ -106,7 +106,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   
 </p>
 
-<h2 align="center"> BFS Problem # 5 </h1>
+<h2 align="center"> BFS Problem # 5 </h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_5.png" alt = "Problem # 5" >
@@ -120,25 +120,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
  
 </p>
 
-
-### 1) Uninformed Search
-
-Also called as Blind Search or Brute Force Search.
-
-Suitable For very limited Problem Space problems.
-
-A blind search is a search that has no information about its domain. The only thing
-that a blind search can do is to distinguish a non-goal state from a goal state.
-
-– Breadth-First search
-
-– Depth-First search
-
-– Uniform-Cost search
-
-– Depth-First Iterative Deepening search
-
-#### i) Depth-First Search
+#### ii) Depth-First Search
 
 Depth-first search (DFS) is an algorithm for traversing or searching tree or
 graph data structures. One starts at the root and explores as far as possible
@@ -162,9 +144,9 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 
 & "d" = depth
 
-#### Program Output
+<h2 align="center"> <u> Program Output </u> </h2> 
  
-<h2 align="center"> DFS Problem # 1</h1>
+<h2 align="center"> DFS Problem # 1</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_1.png" alt = "Problem # 1" >
@@ -177,7 +159,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   
 </p>
 
-<h2 align="center"> DFS Problem # 2</h1>
+<h2 align="center"> DFS Problem # 2</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_2.png" alt = "Problem # 2" >
@@ -190,7 +172,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 
 </p>
 
-<h2 align="center"> DFS Problem # 3</h1>
+<h2 align="center"> DFS Problem # 3</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_3.png" alt = "Problem # 3" >
@@ -203,7 +185,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_3_iv.png" alt = "Solution # 3_iv">
 </p>
 
-<h2 align="center"> DFS Problem # 4</h1>
+<h2 align="center"> DFS Problem # 4</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_4.png" alt = "Problem # 4" >
@@ -215,7 +197,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_iii.png" alt = "Solution # 4_iii">
 </p>
 
-<h2 align="center"> DFS Problem # 5</h1>
+<h2 align="center"> DFS Problem # 5</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_5.png" alt = "Problem # 5" >
