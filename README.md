@@ -51,16 +51,13 @@ algorithm move onto the next level.
 
 <p align = 'center'>
 
-<img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png"/>
+<img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png"/ alt = "Problem # 1">
+  
+<img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_i.png"/ alt = "Solution # 1_i">
+<img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_ii.png"/ alt = "Solution # 1_ii">
+<img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_iii.png"/ alt = "Solution # 1_iii">
   
  </p>
-
-![Solution # 1_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_1_i.png?raw=true)
-
-![Solution # 1_ii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_1_ii.png?raw=true)
-
-![Solution # 1_iii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_1_iii.png?raw=true)
-
 
 ##### Problem # 2
 ![Problem # 2](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_2.png?raw=true)
