@@ -51,7 +51,7 @@ algorithm move onto the next level.
  
   <h1 align="center"> Problem # 1</h1>
 
-  <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1">
+  <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1" align="center">
   
 </p>
 
