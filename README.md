@@ -249,7 +249,7 @@ It maintain a priority Queue.
 <h2 align="center"> UCS Problem # 3</h2>
   
 <p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/U_P_2.png" alt = "Problem # 3" >
+  <img src = "Screenshots/Problem_Screenshots/U_P_3.png" alt = "Problem # 3" >
 </p>
 
 <p align = 'center'>
