@@ -47,9 +47,9 @@ algorithm move onto the next level.
 
 #### Program Output
 
-##### Problem # 1
-
 <p align = 'center'>
+  
+  #### Problem # 1
 
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1">
 </p>
