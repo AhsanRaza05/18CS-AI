@@ -49,9 +49,11 @@ algorithm move onto the next level.
 
 ##### Problem # 1
 
-<p align = 'centre'>
+<p align = 'center'>
 
-![Problem # 1_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_1.png?raw=true)
+<img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png"/>
+  
+ </p>
 
 ![Solution # 1_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_1_i.png?raw=true)
 
@@ -97,5 +99,5 @@ algorithm move onto the next level.
 ![Solution # 5_iii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_5_iii.png?raw=true)
 
 ![Solution # 5_iv](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_5_iv.png?raw=true)
-</p>
+
   
