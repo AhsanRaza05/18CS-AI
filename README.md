@@ -47,7 +47,7 @@ algorithm move onto the next level.
 
 #### Program Output
  
-<h1 align="center"> Problem # 1</h1>
+<h2 align="center"> Problem # 1</h1>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1" >
@@ -60,7 +60,7 @@ algorithm move onto the next level.
   
 </p>
 
-<h1 align="center"> Problem # 2</h1>
+<h2 align="center"> Problem # 2</h1>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_2.png" alt = "Problem # 2" >
