@@ -210,4 +210,79 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iv.png" alt = "Solution # 5_iv">
 </p>
 
+#### iii) Uniform-First Search
+
+Breadth-first search finds the shallowest goal state, but this may not always be
+the least-cost solution for a general path cost function.
+
+Uniform cost search modifies the breadth-first strategy by always expanding
+the lowest-cost node rather than the lowest-depth node.
+
+It maintain a priority Queue.
+
+<h2 align="center"> <u> Program Output </u> </h2> 
+ 
+<h2 align="center"> UCS Problem # 1</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/U_P_1.png" alt = "Problem # 1" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_1_ii.png" alt = "Solution # 1_ii">
+  
+</p>
+
+<h2 align="center"> UCS Problem # 2</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/U_P_2.png" alt = "Problem # 2" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_2_i.png" alt = "Solution # 2">
+</p>
+
+</p>
+
+<h2 align="center"> UCS Problem # 3</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/U_P_2.png" alt = "Problem # 3" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_i.png" alt = "Solution # 3_i">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_ii.png" alt = "Solution # 3_ii">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_iii.png" alt = "Solution # 3_iii">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_iv.png" alt = "Solution # 3_iv">
+</p>
+
+<h2 align="center"> DFS Problem # 4</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/P_4.png" alt = "Problem # 4" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_i.png" alt = "Solution # 4_i">
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_ii.png" alt = "Solution # 4_ii">
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_iii.png" alt = "Solution # 4_iii">
+</p>
+
+<h2 align="center"> DFS Problem # 5</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/P_5.png" alt = "Problem # 5" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_i.png" alt = "Solution # 5_i">
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_ii.png" alt = "Solution # 5_ii">
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iii.png" alt = "Solution # 5_iii">
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iv.png" alt = "Solution # 5_iv">
+</p>
+
+
 
