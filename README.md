@@ -64,8 +64,11 @@ algorithm move onto the next level.
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_2.png" alt = "Problem # 2_i" >
-  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_i.png" alt = "Problem # 2_ii" >
-  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png" alt = "Problem # 2_iii" >
+ </p>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_i.png" alt = "Solution # 2_i" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png" alt = "Solution # 2_ii" >
 </p>
 
 ##### Problem # 3
