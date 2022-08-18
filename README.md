@@ -49,7 +49,7 @@ algorithm move onto the next level.
 
 ##### Problem # 1
 
-<p align = 'center'>
+<p align = 'centre'>
 
 ![Problem # 1_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_1.png?raw=true)
 
