@@ -139,7 +139,7 @@ public class UniformCostSearchAlgorithmMain {
         // System.out.println(UniformCostSearch.search(d, totalNodes, "X"));
 
         // Display Result in Dialogue Box
-        textArea.setText(UniformCostSearchAlgorithm.search(d, totalNodes, "X"));
+        textArea.setText(UniformCostSearchAlgorithm.search(d, totalNodes, "G"));
 
         // wrap a scrollpane around it
         scrollPane = new JScrollPane(textArea);

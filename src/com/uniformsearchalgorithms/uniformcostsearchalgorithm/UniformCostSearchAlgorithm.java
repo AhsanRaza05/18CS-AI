@@ -25,16 +25,42 @@ public class UniformCostSearchAlgorithm {
 
     currentMyQueue = new MyQueue(0, new WeightedNode[]{currentNode});
 
+    // Initialize Queue with Starting Node.
+    priorityQueue.add(currentMyQueue);
+    
     int steps = 1;
 
     String result= "";
 
-    do{
+ // Repeat until Queue is empty  
+   while( !priorityQueue.isEmpty()) {
+    	
+	   
+	    //Pick minimum cost path from Queue.
+    	currentMyQueue = priorityQueue.get(0);
+        priorityQueue.remove(0);
+
+        currentNode = currentMyQueue.getPath()[0];
+
+        
+        //  If the minimum path is goal, stop algorithm you found the solution.
+        
+        if(currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState)){
+        	
+        	result += "\n Step # %s \n\t".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
+
+        	result += "\n\tPriority Queue" + priorityQueue + "\n";
+        	
+        	return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+"\n*********************** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" + result);
+
+        }
     
         result += "\n Step # %s \n\tFrom the path we have:".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
 
         List<WeightedNode> list ;
 
+        // For each neighbor node v add expanded path < v ,P > to Queue.
+        
         for(int i = 0; i < currentNode.getchildren().length; i++){
 
             list = new ArrayList<WeightedNode>();
@@ -57,27 +83,10 @@ public class UniformCostSearchAlgorithm {
     
         Collections.sort(priorityQueue,new PriorityComparator());
 
-        result += "\t Priority Queue" + priorityQueue + "\n";
-
-        currentMyQueue = priorityQueue.get(0);
-        priorityQueue.remove(0);
-
-        currentNode = currentMyQueue.getPath()[0];
+        result += "\n\tPriority Queue" + priorityQueue + "\n";
 
         steps++;
-        
-        //  If the minimum path is goal, stop algorithm you found the solution.
-        
-        //System.out.println(priorityQueue.get(0).getPath()[0].getItem());
-
-        if(currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState)){
-
-            return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+"\n*********************** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" + result);
-
-        }
-
-    // Repeat until Queue is empty  
-    }while( !priorityQueue.isEmpty());
+    }
    
     return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+"\n************************************** Goal Does not Exist! **************************************\n" + result);
 
