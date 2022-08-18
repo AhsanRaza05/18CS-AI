@@ -47,7 +47,7 @@ algorithm move onto the next level.
 
 #### Program Output
  
-<h2 align="center"> Problem # 1</h1>
+<h2 align="center"> BFS Problem # 1</h1>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1" >
@@ -60,7 +60,7 @@ algorithm move onto the next level.
   
 </p>
 
-<h2 align="center"> Problem # 2</h1>
+<h2 align="center"> BFS Problem # 2</h1>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_2.png" alt = "Problem # 2" >
@@ -71,7 +71,7 @@ algorithm move onto the next level.
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png" alt = "Solution # 2_ii" >
 </p>
 
-<h2 align="center"> Problem # 3 </h1>
+<h2 align="center"> BFS Problem # 3 </h1>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_3.png" alt = "Problem # 3" >
@@ -84,7 +84,7 @@ algorithm move onto the next level.
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_iv.png" alt = "Solution # 3_iv" >
 </p>
 
-<h2 align="center"> Problem # 4 </h1>
+<h2 align="center"> BFS Problem # 4 </h1>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_4.png" alt = "Problem # 4" >
@@ -97,7 +97,7 @@ algorithm move onto the next level.
   
 </p>
 
-<h2 align="center"> Problem # 5 </h1>
+<h2 align="center"> BFS Problem # 5 </h1>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_5.png" alt = "Problem # 5" >
