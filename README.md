@@ -71,7 +71,7 @@ algorithm move onto the next level.
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png" alt = "Solution # 2_ii" >
 </p>
 
-<h2 align="center"> <u> Problem # 3 <u> </h1>
+<h2 align="center"> <u> Problem # 3 </u> </h1>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_3.png" alt = "Problem # 3" >
