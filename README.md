@@ -80,39 +80,35 @@ algorithm move onto the next level.
  <p align = 'center'>
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_i.png" alt = "Solution # 3_i" >
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_ii.png" alt = "Solution # 3_ii" >
-  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_ii.png" alt = "Solution # 3_iii" >
-  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_ii.png" alt = "Solution # 3_iv" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_iii.png" alt = "Solution # 3_iii" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_iv.png" alt = "Solution # 3_iv" >
 </p>
 
-##### Problem # 3
-![Problem # 3](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_3.png?raw=true)
+<h2 align="center"> Problem # 4 </h1>
 
-![Solution # 3_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_3_i.png?raw=true)
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/BFS/BF_4.png" alt = "Problem # 4" >
+ </p>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_4_i.png" alt = "Solution # 4_i" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_4_ii.png" alt = "Solution # 4_ii" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_4_iii.png" alt = "Solution # 4_iii" >
+  
+</p>
 
-![Solution # 3_ii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_3_ii.png?raw=true)
+<h2 align="center"> Problem # 5 </h1>
 
-![Solution # 3_iii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_3_iii.png?raw=true)
-
-![Solution # 3_iv](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_3_iv.png?raw=true)
-
-##### Problem # 4
-![Problem # 4](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_4.png?raw=true)
-
-![Solution # 4_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_4_i.png?raw=true)
-
-![Solution # 4_ii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_4_ii.png?raw=true)
-
-![Solution # 4_iii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_4_iii.png?raw=true)
-
-##### Problem # 5
-![Problem # 5](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Problem_Screenshots/BFS/BF_5.png?raw=true)
-
-![Solution # 5_i](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_5_i.png?raw=true)
-
-![Solution # 5_ii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_5_ii.png?raw=true)
-
-![Solution # 5_iii](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_5_iii.png?raw=true)
-
-![Solution # 5_iv](https://github.com/AhsanRaza05/18CS-AI/blob/main/Screenshots/Solution_Screenshots/BFS/BF_S_5_iv.png?raw=true)
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/BFS/BF_5.png" alt = "Problem # 5" >
+ </p>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_5_i.png" alt = "Solution # 5_i" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_5_ii.png" alt = "Solution # 5_ii" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_5_iii.png" alt = "Solution # 5_iii" >
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_5_iv.png" alt = "Solution # 5_iv" >
+ 
+</p>
 
   
