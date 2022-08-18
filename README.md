@@ -52,7 +52,9 @@ algorithm move onto the next level.
 <p align = 'center'>
 
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1">
+</p>
 
+<p align = 'center'>
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_i.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_ii.png" alt = "Solution # 1_ii">
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_iii.png" alt = "Solution # 1_iii">
