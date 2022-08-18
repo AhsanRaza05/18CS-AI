@@ -10,6 +10,39 @@ spaces from an initial configuration to a goal state.
 The Solution to a search problem is a sequence of actions, called the plan that transforms the start state to the goal state.
 
 This plan is achieved through search algorithms.
+
+## Table of Contents
+1 Types Of Searching Algorithms
+
+2 Uninformed Search
+
+    Breadth First Search Algorithm
+       
+       Program Output
+           Problem # 1
+           Problem # 2
+           Problem # 3
+           Problem # 4
+           Problem # 5
+           
+     Depth First Search Algorithm
+       
+       Program Output
+           Problem # 1
+           Problem # 2
+           Problem # 3
+           Problem # 4
+           Problem # 5
+           
+    Uniform Cost Search Algorithm
+       
+       Program Output
+           Problem # 1
+           Problem # 2
+           Problem # 3
+           Problem # 4
+           Problem # 5
+    
 ### Types of Searching Algorithms
 
 ![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
