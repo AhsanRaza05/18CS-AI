@@ -49,7 +49,7 @@ algorithm move onto the next level.
 
 <p align = 'center'>
   
-  #### Problem # 1
+  Problem # 1
 
   <img src = "Screenshots/Problem_Screenshots/BFS/BF_1.png" alt = "Problem # 1">
 </p>
