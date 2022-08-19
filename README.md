@@ -1,6 +1,38 @@
 
 # Searching Algorithms of Aritificial Intelligence
 
+## Table of Contents
+* Overview
+
+* Types Of Searching Algorithms
+
+* Uninformed Search
+
+  * Breadth First Search Algorithm
+    * Program Output
+        * Problem # 1
+        * Problem # 2
+        * Problem # 3
+        * Problem # 4
+        * Problem # 5
+
+  * Depth First Search Algorithm
+    * Program Output
+        * Problem # 1
+        * Problem # 2
+        * Problem # 3
+        * Problem # 4
+        * Problem # 5
+  
+  * Uniform Cost Search Algorithm
+    * Program Output
+        * Problem # 1
+        * Problem # 2
+        * Problem # 3
+        * Problem # 4
+        * Problem # 5
+
+## Overview
 
 Artificial Intelligence is the study of building agents that act rationally. Most of the time, these agents perform some kind of search algorithm in the background in order to achieve their tasks. 
 
@@ -10,7 +42,8 @@ spaces from an initial configuration to a goal state.
 The Solution to a search problem is a sequence of actions, called the plan that transforms the start state to the goal state.
 
 This plan is achieved through search algorithms.
-### Types of Searching Algorithms
+     
+## Types of Searching Algorithms
 
 ![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
 
@@ -209,5 +242,55 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iii.png" alt = "Solution # 5_iii">
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iv.png" alt = "Solution # 5_iv">
 </p>
+
+#### iii) Uniform-First Search
+
+Breadth-first search finds the shallowest goal state, but this may not always be
+the least-cost solution for a general path cost function.
+
+Uniform cost search modifies the breadth-first strategy by always expanding
+the lowest-cost node rather than the lowest-depth node.
+
+It maintain a priority Queue.
+
+<h2 align="center"> <u> Program Output </u> </h2> 
+ 
+<h2 align="center"> UCS Problem # 1</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/U_P_1.png" alt = "Problem # 1" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_1_ii.png" alt = "Solution # 1_ii">
+  
+</p>
+
+<h2 align="center"> UCS Problem # 2</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/U_P_2.png" alt = "Problem # 2" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_2_i.png" alt = "Solution # 2">
+</p>
+
+</p>
+
+<h2 align="center"> UCS Problem # 3</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/U_P_3.png" alt = "Problem # 3" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_i.png" alt = "Solution # 3_i">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_ii.png" alt = "Solution # 3_ii">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_iii.png" alt = "Solution # 3_iii">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_iv.png" alt = "Solution # 3_iv">
+</p>
+
 
 
