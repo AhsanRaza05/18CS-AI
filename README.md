@@ -6,6 +6,8 @@
 
 * <a href = "#Types_Head" > Types Of Searching Algorithms </a> 
 
+* <a href = "#Problem_Head" > Problem Assumption </a> 
+
 * <a href = "#Uniform_Search_Head" > Uninformed Search </a> 
 
   * Breadth First Search Algorithm
@@ -47,6 +49,9 @@ This plan is achieved through search algorithms.
 
 ![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
 
+## <div id = "Problem_Head"> Problem Assumption </div>
+
+![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
 
 ### 1) Uninformed Search
 
