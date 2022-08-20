@@ -10,30 +10,49 @@
 
 * <a href = "#Uniform_Search_Head" > Uninformed Search </a> 
 
-  * Breadth First Search Algorithm
+  * <a href = "#BFS_Head" > Breadth First Search Algorithm </a>
     * Program Output
-        * Problem # 1
-        * Problem # 2
-        * Problem # 3
-        * Problem # 4
-        * Problem # 5
+        * User Define Problem
+          * Problem # 1
+        * Predefine Problems
+          * Problem # 1
+          * Problem # 2
+          * Problem # 3
+          * Problem # 4
+          * Problem # 5
 
-  * Depth First Search Algorithm
+  * <a href = "#DFS_Head" > Depth First Search Algorithm </a>
     * Program Output
-        * Problem # 1
-        * Problem # 2
-        * Problem # 3
-        * Problem # 4
-        * Problem # 5
+        * User Define Problem
+          * Problem # 1
+        * Predefine Problems
+          * Problem # 1
+          * Problem # 2
+          * Problem # 3
+          * Problem # 4
+          * Problem # 5
+          
+  * <a href = "#DLS_Head" > Depth Limited Search Algorithm </a>
+    * Program Output
+        * User Define Problem
+          * Problem # 1
+        * Predefine Problems
+          * Problem # 1
+          * Problem # 2
+          * Problem # 3
+          * Problem # 4
+          * Problem # 5
   
-  * Uniform Cost Search Algorithm
+  * <a href = "#UCS_Head" > Uniform Cost Search Algorithm </a>
     * Program Output
-        * Problem # 1
-        * Problem # 2
-        * Problem # 3
-        * Problem # 4
-        * Problem # 5
-
+        * User Define Problem
+          * Problem # 1
+        * Predefine Problems
+          * Problem # 1
+          * Problem # 2
+          * Problem # 3
+          * Problem # 4
+          * Problem # 5
 ## <div id = "Overview_Head"> Overview </div>
 
 Artificial Intelligence is the study of building agents that act rationally. Most of the time, these agents perform some kind of search algorithm in the background in order to achieve their tasks. 
@@ -51,9 +70,11 @@ This plan is achieved through search algorithms.
 
 ## <div id = "Problem_Head"> Problem Assumption </div>
 
-![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
+<p align = 'center'>
+<img src = "Screenshots/Problem_Screenshots/Problem_Assumption.png" alt = "Assumed Problem" >
+</p>
 
-### 1) Uninformed Search
+## <div id = "Uniform_Search_Head"> 1) Uninformed Search </d>
 
 Also called as Blind Search or Brute Force Search.
 
@@ -70,7 +91,7 @@ that a blind search can do is to distinguish a non-goal state from a goal state.
 
 – Depth-First Iterative Deepening search
 
-#### i) Breadth-First Search
+### <div id = "BFS_Head"> i) Breadth-First Search </div>
 
 Breadth-first search (BFS) is an algorithm for traversing or searching tree or
 graph data structures.
@@ -158,7 +179,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
  
 </p>
 
-#### ii) Depth-First Search
+### <div id = "DFS_Head"> ii) Depth-First Search </div>
 
 Depth-first search (DFS) is an algorithm for traversing or searching tree or
 graph data structures. One starts at the root and explores as far as possible
@@ -248,7 +269,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iv.png" alt = "Solution # 5_iv">
 </p>
 
-#### iii) Uniform-First Search
+### <div id = "UCS_Head"> iii) Uniform-First Search
 
 Breadth-first search finds the shallowest goal state, but this may not always be
 the least-cost solution for a general path cost function.
