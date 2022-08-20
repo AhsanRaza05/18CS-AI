@@ -2,11 +2,11 @@
 # Searching Algorithms of Aritificial Intelligence
 
 ## Table of Contents
-* Overview
+* <a href = "#Overview_Head" > Overview </a> 
 
-* Types Of Searching Algorithms
+* <a href = "#Types_Head" > Types Of Searching Algorithms </a> 
 
-* Uninformed Search
+* <a href = "#Uniform_Search_Head" > Uninformed Search </a> 
 
   * Breadth First Search Algorithm
     * Program Output
@@ -32,7 +32,7 @@
         * Problem # 4
         * Problem # 5
 
-## Overview
+## <div id = "Overview_Head"> Overview </div>
 
 Artificial Intelligence is the study of building agents that act rationally. Most of the time, these agents perform some kind of search algorithm in the background in order to achieve their tasks. 
 
@@ -43,7 +43,7 @@ The Solution to a search problem is a sequence of actions, called the plan that 
 
 This plan is achieved through search algorithms.
      
-## Types of Searching Algorithms
+## <div id = "Types_Head">  Types of Searching Algorithms </div>
 
 ![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
 
