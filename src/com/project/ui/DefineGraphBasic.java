@@ -13,6 +13,7 @@ import javax.swing.JTextArea;
 
 import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
 import com.uniformsearchalgorithms.depthfirstsearchalgorithm.algorithm.DepthFirstSearchAlgorithm;
+import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
 import com.uniformsearchalgorithms.node.Node;
 
 /**
@@ -37,6 +38,7 @@ public class DefineGraphBasic extends javax.swing.JFrame {
         
         // Use to Specifiy either algorithm is DFS or BFS
         this.DFSOrBFS = DFSOrBFS;
+       
     }
 
     /**
@@ -228,7 +230,9 @@ public class DefineGraphBasic extends javax.swing.JFrame {
 	   			UI.displayResult(BreadthFirstSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes));	
 	   		}
 	   		else {
-	   			System.out.println("Add Search Method Firsrt!");
+	   			
+	   			UI.goalState = JOptionPane.showInputDialog("Enter Goal State");
+	   			UI.displayResult(BreadthFirstSearchAlgorithm.search(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, UI.goalState));
 	   		}
 	   	}
 	   	else {
@@ -238,7 +242,8 @@ public class DefineGraphBasic extends javax.swing.JFrame {
 				UI.displayResult(DepthFirstSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes));	
 			}
 	   		else {
-	   			System.out.println("Add Search Method Firsrt!");
+	   			UI.goalState = JOptionPane.showInputDialog("Enter Goal State");
+	   			UI.displayResult(DepthFirstSearchAlgorithm.search(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, UI.goalState));
 	   		}
 	   	}
 	 	

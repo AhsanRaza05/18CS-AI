@@ -253,7 +253,8 @@ public class DefineGraphDLS extends javax.swing.JFrame {
 	   			UI.displayResult(DepthLimitedSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, depthLevel));	
 	   		}
 	   		else {
-	   			System.out.println("Add Search Method Firsrt!");
+	   			UI.goalState = JOptionPane.showInputDialog("Enter Goal State");
+	   			UI.displayResult(DepthLimitedSearchAlgorithm.search(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, depthLevel, UI.goalState));
 	   		}
 		   	
 	    	
