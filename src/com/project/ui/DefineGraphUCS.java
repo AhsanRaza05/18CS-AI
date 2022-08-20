@@ -12,6 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
+import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
 import com.uniformsearchalgorithms.node.*;
 import com.uniformsearchalgorithms.uniformcostsearchalgorithm.algorithm.UniformCostSearchAlgorithm;
 
@@ -223,32 +224,10 @@ public class DefineGraphUCS extends javax.swing.JFrame {
     	Map<String, WeightedNode> children = UI.setChildrenAndCost(UI.getNodesListOfWeightNode(UI.getNodesListOfString(UI.allNodes)), UI.allNeighbourgroups, UI.getNodesListOfString(UI.allNodes), costTF.getText().trim());
     	
     	int totalNodes = children.size();
-
-    	// create a JTextArea
-    	JTextArea textArea = new JTextArea(38, 45);
-    	textArea.setEditable(false);
-
-    	JDialog dialgoue;
-
-    	JOptionPane pane;
-
-    	JScrollPane scrollPane;
     	
 		// Display Result in Dialogue Box
-    	
-		textArea.setText(UniformCostSearchAlgorithm.search(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, UI.goalState));
-
-		// wrap a scrollpane around it
-		scrollPane = new JScrollPane(textArea);
-
-		// display them in a message dialog
-		pane = new JOptionPane(scrollPane);
-
-		dialgoue = pane.createDialog(null,
-				"***************************************** PROBLEM # 1 ***************************************** ");
-		// dialgoue.setLocation(0,0);
-		dialgoue.setVisible(true);
-    	
+   		UI.displayResult(UniformCostSearchAlgorithm.search(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, UI.goalState));	
+   		
     	return;
     }//GEN-LAST:event_subButtonActionPerformed
 

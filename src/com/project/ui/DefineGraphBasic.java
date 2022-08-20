@@ -205,11 +205,11 @@ public class DefineGraphBasic extends javax.swing.JFrame {
     	// Set the Operation type
 	     if(UI.isTraversing) {
 	      	
-	    	 traversingRadioButton.setSelected(true);
+	    	 UI.isTraversing = true;
 	     }
 	      
 	     else {
-	      searchinRButton.setSelected(true);
+	    	 UI.isTraversing = false;
 	     }
     	
     	// Creating the Window of operation based on List of Selected Algorithms
@@ -219,38 +219,30 @@ public class DefineGraphBasic extends javax.swing.JFrame {
 	   	 Map<String, Node> children = UI.setChildren(UI.getNodesListOfNode(UI.getNodesListOfString(UI.allNodes)),UI.allNeighbourgroups, UI.getNodesListOfString(UI.allNodes));
 	   	
 	   	int totalNodes = children.size();
-	
-	   	// create a JTextArea
-	   	JTextArea textArea = new JTextArea(38, 45);
-	   	textArea.setEditable(false);
-	
-	   	JDialog dialgoue;
-	
-	   	JOptionPane pane;
-	
-	   	JScrollPane scrollPane;
-  	
-	    // Display Result in Dialogue Box
 	   	
+	   	// Display Result in Dialogue Box
 	   	if(DFSOrBFS.equalsIgnoreCase("BFS")) {
 	   		
-	   		textArea.setText(BreadthFirstSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes));
+	   		if(traversingRadioButton.isSelected()) {
+	   			
+	   			UI.displayResult(BreadthFirstSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes));	
+	   		}
+	   		else {
+	   			System.out.println("Add Search Method Firsrt!");
+	   		}
 	   	}
 	   	else {
-	   		textArea.setText(DepthFirstSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes));
+	   		
+			if(traversingRadioButton.isSelected()) {
+				   			
+				UI.displayResult(DepthFirstSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes));	
+			}
+	   		else {
+	   			System.out.println("Add Search Method Firsrt!");
+	   		}
 	   	}
 	 	
-		// wrap a scrollpane around it
-		scrollPane = new JScrollPane(textArea);
-
-		// display them in a message dialog
-		pane = new JOptionPane(scrollPane);
-
-		dialgoue = pane.createDialog(null,
-				"***************************************** PROBLEM # 1 ***************************************** ");
-		// dialgoue.setLocation(0,0);
-		dialgoue.setVisible(true);
-    	
+		    	
     	return;
     	
     }//GEN-LAST:event_subButtonActionPerformed

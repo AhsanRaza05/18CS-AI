@@ -11,7 +11,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
 import com.uniformsearchalgorithms.breathfirstsearchalgorithm.examples.BreadthFirstSearchAlgoritmExamples;
+import com.uniformsearchalgorithms.depthfirstsearchalgorithm.algorithm.DepthFirstSearchAlgorithm;
 import com.uniformsearchalgorithms.depthfirstsearchalgorithm.examples.DepthFirstSearchAlgorithmExamples;
 import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.examples.DepthLimitedSearchAlgorithmExamples;
 import com.uniformsearchalgorithms.uniformcostsearchalgorithm.examples.UniformCostSearchAlgorithmExamples;
@@ -443,6 +450,33 @@ public class UI extends javax.swing.JFrame {
     		
     }
        
+    public static void displayResult(String text) {
+    	
+    	// create a JTextArea
+	   	JTextArea textArea = new JTextArea(38, 45);
+	   	textArea.setEditable(false);
+	
+	   	JDialog dialgoue;
+	
+	   	JOptionPane pane;
+	
+	   	JScrollPane scrollPane;
+  	
+	    // Display Result in Dialogue Box
+	   	
+	   	textArea.setText(text);
+	   	
+		// wrap a scrollpane around it
+		scrollPane = new JScrollPane(textArea);
+
+		// display them in a message dialog
+		pane = new JOptionPane(scrollPane);
+
+		dialgoue = pane.createDialog(null,
+				"***************************************** PROBLEM # 1 ***************************************** ");
+		// dialgoue.setLocation(0,0);
+		dialgoue.setVisible(true);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox BFSCBox;

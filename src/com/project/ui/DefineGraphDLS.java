@@ -44,6 +44,7 @@ public class DefineGraphDLS extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+    	operationButtonGroup = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         nodeLbl = new javax.swing.JLabel();
         nodeTF = new javax.swing.JTextField();
@@ -86,8 +87,10 @@ public class DefineGraphDLS extends javax.swing.JFrame {
 
         jLabel2.setText("Operation");
 
+        operationButtonGroup.add(traversingRadioButton);
         traversingRadioButton.setText("Traversing");
 
+        operationButtonGroup.add(searchinRButton);
         searchinRButton.setText("Searching");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -227,11 +230,11 @@ public class DefineGraphDLS extends javax.swing.JFrame {
 	     // Set the Operation type
 	     if(UI.isTraversing) {
 	      	
-	    	 traversingRadioButton.setSelected(true);
+	    	 UI.isTraversing = true;
 	     }
 	      
 	     else {
-	      searchinRButton.setSelected(true);
+	    	 UI.isTraversing = false;
 	     }
     	
     	 // Creating the Window based on List of Selected Algorithms
@@ -241,32 +244,18 @@ public class DefineGraphDLS extends javax.swing.JFrame {
 		   	Map<String, Node> children = UI.setChildren(UI.getNodesListOfNode(UI.getNodesListOfString(UI.allNodes)),UI.allNeighbourgroups, UI.getNodesListOfString(UI.allNodes));
 		   	
 		   	int totalNodes = children.size();
+		
+		   	int depthLevel = Integer.parseInt(UI.depthLimit);		
+
+		   	// Display Result in Dialogue Box
+	   		if(traversingRadioButton.isSelected()) {
+	   			
+	   			UI.displayResult(DepthLimitedSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, depthLevel));	
+	   		}
+	   		else {
+	   			System.out.println("Add Search Method Firsrt!");
+	   		}
 		   	
-		   	int depthLevel = Integer.parseInt(UI.depthLimit);
-		
-		   	// create a JTextArea
-		   	JTextArea textArea = new JTextArea(38, 45);
-		   	textArea.setEditable(false);
-		
-		   	JDialog dialgoue;
-		
-		   	JOptionPane pane;
-		
-		   	JScrollPane scrollPane;
-	   	
-		    // Display Result in Dialogue Box
-		 	textArea.setText(DepthLimitedSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, depthLevel));
-			
-		 	// wrap a scrollpane around it
-			scrollPane = new JScrollPane(textArea);
-	
-			// display them in a message dialog
-			pane = new JOptionPane(scrollPane);
-	
-			dialgoue = pane.createDialog(null,
-					"***************************************** PROBLEM # 1 ***************************************** ");
-			// dialgoue.setLocation(0,0);
-			dialgoue.setVisible(true);
 	    	
 	    	return;
     }//GEN-LAST:event_subButtonActionPerformed
@@ -294,5 +283,6 @@ public class DefineGraphDLS extends javax.swing.JFrame {
     private javax.swing.JRadioButton searchinRButton;
     private javax.swing.JButton subButton;
     private javax.swing.JRadioButton traversingRadioButton;
+    private javax.swing.ButtonGroup operationButtonGroup;
     // End of variables declaration  
 }
