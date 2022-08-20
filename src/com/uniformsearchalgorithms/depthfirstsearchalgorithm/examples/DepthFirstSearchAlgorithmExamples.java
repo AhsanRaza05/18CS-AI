@@ -248,7 +248,7 @@ public class DepthFirstSearchAlgorithmExamples {
         dialgoue = pane.createDialog(null, "PROBLEM # 5");
         dialgoue.setVisible(true);
 
-        System.exit(0);        
+//        System.exit(0);        
     }
 
 }

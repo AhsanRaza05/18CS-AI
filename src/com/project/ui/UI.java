@@ -4,10 +4,18 @@
  */
 package com.project.ui;
 
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import com.uniformsearchalgorithms.breathfirstsearchalgorithm.examples.BreadthFirstSearchAlgoritmExamples;
 import com.uniformsearchalgorithms.depthfirstsearchalgorithm.examples.DepthFirstSearchAlgorithmExamples;
 import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.examples.DepthLimitedSearchAlgorithmExamples;
 import com.uniformsearchalgorithms.uniformcostsearchalgorithm.examples.UniformCostSearchAlgorithmExamples;
+import com.uniformsearchalgorithms.node.*;
 
 /**
  *
@@ -19,7 +27,11 @@ public class UI extends javax.swing.JFrame {
      * Creates new form UI
      */
 	
-	public static String nodes, neighbourGroups;
+	public static String allNodes, allNeighbourgroups, goalState, depthLimit, allcostGroups = "";
+	
+	public static List<String> selectedAlgorithmsList;
+	
+	public static boolean isTraversing;
 	
     public UI() {
         initComponents();
@@ -51,6 +63,7 @@ public class UI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         subButton = new javax.swing.JButton();
 
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         BFSCBox.setText("BFS");
@@ -67,6 +80,7 @@ public class UI extends javax.swing.JFrame {
         BFSCBox.setSelected(true);
         
         noRButton.setSelected(true);
+        
         
         javax.swing.GroupLayout searchPanelLayout = new javax.swing.GroupLayout(searchPanel);
         searchPanel.setLayout(searchPanelLayout);
@@ -187,6 +201,8 @@ public class UI extends javax.swing.JFrame {
         );
 
         pack();
+        
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void noRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noRButtonActionPerformed
@@ -195,7 +211,8 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_noRButtonActionPerformed
 
     private void subButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subButtonActionPerformed
-        // TODO add your handling code here:
+    	
+    	selectedAlgorithmsList = new ArrayList<String>(4);
     	
     	if(noRButton.isSelected()) {
     		System.out.println("HI");
@@ -212,7 +229,7 @@ public class UI extends javax.swing.JFrame {
     		
     		if(DLSCBox.isSelected()) {
     			
-    			DepthLimitedSearchAlgorithmExamples.dsiplay();;
+    			DepthLimitedSearchAlgorithmExamples.dsiplay();
     		}
     		
     		if(UCSCBox.isSelected()) {
@@ -223,17 +240,209 @@ public class UI extends javax.swing.JFrame {
     		
     	}
     	else {
+    		
     		System.out.println("Bye");
     		
-    		new DefineGraphUCS().setVisible(true);
-//    		new DefineGraphDLS().setVisible(true);
-//    		new DefineGraphWithoutCost().setVisible(true);
+    		if(BFSCBox.isSelected()) {
+    			
+    			
+    			selectedAlgorithmsList.add("BFS");
+    		}
+    		
+    		if(DFSCBox.isSelected()) {
+   
+    			
+    			selectedAlgorithmsList.add("DFS");
+    		}
+    		
+    		if(DLSCBox.isSelected()) {
+    
+    			
+    			selectedAlgorithmsList.add("DLS");
+    		}
+    		
+    		if(UCSCBox.isSelected()) {
+    
+    			
+    			selectedAlgorithmsList.add("UCS");
+    		}
+    		
+    		// Creating the Window of operation based on List of Selected Algorithms
+        	UI.createWindow(UI.selectedAlgorithmsList);
     	}
     	
     	
     }//GEN-LAST:event_subButtonActionPerformed
 
-   
+    public static void createWindow(List <String> selectedAlgorithmsList) {
+    	
+    	System.out.println("Before Removing; " + selectedAlgorithmsList);
+    	
+    	String item ;
+    	
+    	if(!selectedAlgorithmsList.isEmpty()) {
+    		
+    		item = selectedAlgorithmsList.remove(0);
+    		
+    		System.out.println("After Removing; " + selectedAlgorithmsList);
+        	
+        	System.out.println();
+        	
+        	if(item.equalsIgnoreCase("BFS")) {
+    			
+    			new DefineGraphBasic("BFS").setVisible(true);	
+    		}
+    		
+        	else if(item.equalsIgnoreCase("DFS")) {
+    			
+    			new DefineGraphBasic("DFS").setVisible(true);
+    		}
+    		
+        	else if(item.equalsIgnoreCase("DLS")) {
+    			
+    			new DefineGraphDLS().setVisible(true);
+    		}
+    		
+        	else if(item.equalsIgnoreCase("UCS")) {
+    			
+    			new DefineGraphUCS().setVisible(true);
+
+    		}
+    	}
+    	
+    	
+    }
+    
+    public static String[] getNodesListOfString(String allNodes) {
+		
+		return (allNodes.split(" "));
+		
+	}
+    
+    public static Map<String, Node> getNodesListOfNode(String[] nodesList){
+    	
+    	Map <String, Node> allNodes = new HashMap<String, Node>();
+    	
+    	for(String item: nodesList) {
+    		
+    		allNodes.put(item, new Node(item));
+    	}
+    	
+    	System.out.println(allNodes);
+    	
+    	return (allNodes);
+    	
+    }
+    
+    public static Map<String, WeightedNode> getNodesListOfWeightNode(String[] nodesList){
+    	
+    	Map <String, WeightedNode> allNodes = new HashMap<String, WeightedNode>();
+    	
+    	for(String item: nodesList) {
+    		
+    		allNodes.put(item, new WeightedNode(item));
+    	}
+    	
+    	System.out.println(allNodes);
+    	
+    	return (allNodes);
+    	
+    }
+    
+    public static Map<String, Node> setChildren( Map<String, Node> nodes, String allNeighbourgroups, String[] getNodes) {
+    	
+    	// Make String Array of Children.
+    	String childrenGroups[] = allNeighbourgroups.split(" ");
+    	System.out.println("Children Groups" + Arrays.toString(childrenGroups));
+    	
+    	// Add children to Nodes.
+    	Node childNodes[] = new Node[0];
+    	String children[];
+    	String parentNode = "";
+    	
+    	for(int i = 0; i < childrenGroups.length; i++) {
+    		
+    		children = childrenGroups[i].split(",");
+    		
+    		childNodes = new Node[children.length];
+    		
+    		for(int j = 0; j < children.length; j++) {
+    			
+    			childNodes[j] = nodes.get(children[j]);
+    			
+    			parentNode = getNodes[i];
+    			
+    		}
+    		
+    		nodes.get(parentNode).setAllChildren(childNodes);
+    		
+//    		if(getNodes.length > childrenGroups.length) {
+//    			
+//    			nodes.get(getNodes[getNodes.length - 1]).setAllChildren(new Node[] {});
+//    		}
+    	}
+    	
+    	return nodes;
+    		
+    }
+    
+    public static Map<String, WeightedNode> setChildrenAndCost( Map<String, WeightedNode> nodes, String allNeighbourgroups, String[] getNodes, String allCostGroups) {
+    	
+    	// Make String Array of Children.
+    	String childrenGroups[] = allNeighbourgroups.split(" ");
+    	System.out.println("Children Groups" + Arrays.toString(childrenGroups));
+    	
+    	
+    	// Make String Array of Cost.
+    	String costGroups[] = allCostGroups.split(" ");
+    	System.out.println("Cost Groups" + Arrays.toString(costGroups));
+    	
+    	
+    	WeightedNode childNodes[] = new WeightedNode[0];
+    	String childrenItem[];
+    	
+    	Integer costs[];
+    	
+    	String parentNodeItem = "";
+    	
+    	// Add children to Nodes.
+    	for(int i = 0; i < childrenGroups.length; i++) {
+    		
+    		// Split a child group to its children items array
+    		childrenItem = childrenGroups[i].split(",");
+    		
+    		costs = new Integer[childrenItem.length];
+    		childNodes = new WeightedNode[childrenItem.length];
+    		
+    		for(int j = 0; j < childrenItem.length; j++) {
+    			
+    			// Convert Items(String) to Nodes 
+    			childNodes[j] = nodes.get(childrenItem[j]);	
+    			
+    			// Split a Cost group to its children cost items array and casting each element to Integer
+    			costs[j] = Integer.parseInt(costGroups[i].split(",")[j]);
+    		}
+    		
+    		// Get Items in Parent Node
+    		parentNodeItem = getNodes[i];
+    		
+    		// Add Children array in node
+    		nodes.get(parentNodeItem).setAllchildren(childNodes);
+    		
+    		// Add Cost array in node
+    		nodes.get(parentNodeItem).setCost(costs);
+    		
+    		
+//    		if(getNodes.length > childrenGroups.length) {
+//    			
+//    			nodes.get(getNodes[getNodes.length - 1]).setAllChildren(new Node[] {});
+//    		}
+    	}
+    	
+    	return nodes;
+    		
+    }
+       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox BFSCBox;

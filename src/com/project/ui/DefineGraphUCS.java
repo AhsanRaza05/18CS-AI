@@ -4,6 +4,17 @@
  */
 package com.project.ui;
 
+import java.util.Map;
+
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
+import com.uniformsearchalgorithms.node.*;
+import com.uniformsearchalgorithms.uniformcostsearchalgorithm.algorithm.UniformCostSearchAlgorithm;
+
 /**
  *
  * @author AHSAN
@@ -15,6 +26,13 @@ public class DefineGraphUCS extends javax.swing.JFrame {
      */
     public DefineGraphUCS() {
         initComponents();
+        
+        // Loading the previous given data
+        nodeTF.setText(UI.allNodes);
+        childrenGroupTF.setText(UI.allNeighbourgroups);
+        costTF.setText(UI.allcostGroups);
+        goalStateTF.setText(UI.goalState);
+        
     }
 
     /**
@@ -37,10 +55,18 @@ public class DefineGraphUCS extends javax.swing.JFrame {
         costTF = new javax.swing.JTextField();
         egNodeLbl2 = new javax.swing.JLabel();
         egNeighbour2Lbl = new javax.swing.JLabel();
+        goalStateLbl = new javax.swing.JLabel();
+        goalStateTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         subButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         nodeLbl.setText("Enter Node");
 
@@ -56,16 +82,22 @@ public class DefineGraphUCS extends javax.swing.JFrame {
 
         egNeighbour2Lbl.setText("seperate by space e.g. A,B C,D,E ......");
 
+        goalStateLbl.setText("Goal State");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(egNodeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(egNeighbour2Lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(egChildLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,16 +114,19 @@ public class DefineGraphUCS extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(nodeTF))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(egNodeLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(egNodeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(egNodeLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(egChildLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(egNeighbour2Lbl)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(goalStateLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(goalStateTF, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -110,12 +145,16 @@ public class DefineGraphUCS extends javax.swing.JFrame {
                 .addComponent(egChildLbl)
                 .addGap(4, 4, 4)
                 .addComponent(egNeighbour2Lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(costLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(costTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(egNodeLbl2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(goalStateLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(goalStateTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -162,15 +201,65 @@ public class DefineGraphUCS extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+        
+        setLocationRelativeTo(null);
+        
+        }// </editor-fold>//GEN-END:initComponents
 
     private void subButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subButtonActionPerformed
-        // TODO add your handling code here:
+    	
+    	// Updating the List of Nodes and List of NeighbourGroups with latest values
+    	UI.allNodes = nodeTF.getText().trim();
+    	UI.allNeighbourgroups = childrenGroupTF.getText().trim();
+    	UI.goalState = goalStateTF.getText();
+    	UI.allcostGroups = costTF.getText().trim();
+    	
+    	// Creating the Window of operation based on List of Selected Algorithms
+    	UI.createWindow(UI.selectedAlgorithmsList);
+    	
+    	// Add Children to Nodes
+//    	 Map<String, WeightedNode> children = UI.setChildrenAndCost(UI.getNodesListOfWeightNode(UI.getNodesListOfString(UI.allNodes)),UI.allNeighbourgroups, UI.getNodesListOfWeightNode(UI.allNodes), costTF.getText().trim());
+    	
+    	Map<String, WeightedNode> children = UI.setChildrenAndCost(UI.getNodesListOfWeightNode(UI.getNodesListOfString(UI.allNodes)), UI.allNeighbourgroups, UI.getNodesListOfString(UI.allNodes), costTF.getText().trim());
+    	
+    	int totalNodes = children.size();
+
+    	// create a JTextArea
+    	JTextArea textArea = new JTextArea(38, 45);
+    	textArea.setEditable(false);
+
+    	JDialog dialgoue;
+
+    	JOptionPane pane;
+
+    	JScrollPane scrollPane;
+    	
+		// Display Result in Dialogue Box
+    	
+		textArea.setText(UniformCostSearchAlgorithm.search(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, UI.goalState));
+
+		// wrap a scrollpane around it
+		scrollPane = new JScrollPane(textArea);
+
+		// display them in a message dialog
+		pane = new JOptionPane(scrollPane);
+
+		dialgoue = pane.createDialog(null,
+				"***************************************** PROBLEM # 1 ***************************************** ");
+		// dialgoue.setLocation(0,0);
+		dialgoue.setVisible(true);
+    	
+    	return;
     }//GEN-LAST:event_subButtonActionPerformed
 
-    
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+    	
+    	// Creating the Window of operation based on List of Selected Algorithms
+    	UI.createWindow(UI.selectedAlgorithmsList);
+        System.out.println("You are Champion!");
+    }  
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JTextField childrenGroupTF;
     private javax.swing.JLabel childrenGroupsLbl1;
     private javax.swing.JLabel costLbl;
@@ -179,10 +268,12 @@ public class DefineGraphUCS extends javax.swing.JFrame {
     private javax.swing.JLabel egNeighbour2Lbl;
     private javax.swing.JLabel egNodeLbl;
     private javax.swing.JLabel egNodeLbl2;
+    private javax.swing.JLabel goalStateLbl;
+    private javax.swing.JTextField goalStateTF;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nodeLbl;
     private javax.swing.JTextField nodeTF;
     private javax.swing.JButton subButton;
-    // End of variables declaration//GEN-END:variables
+    // End of variables declaration      
 }

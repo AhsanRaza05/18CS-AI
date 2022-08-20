@@ -256,7 +256,7 @@ public class BreadthFirstSearchAlgoritmExamples {
 				"***************************************** PROBLEM # 5 ***************************************** ");
 		dialgoue.setVisible(true);
 
-		System.exit(0);
+//		System.exit(0);
 
 	}
 

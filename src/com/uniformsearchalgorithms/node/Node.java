@@ -12,11 +12,12 @@ public class Node {
 
      this.item = item;
      this.children = children;
+     
  }
 
  public Node(String item){
 
-     this(item, null);
+     this(item, new Node[] {});
  }
 
  // Setters

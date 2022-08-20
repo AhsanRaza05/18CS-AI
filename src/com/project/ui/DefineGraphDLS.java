@@ -4,6 +4,17 @@
  */
 package com.project.ui;
 
+import java.util.Map;
+
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
+import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
+import com.uniformsearchalgorithms.node.Node;
+
 /**
  *
  * @author AHSAN
@@ -15,6 +26,13 @@ public class DefineGraphDLS extends javax.swing.JFrame {
      */
     public DefineGraphDLS() {
         initComponents();
+        
+        // Loading the previous given data
+        nodeTF.setText(UI.allNodes);
+        childrenGroupTF.setText(UI.allNeighbourgroups);
+        UI.isTraversing = (traversingRadioButton.isSelected()) ? true : false;
+        depthLimitTF.setText(UI.depthLimit);
+        
     }
 
     /**
@@ -37,11 +55,21 @@ public class DefineGraphDLS extends javax.swing.JFrame {
         depthLimitTF = new javax.swing.JTextField();
         egNodeLbl2 = new javax.swing.JLabel();
         egNeighbour2Lbl = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        traversingRadioButton = new javax.swing.JRadioButton();
+        searchinRButton = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         subButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+
+        
         nodeLbl.setText("Enter Node");
 
         egNodeLbl.setText("Seperate nodes by space e.g. A B C .....");
@@ -56,16 +84,30 @@ public class DefineGraphDLS extends javax.swing.JFrame {
 
         egNeighbour2Lbl.setText("seperate by space e.g. A,B C,D,E ......");
 
+        jLabel2.setText("Operation");
+
+        traversingRadioButton.setText("Traversing");
+
+        searchinRButton.setText("Searching");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(egNodeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(egNeighbour2Lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(egChildLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(egNodeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,15 +124,16 @@ public class DefineGraphDLS extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(nodeTF))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(egNodeLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(egChildLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(egNeighbour2Lbl)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(traversingRadioButton)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(searchinRButton))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(12, 12, 12)
+                                        .addComponent(egNodeLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -110,13 +153,18 @@ public class DefineGraphDLS extends javax.swing.JFrame {
                 .addComponent(egChildLbl)
                 .addGap(4, 4, 4)
                 .addComponent(egNeighbour2Lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(depthLimitLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(depthLimitTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(egNodeLbl2)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(traversingRadioButton)
+                    .addComponent(searchinRButton)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -158,19 +206,78 @@ public class DefineGraphDLS extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(subButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
+        
+        setLocationRelativeTo(null);
+        
     }// </editor-fold>//GEN-END:initComponents
 
     private void subButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subButtonActionPerformed
-        // TODO add your handling code here:
+       
+    	// Updating the List of Nodes and List of NeighbourGroups with latest values
+    	UI.allNodes = nodeTF.getText().trim();
+    	UI.allNeighbourgroups = childrenGroupTF.getText().trim();
+    	UI.depthLimit = depthLimitTF.getText().trim();
+    	
+//    	UI.isTraversing = (UI.isTraversing == true) ? traversingRadioButton.setSelected(true) : searchinRButton.setSelected(true);
+        
+	     // Set the Operation type
+	     if(UI.isTraversing) {
+	      	
+	    	 traversingRadioButton.setSelected(true);
+	     }
+	      
+	     else {
+	      searchinRButton.setSelected(true);
+	     }
+    	
+    	 // Creating the Window based on List of Selected Algorithms
+    	 UI.createWindow(UI.selectedAlgorithmsList);
+    	
+	    	// Add Children to Nodes
+		   	Map<String, Node> children = UI.setChildren(UI.getNodesListOfNode(UI.getNodesListOfString(UI.allNodes)),UI.allNeighbourgroups, UI.getNodesListOfString(UI.allNodes));
+		   	
+		   	int totalNodes = children.size();
+		   	
+		   	int depthLevel = Integer.parseInt(UI.depthLimit);
+		
+		   	// create a JTextArea
+		   	JTextArea textArea = new JTextArea(38, 45);
+		   	textArea.setEditable(false);
+		
+		   	JDialog dialgoue;
+		
+		   	JOptionPane pane;
+		
+		   	JScrollPane scrollPane;
+	   	
+		    // Display Result in Dialogue Box
+		 	textArea.setText(DepthLimitedSearchAlgorithm.traverse(children.get(UI.getNodesListOfString(UI.allNodes)[0]), totalNodes, depthLevel));
+			
+		 	// wrap a scrollpane around it
+			scrollPane = new JScrollPane(textArea);
+	
+			// display them in a message dialog
+			pane = new JOptionPane(scrollPane);
+	
+			dialgoue = pane.createDialog(null,
+					"***************************************** PROBLEM # 1 ***************************************** ");
+			// dialgoue.setLocation(0,0);
+			dialgoue.setVisible(true);
+	    	
+	    	return;
     }//GEN-LAST:event_subButtonActionPerformed
 
-    
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+    	
+    	// Creating the Window of operation based on List of Selected Algorithms
+    	UI.createWindow(UI.selectedAlgorithmsList);
+        System.out.println("You are Champion!");
+    }  
+    // Variables declaration - do not modify                     
     private javax.swing.JTextField childrenGroupTF;
     private javax.swing.JLabel childrenGroupsLbl1;
     private javax.swing.JLabel depthLimitLbl;
@@ -180,9 +287,12 @@ public class DefineGraphDLS extends javax.swing.JFrame {
     private javax.swing.JLabel egNodeLbl;
     private javax.swing.JLabel egNodeLbl2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nodeLbl;
     private javax.swing.JTextField nodeTF;
+    private javax.swing.JRadioButton searchinRButton;
     private javax.swing.JButton subButton;
-    // End of variables declaration//GEN-END:variables
+    private javax.swing.JRadioButton traversingRadioButton;
+    // End of variables declaration  
 }

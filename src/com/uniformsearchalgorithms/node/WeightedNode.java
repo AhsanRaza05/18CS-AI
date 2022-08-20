@@ -18,9 +18,16 @@ public class WeightedNode {
 
  public WeightedNode(String item, Integer[] cost){
 
-     this(item, null, cost);
+     this(item, new WeightedNode[] {}, cost);
  }
 
+ public WeightedNode(String item){
+
+//     this(item, null,null);
+     
+     this(item, new WeightedNode[]{}, new Integer[]{0});
+     
+ }
  // Setters
  public void setItem(String item){
 
