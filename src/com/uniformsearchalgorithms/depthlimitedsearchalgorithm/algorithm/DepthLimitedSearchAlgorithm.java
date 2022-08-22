@@ -26,7 +26,7 @@ public class DepthLimitedSearchAlgorithm {
 
         int step = 1;
 
-        String result = "";
+        String result = "\n\n\tDepth Level Limit: " + level + "\n";
         result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n\n";
        
 

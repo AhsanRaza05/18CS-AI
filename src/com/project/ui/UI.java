@@ -133,7 +133,7 @@ public class UI extends javax.swing.JFrame {
         yesRButton.setText("Yes");
 
         questionGroup.add(noRButton);
-        noRButton.setText("No. I will use example problem");
+        noRButton.setText("No. Use example problems");
         noRButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 noRButtonActionPerformed(evt);
