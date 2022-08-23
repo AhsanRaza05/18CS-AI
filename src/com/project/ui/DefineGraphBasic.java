@@ -38,6 +38,7 @@ public class DefineGraphBasic extends javax.swing.JFrame {
         
         // Use to Specifiy either algorithm is DFS or BFS
         this.DFSOrBFS = DFSOrBFS;
+        traversingRadioButton.setSelected(true);
        
     }
 

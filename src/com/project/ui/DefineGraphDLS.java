@@ -32,6 +32,7 @@ public class DefineGraphDLS extends javax.swing.JFrame {
         childrenGroupTF.setText(UI.allNeighbourgroups);
         UI.isTraversing = (traversingRadioButton.isSelected()) ? true : false;
         depthLimitTF.setText(UI.depthLimit);
+        traversingRadioButton.setSelected(true);
         
     }
 
