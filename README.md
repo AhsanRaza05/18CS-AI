@@ -12,48 +12,42 @@
 
   * <a href = "#BFS_Head" > Breadth First Search Algorithm </a>
     * <a href = "#po1" > Program Output </a> 
-        * User Define Problem
-          * Problem # 1
-        * Predefine Problems
-          * Problem # 1
-          * Problem # 2
-          * Problem # 3
-          * Problem # 4
-          * Problem # 5
+        * <a href = "#BFS_UDP" > User Define Problem </a>
+          * <a href = "#BFS_UDP_P1"> Problem # 1 </a>
+        * <a href = "#BFS_PDP"> Predefine Problems </a>
+          * <a href = "#BFS_PDP_P1"> Problem # 1 </a>
+          * <a href = "#BFS_PDP_P2"> Problem # 2 </a>
+          * <a href = "#BFS_PDP_P3"> Problem # 3 </a>
+          * <a href = "#BFS_PDP_P4"> Problem # 4 </a>
+          * <a href = "#BFS_PDP_P5"> Problem # 5 </a>
 
   * <a href = "#DFS_Head" > Depth First Search Algorithm </a>
     * <a href = "#po2" > Program Output </a> 
-        * User Define Problem
-          * Problem # 1
-        * Predefine Problems
-          * Problem # 1
-          * Problem # 2
-          * Problem # 3
-          * Problem # 4
-          * Problem # 5
+        * <a href = "#DFS_UDP" > User Define Problem </a>
+          * <a href = "#DFS_UDP_P1"> Problem # 1 </a>
+        * <a href = "#DFS_PDP"> Predefine Problems </a>
+          * <a href = "#DFS_PDP_P1"> Problem # 1 </a>
+          * <a href = "#DFS_PDP_P2"> Problem # 2 </a>
+          * <a href = "#DFS_PDP_P3"> Problem # 3 </a>
+          * <a href = "#DFS_PDP_P4"> Problem # 4 </a>
+          * <a href = "#DFS_PDP_P5"> Problem # 5 </a>
           
   * <a href = "#DLS_Head" > Depth Limited Search Algorithm </a>
     * <a href = "#po3" > Program Output </a> 
-        * User Define Problem
-          * Problem # 1
-        * Predefine Problems
-          * Problem # 1
-          * Problem # 2
-          * Problem # 3
-          * Problem # 4
-          * Problem # 5
-  
+        * <a href = "#DLS_UDP" > User Define Problem </a>
+          * <a href = "#DLS_UDP_P1"> Problem # 1 </a>
+        * <a href = "#DLS_PDP"> Predefine Problems </a>
+          * <a href = "#DLS_PDP_P1"> Problem # 1 </a>
+          * <a href = "#DLS_PDP_P2"> Problem # 2 </a>
+         
   * <a href = "#UCS_Head" > Uniform Cost Search Algorithm </a>
     * <a href = "#po4" > Program Output </a> 
-        * User Define Problem
-          * Problem # 1
-        * Predefine Problems
-          * Problem # 1
-          * Problem # 2
-          * Problem # 3
-          * Problem # 4
-          * Problem # 5
-          * 
+        * <a href = "#UCS_UDP" > User Define Problem </a>
+          * <a href = "#UCS_UDP_P1"> Problem # 1 </a>
+        * <a href = "#UCS_PDP"> Predefine Problems </a>
+          * <a href = "#UCS_PDP_P1"> Problem # 1 </a>
+          * <a href = "#UCS_PDP_P2"> Problem # 2 </a>
+          * <a href = "#UCS_PDP_P3"> Problem # 3 </a>
 ## <div id = "Overview_Head"> Overview </div>
 
 Artificial Intelligence is the study of building agents that act rationally. Most of the time, these agents perform some kind of search algorithm in the background in order to achieve their tasks. 
@@ -117,8 +111,27 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 & "d" = depth
 
 <h2 align="center" id = "po1"> <u> Program Output </u> </h2> 
- 
-<h2 align="center"> BFS Problem # 1</h2>
+
+## <p align = "center" id = "BFS_UDP"> User Define Problem </p>
+
+### <p align = "center" id = "BFS_UDP_P1"> Problem # 1</p>
+
+#### <p align = "center"> Traversing </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_T_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_T_1_ii.png" alt = "Solution # 1_ii">
+</p>
+
+#### <p align = "center"> Searching </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_S_1_i.png" alt = "Solution # 1_i">
+</p>
+
+## <p align = "center" id = "BFS_PDP"> Pre Define Problem </p>
+
+<h2 align="center" id = "BFS_PDP_P1"> BFS Example Problem # 1</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_1.png" alt = "Problem # 1" >
@@ -128,10 +141,9 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_i.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_ii.png" alt = "Solution # 1_ii">
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_1_iii.png" alt = "Solution # 1_iii">
-  
 </p>
 
-<h2 align="center"> BFS Problem # 2</h2>
+<h2 align="center"  id = "BFS_PDP_P2" > BFS Problem # 2</h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_2.png" alt = "Problem # 2" >
@@ -142,7 +154,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_2_ii.png" alt = "Solution # 2_ii" >
 </p>
 
-<h2 align="center"> BFS Problem # 3 </h2>
+<h2 align="center"  id = "BFS_PDP_P3"> BFS Problem # 3 </h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_3.png" alt = "Problem # 3" >
@@ -155,7 +167,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_3_iv.png" alt = "Solution # 3_iv" >
 </p>
 
-<h2 align="center"> BFS Problem # 4 </h2>
+<h2 align="center"  id = "BFS_PDP_P4"> BFS Problem # 4 </h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_4.png" alt = "Problem # 4" >
@@ -168,7 +180,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   
 </p>
 
-<h2 align="center"> BFS Problem # 5 </h2>
+<h2 align="center"  id = "BFS_PDP_P5"> BFS Problem # 5 </h2>
 
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_5.png" alt = "Problem # 5" >
@@ -206,9 +218,29 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 
 & "d" = depth
 
-<h2 align="center" id = "po2" > <u> Program Output </u> </h2> 
- 
-<h2 align="center"> DFS Problem # 1</h2>
+<h2 align="center" id = "po2"> <u> Program Output </u> </h2> 
+
+## <p align = "center" id = "DFS_UDP"> User Define Problem </p>
+
+### <p align = "center" id = "DFS_UDP_P1"> Problem # 1</p>
+
+#### <p align = "center"> Traversing </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_T_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_T_1_ii.png" alt = "Solution # 1_ii">
+</p>
+
+
+#### <p align = "center"> Searching </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_S_1_i.png" alt = "Solution # 1_i">
+</p>
+
+ ## <p align = "center" id = "DFS_PDP"> Pre Define Problem </p>
+
+<h2 align="center" id = "DFS_PDP_P1"> DFS Example Problem # 1</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_1.png" alt = "Problem # 1" >
@@ -221,7 +253,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   
 </p>
 
-<h2 align="center"> DFS Problem # 2</h2>
+<h2 align="center" id = "DFS_PDP_P2"> DFS Example Problem # 2</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_2.png" alt = "Problem # 2" >
@@ -234,7 +266,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 
 </p>
 
-<h2 align="center"> DFS Problem # 3</h2>
+<h2 align="center" id = "DFS_PDP_P3"> DFS Example Problem # 3</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_3.png" alt = "Problem # 3" >
@@ -247,7 +279,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_3_iv.png" alt = "Solution # 3_iv">
 </p>
 
-<h2 align="center"> DFS Problem # 4</h2>
+<h2 align="center" id = "DFS_PDP_P4"> DFS Example Problem # 4</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_4.png" alt = "Problem # 4" >
@@ -258,8 +290,8 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_ii.png" alt = "Solution # 4_ii">
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_iii.png" alt = "Solution # 4_iii">
 </p>
-
-<h2 align="center"> DFS Problem # 5</h2>
+ 
+<h2 align="center" id = "DFS_PDP_P5"> DFS Example Problem # 5</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_5.png" alt = "Problem # 5" >
@@ -294,69 +326,47 @@ search.
 
 <h2 align="center" id = "po3" > <u> Program Output </u> </h2> 
  
-<h2 align="center"> DLS Problem # 1</h2>
+## <p align = "center" id = "DLS_UDP"> User Define Problem </p>
+
+### <p align = "center" id = "DLS_UDP_P1"> Problem # 1</p>
+
+#### <p align = "center"> Traversing </p> 
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DLS/DF_S_U_T_1_i.png" alt = "Solution # 1_i">
+</p> 
+
+#### <p align = "center"> Searching </p> 
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_U_S_1_i.png" alt = "Solution # 1_i">
+</p> 
+## <p align = "center" id = "DLS_PDP"> Pre Define Problem </p>
+
+<h2 align="center" id = "DLS_PDP_P1"> DLS Problem # 1</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_1.png" alt = "Problem # 1" >
 </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_1_i.png" alt = "Solution # 1_i">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_1_ii.png" alt = "Solution # 1_ii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_1_iii.png" alt = "Solution # 1_iii">
-  
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_1_ii.png" alt = "Solution # 1_ii">
 </p>
 
-<h2 align="center"> DLS Problem # 2</h2>
+<h2 align="center" id = "DLS_PDP_P2"> DLS Problem # 2</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/P_2.png" alt = "Problem # 2" >
 </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_2_i.png" alt = "Solution # 2_i">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_2_ii.png" alt = "Solution # 2_ii">
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_2_i.png" alt = "Solution # 2_i">
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_2_ii.png" alt = "Solution # 2_ii">
 </p>
 
 </p>
 
-<h2 align="center"> DLS Problem # 3</h2>
-  
-<p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/P_3.png" alt = "Problem # 3" >
-</p>
-
-<p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_3_i.png" alt = "Solution # 3_i">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_3_ii.png" alt = "Solution # 3_ii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_3_iii.png" alt = "Solution # 3_iii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_3_iv.png" alt = "Solution # 3_iv">
-</p>
-
-<h2 align="center"> DLS Problem # 4</h2>
-  
-<p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/P_4.png" alt = "Problem # 4" >
-</p>
-
-<p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_i.png" alt = "Solution # 4_i">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_ii.png" alt = "Solution # 4_ii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_4_iii.png" alt = "Solution # 4_iii">
-</p>
-
-<h2 align="center"> DLS Problem # 5</h2>
-  
-<p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/P_5.png" alt = "Problem # 5" >
-</p>
-
-<p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_i.png" alt = "Solution # 5_i">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_ii.png" alt = "Solution # 5_ii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iii.png" alt = "Solution # 5_iii">
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_5_iv.png" alt = "Solution # 5_iv">
-</p>
 
 
 ### <div id = "UCS_Head"> iii) Uniform-First Search
@@ -367,11 +377,23 @@ the least-cost solution for a general path cost function.
 Uniform cost search modifies the breadth-first strategy by always expanding
 the lowest-cost node rather than the lowest-depth node.
 
-It maintain a priority Queue.
+It maintain a "Priority Queue".
 
 <h2 align="center" id = "po4" > <u> Program Output </u> </h2> 
+
+## <p align = "center" id = "UCS_UDP"> User Define Problem </p>
+
+### <p align = "center" id = "UCS_UDP_P1"> Problem # 1</p>
+
+#### <p align = "center"> Searching </p>  
+ <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_U_S_1_i.png" alt = "Problem # 1" >
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_U_S_1_ii.png" alt = "Problem # 2" > 
+</p>
  
-<h2 align="center"> UCS Problem # 1</h2>
+ ## <p align = "center" id = "UCS_PDP"> Pre Define Problem </p>
+ 
+<h2 align="center" id = "UCS_PDP_P1"> UCS Problem # 1</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/U_P_1.png" alt = "Problem # 1" >
@@ -383,7 +405,7 @@ It maintain a priority Queue.
   
 </p>
 
-<h2 align="center"> UCS Problem # 2</h2>
+<h2 align="center" id = "UCS_PDP_P2"> UCS Problem # 2</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/U_P_2.png" alt = "Problem # 2" >
@@ -395,7 +417,7 @@ It maintain a priority Queue.
 
 </p>
 
-<h2 align="center"> UCS Problem # 3</h2>
+<h2 align="center" id = "UCS_PDP_P3"> UCS Problem # 3</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/U_P_3.png" alt = "Problem # 3" >
