@@ -69,7 +69,7 @@ This plan is achieved through search algorithms.
 ## <div id = "Problem_Head"> User Define Problem Assumption </div>
 
 <p align = 'center'>
-<img src = "Screenshots/Problem_Screenshots/Problem_Assumption.png" alt = "Assumed Problem" >
+ <img src = "Screenshots/Problem_Screenshots/Problem_Assumption.png" alt = "Assumed Problem" >
 </p>
 
 <p align = 'center' > Assume that above Graph will be used by User. </p>
@@ -77,39 +77,44 @@ This plan is achieved through search algorithms.
 ## <div id = "UI">  User Interface </div>
 
 <p align = 'center'>
- 
- 
  <img src = "Screenshots/UI/First_Window.png"  alt = "1st Window" >
- 
- <div align = "center">
- <figcaption align = "center"> Fig-A: Selecting Algorithm </figcaption>
- </div>
- 
- <img src = "Screenshots/UI/Second_Window.png"  alt = "2nd Window" >
- 
- <div align = "center">
- <figcaption align = "center"> Fig-B: Selecting BFS and Defining the Graph </figcaption>
- </div>
- 
- <img src = "Screenshots/UI/Third_Window.png"  alt = "3rd Window" >
- 
- <div align = "center">
- <figcaption align = "center"> Fig-C: Selecting DFS and Defining the Graph </figcaption>
- </div>
- 
- <img src = "Screenshots/UI/Fourth_Window.png"  alt = "4th Window" >
- 
- <div align = "center">
- <figcaption align = "center"> Fig-D: Selecting DLS and Defining the Graph </figcaption>
- </div>
- 
- <img src = "Screenshots/UI/Fifth_Window.png"  alt = "5th Window" >
- 
- <div align = "center">
- <figcaption align = "center">  Fig-E: Selecting UCS and Defining the Graph  </figcaption>
- </div>
- 
 </p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-A: Selecting Algorithm </figcaption>
+ </div>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/UI/Second_Window.png"  alt = "2nd Window" >
+ </p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-B: Selecting BFS and Defining the Graph </figcaption>
+ </div>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/UI/Third_Window.png"  alt = "3rd Window" >
+ </p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-C: Selecting DFS and Defining the Graph </figcaption>
+ </div>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/UI/Fourth_Window.png"  alt = "4th Window" >
+ </p>
+ 
+ <div align = "center">
+  <figcaption align = "center"> Fig-D: Selecting DLS and Defining the Graph </figcaption>
+ </div>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/UI/Fifth_Window.png"  alt = "5th Window" >
+ </p>
+ 
+ <div align = "center">
+  <figcaption align = "center">  Fig-E: Selecting UCS and Defining the Graph  </figcaption>
+ </div>
 
 ## <div id = "Uniform_Search_Head"> 1) Uninformed Search </d>
 
@@ -174,7 +179,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 ## <p align = "center" id = "BFS_PDP"> Pre Define Problems </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/UI/First_Window.png" alt = "Problem # 1" >
+  <img src = "Screenshots/UI/BFS_Examples.png" alt = "Problem # 1" >
 </p>
 
 <h2 align="center" id = "BFS_PDP_P1"> BFS Example Problem # 1</h2>
@@ -282,11 +287,15 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 #### <p align = "center"> Searching </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_T_1_0.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_S_1_0.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_S_1_i.png" alt = "Solution # 1_i">
 </p>
 
  ## <p align = "center" id = "DFS_PDP"> Pre Define Problem </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/UI/DFS_Examples.png" alt = "Problem # 1" >
+</p>
 
 <h2 align="center" id = "DFS_PDP_P1"> DFS Example Problem # 1</h2>
   
@@ -381,16 +390,22 @@ search.
 #### <p align = "center"> Traversing </p> 
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/DLS/DF_S_U_T_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_U_T_1_0.png" alt = "Solution # 1_0">
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_U_T_1_i.png" alt = "Solution # 1_i">
 </p> 
 
 #### <p align = "center"> Searching </p> 
 
 <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_U_S_1_0.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_U_S_1_i.png" alt = "Solution # 1_i">
 </p> 
 
 ## <p align = "center" id = "DLS_PDP"> Pre Define Problem </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/UI/DLS_Examples.png" alt = "Problem # 1" >
+</p>
 
 <h2 align="center" id = "DLS_PDP_P1"> DLS Problem # 1</h2>
   
@@ -416,8 +431,6 @@ search.
 
 </p>
 
-
-
 ### <div id = "UCS_Head"> iii) Uniform-Cost Search
 
 Breadth-first search finds the shallowest goal state, but this may not always be
@@ -436,11 +449,16 @@ It maintain a "Priority Queue".
 
 #### <p align = "center"> Searching </p>  
  <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_U_S_1_0.png" alt = "Problem # 0" >
   <img src = "Screenshots/Solution_Screenshots/UCS/UCS_U_S_1_i.png" alt = "Problem # 1" >
   <img src = "Screenshots/Solution_Screenshots/UCS/UCS_U_S_1_ii.png" alt = "Problem # 2" > 
 </p>
  
  ## <p align = "center" id = "UCS_PDP"> Pre Define Problem </p>
+ 
+ <p align = 'center'>
+  <img src = "Screenshots/UI/UCS_Examples.png" alt = "Problem # 1" >
+</p>
  
 <h2 align="center" id = "UCS_PDP_P1"> UCS Problem # 1</h2>
   
