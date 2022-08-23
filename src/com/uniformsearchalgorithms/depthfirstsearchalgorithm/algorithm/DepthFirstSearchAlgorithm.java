@@ -32,7 +32,7 @@ public class DepthFirstSearchAlgorithm {
 
         int step = 1;
 
-        result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+        result += "\n\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
 
         // Repeat Loop until Stack is empty
         l:while(!stack.isEmpty()){
@@ -104,7 +104,7 @@ public class DepthFirstSearchAlgorithm {
 
        int step = 1;
 
-       result += "\n\tGoal State: " + goalState +"\n\n\tStep # "  + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
+       result += "\n\n\tGoal State: " + goalState +"\n\n\tStep # "  + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n";
 
        // Repeat Loop until Stack is empty
        l:while(!stack.isEmpty()){
