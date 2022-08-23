@@ -6,6 +6,8 @@
 
 * <a href = "#Types_Head" > Types Of Searching Algorithms </a> 
 
+* <a href = "#UI" > User Interface </a> 
+
 * <a href = "#Problem_Head" > User Define Problem Assumption </a> 
 
 * <a href = "#Uniform_Search_Head" > Uninformed Search </a> 
@@ -48,6 +50,7 @@
           * <a href = "#UCS_PDP_P1"> Problem # 1 </a>
           * <a href = "#UCS_PDP_P2"> Problem # 2 </a>
           * <a href = "#UCS_PDP_P3"> Problem # 3 </a>
+          
 ## <div id = "Overview_Head"> Overview </div>
 
 Artificial Intelligence is the study of building agents that act rationally. Most of the time, these agents perform some kind of search algorithm in the background in order to achieve their tasks. 
@@ -70,6 +73,16 @@ This plan is achieved through search algorithms.
 </p>
 
 <p align = 'center' > Assume that above Graph will be used by User. </p>
+
+## <div id = "UI">  User Interface </div>
+
+<p align = 'center'>
+ <img src = "Screenshots/UI/First_Window.png"  alt = "1st Window" >
+ <img src = "Screenshots/UI/Second_Window.png"  alt = "2nd Window" >
+ <img src = "Screenshots/UI/First_Window.png"  alt = "3rd Window" >
+ <img src = "Screenshots/UI/First_Window.png"  alt = "4th Window" >
+ <img src = "Screenshots/UI/First_Window.png"  alt = "5th Window" >
+</p>
 
 ## <div id = "Uniform_Search_Head"> 1) Uninformed Search </d>
 
