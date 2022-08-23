@@ -370,7 +370,7 @@ search.
 
 
 
-### <div id = "UCS_Head"> iii) Uniform-First Search
+### <div id = "UCS_Head"> iii) Uniform-Cost Search
 
 Breadth-first search finds the shallowest goal state, but this may not always be
 the least-cost solution for a general path cost function.
