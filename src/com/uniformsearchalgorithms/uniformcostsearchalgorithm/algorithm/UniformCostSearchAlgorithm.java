@@ -47,7 +47,7 @@ public class UniformCostSearchAlgorithm {
         
         if(currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState)){
         	
-        	result += "\n\n\tGoal State: " + goalState  +  "\n\n Step # %s \n\t".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
+        	result += "\n\n Step # %s \n\t".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
 
         	result += "\n\tPriority Queue" + priorityQueue + "\n";
         	
