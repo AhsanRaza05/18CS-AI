@@ -159,17 +159,23 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 #### <p align = "center"> Traversing </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_T_1_i.png" alt = "Solution # 1_i">
+ <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_T_1_0.png" alt = "Solution # 1_0"> 
+ <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_T_1_i.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_T_1_ii.png" alt = "Solution # 1_ii">
 </p>
 
 #### <p align = "center"> Searching </p>
 
 <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_S_1_0.png" alt = "Solution # 1_0">
   <img src = "Screenshots/Solution_Screenshots/BFS/BF_S_U_S_1_i.png" alt = "Solution # 1_i">
 </p>
 
-## <p align = "center" id = "BFS_PDP"> Pre Define Problem </p>
+## <p align = "center" id = "BFS_PDP"> Pre Define Problems </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/UI/First_Window.png" alt = "Problem # 1" >
+</p>
 
 <h2 align="center" id = "BFS_PDP_P1"> BFS Example Problem # 1</h2>
   
@@ -267,6 +273,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 #### <p align = "center"> Traversing </p>
 
 <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_T_1_0.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_T_1_i.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_T_1_ii.png" alt = "Solution # 1_ii">
 </p>
@@ -275,6 +282,7 @@ Where "b" = Branch Factor (Number of nodes from root first expands on a set numb
 #### <p align = "center"> Searching </p>
 
 <p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_T_1_0.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/DFS/DF_S_U_S_1_i.png" alt = "Solution # 1_i">
 </p>
 
