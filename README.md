@@ -341,7 +341,7 @@ search.
 <p align = 'center'>
   <img src = "Screenshots/Solution_Screenshots/DLS/DL_S_U_S_1_i.png" alt = "Solution # 1_i">
 </p> 
-## <p align = "center" id = "DLS_UDP"> Pre Define Problem </p>
+## <p align = "center" id = "DLS_PDP"> Pre Define Problem </p>
 
 <h2 align="center" id = "DLS_PDP_P1"> DLS Problem # 1</h2>
   
