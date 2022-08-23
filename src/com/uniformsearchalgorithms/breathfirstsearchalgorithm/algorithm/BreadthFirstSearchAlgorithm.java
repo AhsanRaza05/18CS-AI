@@ -95,7 +95,7 @@ public class BreadthFirstSearchAlgorithm {
 
 		String result = "";
 
-		result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tQueue: " + queue + "\n\tVisited: "
+		result += "\n\tGoal State: " + goalState +"\n\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tQueue: " + queue + "\n\tVisited: "
 				+ Arrays.toString(visitedNodes) + "\n";
 
 		l: do {

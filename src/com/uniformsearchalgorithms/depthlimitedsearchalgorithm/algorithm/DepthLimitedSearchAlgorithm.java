@@ -101,7 +101,7 @@ public class DepthLimitedSearchAlgorithm {
         int step = 1;
 
         String result = "";
-        result += "\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n\n";
+        result += "\n\n\tGoal State: " + goalState  + "\n\n\tDepth Level Limit: " + level + "\n" +"\n\tStep # " + step + "\n\tCurrent Node: " + currentNode + "\n\tStack: " + stack + "\n\tVisited: " + Arrays.toString(visitedNodes) + "\n\n";
        
 
         // Repeat Loop until Stack is empty

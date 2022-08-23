@@ -47,15 +47,15 @@ public class UniformCostSearchAlgorithm {
         
         if(currentMyQueue.getPath()[0].getItem().equalsIgnoreCase(goalState)){
         	
-        	result += "\n Step # %s \n\t".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
+        	result += "\n\n\tGoal State: " + goalState  +  "\n\n Step # %s \n\t".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
 
         	result += "\n\tPriority Queue" + priorityQueue + "\n";
         	
-        	return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+"\n*********************** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" + result);
+        	return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+"\n*********************** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" +  "\n\n\tGoal State: " + goalState   + result);
 
         }
     
-        result += "\n Step # %s \n\tFrom the path we have:".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
+        result +=  "\n\n Step # %s \n\tFrom the path we have:".formatted(steps) + "\n\t    " + currentMyQueue + "\n";
 
         List<WeightedNode> list ;
 
@@ -88,7 +88,7 @@ public class UniformCostSearchAlgorithm {
         steps++;
     }
    
-    return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+"\n************************************** Goal Does not Exist! **************************************\n" + result);
+    return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+ "\n\n************************************** Goal Does not Exist! **************************************\n"+ "\n\n\tGoal State: " + goalState   + result);
 
     }
 
