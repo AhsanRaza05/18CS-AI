@@ -77,11 +77,38 @@ This plan is achieved through search algorithms.
 ## <div id = "UI">  User Interface </div>
 
 <p align = 'center'>
+ 
+ 
  <img src = "Screenshots/UI/First_Window.png"  alt = "1st Window" >
+ 
+ <div align = "center">
+ <figcaption align = "center"> Fig-A: Selecting Algorithm </figcaption>
+ </div>
+ 
  <img src = "Screenshots/UI/Second_Window.png"  alt = "2nd Window" >
- <img src = "Screenshots/UI/First_Window.png"  alt = "3rd Window" >
- <img src = "Screenshots/UI/First_Window.png"  alt = "4th Window" >
- <img src = "Screenshots/UI/First_Window.png"  alt = "5th Window" >
+ 
+ <div align = "center">
+ <figcaption align = "center"> Fig-B: Selecting BFS and Defining the Graph </figcaption>
+ </div>
+ 
+ <img src = "Screenshots/UI/Third_Window.png"  alt = "3rd Window" >
+ 
+ <div align = "center">
+ <figcaption align = "center"> Fig-C: Selecting DFS and Defining the Graph </figcaption>
+ </div>
+ 
+ <img src = "Screenshots/UI/Fourth_Window.png"  alt = "4th Window" >
+ 
+ <div align = "center">
+ <figcaption align = "center"> Fig-D: Selecting DLS and Defining the Graph </figcaption>
+ </div>
+ 
+ <img src = "Screenshots/UI/Fifth_Window.png"  alt = "5th Window" >
+ 
+ <div align = "center">
+ <figcaption align = "center">  Fig-E: Selecting UCS and Defining the Graph  </figcaption>
+ </div>
+ 
 </p>
 
 ## <div id = "Uniform_Search_Head"> 1) Uninformed Search </d>
