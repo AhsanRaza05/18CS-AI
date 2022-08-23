@@ -221,18 +221,19 @@ public class DepthFirstSearchAlgorithmExamples {
         Node twe = new Node("12");
 
         // Set Chidren
-        one.setAllChildren(new Node[]{two, sev, eig});
-        two.setAllChildren(new Node[]{thr, six});
-        thr.setAllChildren(new Node[]{fou, fiv});
-        fou.setAllChildren(new Node[]{});
-        fiv.setAllChildren(new Node[]{});
-        six.setAllChildren(new Node[]{});
-        sev.setAllChildren(new Node[]{});
-        eig.setAllChildren(new Node[]{nin, twe});
-        nin.setAllChildren(new Node[]{ten, ele});
-        ten.setAllChildren(new Node[]{});
-        ele.setAllChildren(new Node[]{});
-        twe.setAllChildren(new Node[]{});
+        one.setAllChildren(new Node[] { two, thr, fou });
+		two.setAllChildren(new Node[] { fiv, six });
+		thr.setAllChildren(new Node[] {});
+		fou.setAllChildren(new Node[] { sev, eig });
+		fiv.setAllChildren(new Node[] { nin, ten });
+		six.setAllChildren(new Node[] {});
+		sev.setAllChildren(new Node[] { ele, twe });
+		eig.setAllChildren(new Node[] {});
+		nin.setAllChildren(new Node[] {});
+		ten.setAllChildren(new Node[] {});
+		ele.setAllChildren(new Node[] {});
+		twe.setAllChildren(new Node[] {});
+
 
         size = 12;
         // System.out.println("\n*********** PROBLEM # 5 *********** ");
