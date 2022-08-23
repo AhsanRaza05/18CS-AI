@@ -414,6 +414,7 @@ It maintain a "Priority Queue".
 
 <p align = 'center'>
   <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_2_i.png" alt = "Solution # 2">
+  <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_2_ii.png" alt = "Solution # 2">
 </p>
 
 </p>
