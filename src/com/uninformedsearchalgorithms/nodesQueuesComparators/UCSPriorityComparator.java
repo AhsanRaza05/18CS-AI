@@ -9,6 +9,13 @@ public class UCSPriorityComparator implements Comparator{
         UCSQueue n1=(UCSQueue)o1;  
         UCSQueue n2=(UCSQueue)o2;  
 
+        System.out.println(n1.getPath()[0] + " " + n1.getPath()[1] );
+        System.out.println(n1.getCost());
+        System.out.println(n2.getCost());
+        System.out.println(n2.getPath()[0] + " " + n2.getPath()[1]);
+        System.out.println(n1.getCost() > n2.getCost());
+        System.out.println();
+        
         if(n1.getCost() > n2.getCost())  
             return 1;  
 

@@ -17,15 +17,21 @@ public class BestFirstSearchAlgorithm {
 
 		    HeuristicWeightedNode currentNode = rootNode;
 		    HeuristicQueue currentMyQueue, temp;
+		    
+		    int sNo = 1;
 
-		    currentMyQueue = new HeuristicQueue(0, new HeuristicWeightedNode[]{currentNode});
-
+		    currentMyQueue = new HeuristicQueue(0, new HeuristicWeightedNode[]{currentNode}, currentNode.getHeuristicCost());
+		    currentMyQueue.setSNo(sNo);
+		    
 		    // Initialize Queue with Starting Node.
 		    priorityQueue.add(currentMyQueue);
 		    
 		    int steps = 1;
 
 		    String result= "";
+		    
+		    int cost = 0;
+            int heuristciCost = 0;
 
 		 // Repeat until Queue is empty  
 		   while( !priorityQueue.isEmpty()) {
@@ -46,7 +52,7 @@ public class BestFirstSearchAlgorithm {
 
 		        	result += "\n\tPriority Queue" + priorityQueue + "\n";
 		        	
-		        	return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+"\n*********************** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" +  "\n\n\tGoal State: " + goalState   + result);
+		        	return ("\n********************************** Best First Search Algorithm ****************************** \n"+"\n*********************** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" +  "\n\n\tGoal State: " + goalState   + result);
 
 		        }
 		    
@@ -66,16 +72,23 @@ public class BestFirstSearchAlgorithm {
 		            
 		            HeuristicWeightedNode[] path =  (HeuristicWeightedNode[]) list.toArray(new HeuristicWeightedNode[list.size()]);
 		            
-		            int cost = currentMyQueue.getCost() + currentNode.getCost()[i];
+		            cost = currentMyQueue.getCost() + currentNode.getCost()[i];
+		            heuristciCost = currentNode.getchildren()[i].getHeuristicCost();
 		            
-		            temp = new HeuristicQueue(cost, path);
+		            temp = new HeuristicQueue(cost, path, heuristciCost);
 		    
 		            if(!isCycle(temp)){
+		            	
+		            	sNo++;
+		            	temp.setSNo(sNo);
 		                priorityQueue.add(temp);
+		                
 		            }
 		            
 		        }
 		    
+		        System.out.println("STEP # " + steps);
+		        System.out.println("Priority Queue Before Sorting: " + priorityQueue);
 		        Collections.sort(priorityQueue,new HeuristicPriorityComparator());
 
 		        result += "\n\tPriority Queue" + priorityQueue + "\n";
@@ -83,7 +96,7 @@ public class BestFirstSearchAlgorithm {
 		        steps++;
 		    }
 		   
-		    return ("\n********************************** Uniform Cost Search Algorithm ****************************** \n"+ "\n\n************************************** Goal Does not Exist! **************************************\n"+ "\n\n\tGoal State: " + goalState   + result);
+		    return ("\n********************************** Best First Search Algorithm ****************************** \n"+ "\n\n************************************** Goal Does not Exist! **************************************\n"+ "\n\n\tGoal State: " + goalState   + result);
 
 		    }
 

@@ -9,12 +9,14 @@ public class HeuristicQueue {
     private HeuristicWeightedNode[] path; 
     
     private Integer heuristicCost;
+    
+    private Integer sNo;
 
     // Constructor
-    public HeuristicQueue(int cost, HeuristicWeightedNode[] path){
+    public HeuristicQueue(int cost, HeuristicWeightedNode[] path, int heuristicCost){
         this.cost = cost;
         this.path = path;
-//        this.heuristicCost = heuristicCost;
+        this.heuristicCost = heuristicCost;
     }
 
     // Setters
@@ -42,8 +44,17 @@ public class HeuristicQueue {
 		return heuristicCost;
 	}
 
+	
 
-    public String toString(){
+    public Integer getSNo() {
+		return sNo;
+	}
+
+	public void setSNo(Integer sNo) {
+		this.sNo = sNo;
+	}
+
+	public String toString(){
 
         String path = "\n\t<";
 
@@ -55,6 +66,7 @@ public class HeuristicQueue {
 
         path = path.substring(0, path.length() - 1);
         path += "> = %s (Cost)".formatted(this.cost);
+        path += ", Heuristic Cost = %s".formatted(this.heuristicCost);
 
         return path;
     }

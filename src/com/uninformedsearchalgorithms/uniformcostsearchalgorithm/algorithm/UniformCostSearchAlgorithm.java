@@ -82,7 +82,8 @@ public class UniformCostSearchAlgorithm {
             }
             
         }
-    
+        System.out.println("STEP # " + steps);
+        System.out.println("Priority Queue Before Sorting: " + priorityQueue);
         Collections.sort(priorityQueue,new UCSPriorityComparator());
 
         result += "\n\tPriority Queue" + priorityQueue + "\n";
