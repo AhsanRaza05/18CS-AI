@@ -1,8 +1,10 @@
 package com.informedsearchalgorithms.nodesQueuesComparators;
 
+import java.util.Comparator;
+
 import com.uninformedsearchalgorithms.nodesQueuesComparators.UCSQueue;
 
-public class HeuristicPriorityComparator {
+public class HeuristicPriorityComparator implements Comparator{
 
 	 public int compare(Object o1,Object o2){  
 		    

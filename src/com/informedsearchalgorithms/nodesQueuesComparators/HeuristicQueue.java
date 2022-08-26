@@ -1,20 +1,20 @@
 package com.informedsearchalgorithms.nodesQueuesComparators;
 
-import com.uninformedsearchalgorithms.nodesQueuesComparators.WeightedNode;
+import com.informedsearchalgorithms.nodesQueuesComparators.HeuristicWeightedNode;
 
 public class HeuristicQueue {
 	
     private Integer cost;
     
-    private WeightedNode[] path; 
+    private HeuristicWeightedNode[] path; 
     
     private Integer heuristicCost;
 
     // Constructor
-    public HeuristicQueue(int cost, WeightedNode[] path, Integer heuristicCost){
+    public HeuristicQueue(int cost, HeuristicWeightedNode[] path){
         this.cost = cost;
         this.path = path;
-        this.heuristicCost = heuristicCost;
+//        this.heuristicCost = heuristicCost;
     }
 
     // Setters
@@ -22,7 +22,7 @@ public class HeuristicQueue {
         this.cost = cost;
     }
 
-    public void setPath(WeightedNode[] path){
+    public void setPath(HeuristicWeightedNode[] path){
         this.path = path;
     }
     
@@ -35,7 +35,7 @@ public class HeuristicQueue {
         return cost;
     }
 
-    public WeightedNode[] getPath(){
+    public HeuristicWeightedNode[] getPath(){
         return path;
     }
 	public Integer getHeuristicCost() {
