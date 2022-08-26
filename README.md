@@ -50,6 +50,19 @@
           * <a href = "#UCS_PDP_P1"> Problem # 1 </a>
           * <a href = "#UCS_PDP_P2"> Problem # 2 </a>
           * <a href = "#UCS_PDP_P3"> Problem # 3 </a>
+
+* <a href = "#Inform_Search_Head" > Informed Search </a> 
+
+  * <a href = "#GBFS_Head" > Best First Search Algorithm </a>
+    * <a href = "#po5" > Program Output </a> 
+        * <a href = "#GBFS_UDP" > User Define Problem </a>
+          * <a href = "#GBFS_UDP_P1"> Problem # 1 </a>
+        * <a href = "#GBFS_PDP"> Predefine Problems </a>
+          * <a href = "#GBFS_PDP_P1"> Problem # 1 </a>
+          * <a href = "#GBFS_PDP_P2"> Problem # 2 </a>
+          * <a href = "#GBFS_PDP_P3"> Problem # 3 </a>
+          * <a href = "#GBFS_PDP_P4"> Problem # 4 </a>
+          * <a href = "#GBFS_PDP_P5"> Problem # 5 </a>
           
 ## <div id = "Overview_Head"> Overview </div>
 
@@ -498,6 +511,89 @@ It maintain a "Priority Queue".
   <img src = "Screenshots/Solution_Screenshots/UCS/UCS_S_3_iv.png" alt = "Solution # 3_iv">
 </p>
 
+## <div id = "Inform_Search_Head"> 2) Informed Search </d>
 
+Uninformed search strategies can find solutions to problems by systematically
+generating new states and testing them against the goal.
 
+Unfortunately, these strategies are incredibly inefficient in most cases.
 
+Uninformed search uses problem-specific knowledge—can find solutions more
+efficiently.
+
+Heuristics are "rules of thumb", educated guesses, intuitive judgments or
+simply common sense.
+
+A heuristic function, h(n), provides an estimate of the cost of the path from a
+given node to the closest goal state.
+
+Must be zero if node represents a goal state.
+
+– Greedy-Best-First search
+
+– A * search
+
+### <div id = "GBFS_Head"> i) Greedy-Best-First Search </div>
+
+Depth first search is good because it allows a solution to be found without all
+competing branches to be expanded.
+
+Breadth first search is good because it does not get trapped on dead-end paths.
+
+Best First Search combines the advantages of the two.
+
+At each step of the best first search process, we select the most promising of
+the nodes we have generated so far.
+
+This is done by applying an appropriate heuristic function to each of them.
+
+**Greedy Best-First search tries to expand the node that is closest to the goal
+assuming it will lead to a solution quickly.**
+
+  * f(n) = h(n)
+
+  * f(n) = Function that gives an evaluation of the state.
+
+  * h(n) = The cost of getting from the current state to a goal state.
+
+#### <div id = "" > Features </div>
+
+The Greedy Best-First-Search algorithm works as uniform cost search, except that it
+has some estimate (called a heuristic) of how far from the goal any node is.
+
+Instead of selecting the node closest to the starting point, it selects the node closest to the goal.
+
+Greedy Best-First-Search is not guaranteed to find a shortest path.
+
+However, it runs much quicker than uniform cost search algorithm because it uses the heuristic function to guide its way towards the goal very quickly
+
+<h2 align="center" id = "po5"> <u> Program Output </u> </h2> 
+
+## <p align = "center" id = "GBFS_UDP"> User Define Problem </p>
+
+### <p align = "center" id = "BFS_UDP_P1"> Problem # 1</p>
+
+#### <p align = "center"> Searching </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_0">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+</p>
+
+## <p align = "center" id = "GBFS_PDP"> Pre Define Problems </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/UI/" alt = "Problem # 1" >
+</p>
+
+<h2 align="center" id = "BFS_PDP_P1"> GBFS Example Problem # 1</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 1" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+</p>
