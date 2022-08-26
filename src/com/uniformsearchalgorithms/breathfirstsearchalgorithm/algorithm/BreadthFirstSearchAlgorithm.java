@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.uniformsearchalgorithms.node.Node;
+import com.uniformsearchalgorithms.nodesQueuesComparators.Node;
 
 import java.util.LinkedList;
 import java.util.Arrays;

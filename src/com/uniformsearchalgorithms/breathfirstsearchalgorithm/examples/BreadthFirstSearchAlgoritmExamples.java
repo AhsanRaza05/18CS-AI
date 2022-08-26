@@ -6,7 +6,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
-import com.uniformsearchalgorithms.node.Node;
+import com.uniformsearchalgorithms.nodesQueuesComparators.Node;
 
 public class BreadthFirstSearchAlgoritmExamples {
 

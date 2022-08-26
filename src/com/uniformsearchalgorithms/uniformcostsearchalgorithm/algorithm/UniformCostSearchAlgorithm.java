@@ -12,18 +12,20 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.uniformsearchalgorithms.node.WeightedNode;
+import com.uniformsearchalgorithms.nodesQueuesComparators.UCSPriorityComparator;
+import com.uniformsearchalgorithms.nodesQueuesComparators.UCSQueue;
+import com.uniformsearchalgorithms.nodesQueuesComparators.WeightedNode;
 
 public class UniformCostSearchAlgorithm {
 
    public static String search(WeightedNode rootNode, int totalNodes, String goalState){
 
-    List <MyQueue> priorityQueue = new ArrayList<MyQueue>();
+    List <UCSQueue> priorityQueue = new ArrayList<UCSQueue>();
 
     WeightedNode currentNode = rootNode;
-    MyQueue currentMyQueue, temp;
+    UCSQueue currentMyQueue, temp;
 
-    currentMyQueue = new MyQueue(0, new WeightedNode[]{currentNode});
+    currentMyQueue = new UCSQueue(0, new WeightedNode[]{currentNode});
 
     // Initialize Queue with Starting Node.
     priorityQueue.add(currentMyQueue);
@@ -73,7 +75,7 @@ public class UniformCostSearchAlgorithm {
             
             int cost = currentMyQueue.getCost() + currentNode.getCost()[i];
             
-            temp = new MyQueue(cost, path);
+            temp = new UCSQueue(cost, path);
     
             if(!isCycle(temp)){
                 priorityQueue.add(temp);
@@ -81,7 +83,7 @@ public class UniformCostSearchAlgorithm {
             
         }
     
-        Collections.sort(priorityQueue,new PriorityComparator());
+        Collections.sort(priorityQueue,new UCSPriorityComparator());
 
         result += "\n\tPriority Queue" + priorityQueue + "\n";
 
@@ -93,7 +95,7 @@ public class UniformCostSearchAlgorithm {
     }
 
     
-    static boolean isCycle(MyQueue temp){
+    static boolean isCycle(UCSQueue temp){
 
         if(temp.getPath()[0] == temp.getPath()[temp.getPath().length-1]){
 

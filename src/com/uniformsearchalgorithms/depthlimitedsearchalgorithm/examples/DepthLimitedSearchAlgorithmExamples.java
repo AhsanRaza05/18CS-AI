@@ -6,7 +6,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
-import com.uniformsearchalgorithms.node.*;
+import com.uniformsearchalgorithms.nodesQueuesComparators.*;
 
 public class DepthLimitedSearchAlgorithmExamples {
 

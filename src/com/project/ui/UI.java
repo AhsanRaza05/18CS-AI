@@ -21,8 +21,8 @@ import com.uniformsearchalgorithms.breathfirstsearchalgorithm.examples.BreadthFi
 import com.uniformsearchalgorithms.depthfirstsearchalgorithm.algorithm.DepthFirstSearchAlgorithm;
 import com.uniformsearchalgorithms.depthfirstsearchalgorithm.examples.DepthFirstSearchAlgorithmExamples;
 import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.examples.DepthLimitedSearchAlgorithmExamples;
+import com.uniformsearchalgorithms.nodesQueuesComparators.*;
 import com.uniformsearchalgorithms.uniformcostsearchalgorithm.examples.UniformCostSearchAlgorithmExamples;
-import com.uniformsearchalgorithms.node.*;
 
 /**
  *

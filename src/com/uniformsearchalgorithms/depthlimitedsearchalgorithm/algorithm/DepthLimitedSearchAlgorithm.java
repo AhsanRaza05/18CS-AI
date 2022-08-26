@@ -1,8 +1,8 @@
 package com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm;
 
-import com.uniformsearchalgorithms.node.*;
-
 import java.util.*;
+
+import com.uniformsearchalgorithms.nodesQueuesComparators.*;
 
 public class DepthLimitedSearchAlgorithm {
 

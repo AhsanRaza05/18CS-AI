@@ -14,7 +14,7 @@ import javax.swing.JTextArea;
 import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
 import com.uniformsearchalgorithms.depthfirstsearchalgorithm.algorithm.DepthFirstSearchAlgorithm;
 import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
-import com.uniformsearchalgorithms.node.Node;
+import com.uniformsearchalgorithms.nodesQueuesComparators.Node;
 
 /**
  *

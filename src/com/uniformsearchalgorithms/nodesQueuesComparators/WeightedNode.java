@@ -1,4 +1,4 @@
-package com.uniformsearchalgorithms.node;
+package com.uniformsearchalgorithms.nodesQueuesComparators;
 
 public class WeightedNode {
 

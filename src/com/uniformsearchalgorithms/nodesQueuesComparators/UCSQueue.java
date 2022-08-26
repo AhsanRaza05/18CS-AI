@@ -1,15 +1,13 @@
-package com.uniformsearchalgorithms.uniformcostsearchalgorithm.algorithm;
+package com.uniformsearchalgorithms.nodesQueuesComparators;
 
-import com.uniformsearchalgorithms.node.WeightedNode;
-
-public class MyQueue{
+public class UCSQueue{
 
     private Integer cost;
     
     private WeightedNode[] path; 
 
     // Constructor
-    public MyQueue(int cost, WeightedNode[] path){
+    public UCSQueue(int cost, WeightedNode[] path){
         this.cost = cost;
         this.path = path;
     }

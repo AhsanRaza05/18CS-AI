@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.uniformsearchalgorithms.node.WeightedNode;
+import com.uniformsearchalgorithms.nodesQueuesComparators.WeightedNode;
 import com.uniformsearchalgorithms.uniformcostsearchalgorithm.algorithm.UniformCostSearchAlgorithm;
 
 public class UniformCostSearchAlgorithmExamples {

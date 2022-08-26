@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
 
 import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
 import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
-import com.uniformsearchalgorithms.node.*;
+import com.uniformsearchalgorithms.nodesQueuesComparators.*;
 import com.uniformsearchalgorithms.uniformcostsearchalgorithm.algorithm.UniformCostSearchAlgorithm;
 
 /**
