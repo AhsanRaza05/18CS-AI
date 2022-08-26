@@ -1,7 +1,7 @@
 package Application;
 
 import com.project.ui.UI;
-import com.uniformsearchalgorithms.breathfirstsearchalgorithm.examples.BreadthFirstSearchAlgoritmExamples;
+import com.uninformedsearchalgorithms.breathfirstsearchalgorithm.examples.BreadthFirstSearchAlgoritmExamples;
 
 public class Application {
 

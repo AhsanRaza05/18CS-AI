@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.uniformsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
-import com.uniformsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
-import com.uniformsearchalgorithms.nodesQueuesComparators.*;
-import com.uniformsearchalgorithms.uniformcostsearchalgorithm.algorithm.UniformCostSearchAlgorithm;
+import com.uninformedsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
+import com.uninformedsearchalgorithms.depthlimitedsearchalgorithm.algorithm.DepthLimitedSearchAlgorithm;
+import com.uninformedsearchalgorithms.nodesQueuesComparators.*;
+import com.uninformedsearchalgorithms.uniformcostsearchalgorithm.algorithm.UniformCostSearchAlgorithm;
 
 /**
  *
