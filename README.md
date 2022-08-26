@@ -1,5 +1,5 @@
 
-# Searching Algorithms of Aritificial Intelligence
+# Search Algorithms in Artificial Intelligence
 
 ## Table of Contents
 * <a href = "#Overview_Head" > Overview </a> 
