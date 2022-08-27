@@ -10,11 +10,11 @@ public class Application {
 
 	public static void main(String[] args) {
 
-//		new UI().setVisible(true);
+		new UI().setVisible(true);
 		
 //		GreedyBestFirstSearchAlgorithmExamples.displayExamples();
 		
-		AStarSearchAlgorithmExamples.displayExamples();
+//		AStarSearchAlgorithmExamples.displayExamples();
 	}
  
 }

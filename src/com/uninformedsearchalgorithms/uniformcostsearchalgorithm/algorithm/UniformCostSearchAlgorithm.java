@@ -31,6 +31,8 @@ public class UniformCostSearchAlgorithm {
     priorityQueue.add(currentMyQueue);
     
     int steps = 1;
+    
+    int sNo = 1;
 
     String result= "";
 
@@ -78,6 +80,10 @@ public class UniformCostSearchAlgorithm {
             temp = new UCSQueue(cost, path);
     
             if(!isCycle(temp)){
+            	
+            	sNo++;
+            	temp.setSNo(sNo);
+            	
                 priorityQueue.add(temp);
             }
             
