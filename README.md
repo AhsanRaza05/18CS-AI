@@ -583,14 +583,15 @@ However, it runs much quicker than uniform cost search algorithm because it uses
 #### <p align = "center"> Searching </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_0">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+ <img src = "Screenshots/Solution_Screenshots/GBFS/GBF_S_U_S_1_i.png" alt = "Solution # 1_0">
+  <img src = "Screenshots/Solution_Screenshots/GBFS/GBF_S_U_S_1_ii.png" alt = "Solution # 1_i">
+ <img src = "Screenshots/Solution_Screenshots/GBFS/GBF_S_U_S_1_iii.png" alt = "Solution # 1_i">
 </p>
 
 ## <p align = "center" id = "GBFS_PDP"> Pre Define Problems </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/UI/" alt = "Problem # 1" >
+  <img src = "Screenshots/UI/GBFS_Examples.png" alt = "Problem # 1" >
 </p>
 
 <h2 align="center" id = "GBFS_PDP_P1"> GBFS Example Problem # 1</h2>
@@ -652,14 +653,17 @@ It is Optimal.
 #### <p align = "center"> Searching </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_0">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+ 
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_U_S_1_i.png" alt = "Solution # 1_0">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_U_S_1_ii.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_U_S_1_iii.png" alt = "Solution # 1_i">
+ 
 </p>
 
 ## <p align = "center" id = "ASS_PDP"> Pre Define Problems </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/UI/" alt = "Problem # 1" >
+  <img src = "Screenshots/UI/AStar_Examples.png" alt = "Problem # 1" >
 </p>
 
 <h2 align="center" id = "ASS_PDP_P1"> ASS Example Problem # 1</h2>
