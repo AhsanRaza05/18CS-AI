@@ -16,6 +16,13 @@ public class UCSPriorityComparator implements Comparator{
         System.out.println(n1.getCost() > n2.getCost());
         System.out.println();
         
+        if(n1.getCost() == n2.getCost()) {
+        	
+        	if(n1.getSNo() > n2.getSNo())  
+	            return 1;  
+        	
+        }
+        
         if(n1.getCost() > n2.getCost())  
             return 1;  
 
