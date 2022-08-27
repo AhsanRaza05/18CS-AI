@@ -20,4 +20,14 @@ public class AStarQueue extends GBFSQueue{
 		this.finalCost = finalCost;
 	}
 	
+	public String toString(){
+
+		String path = super.toString();
+		        
+        path += ", Final Cost = %s".formatted(this.finalCost);
+
+        return path;
+    }
+
+
 }

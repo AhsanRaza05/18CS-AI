@@ -53,7 +53,7 @@ public class AStarSearchAlgorithm {
 
 		        	result += "\n\tPriority Queue" + priorityQueue + "\n";
 		        	
-		        	return ("\n********************************** A Star Search Algorithm ****************************** \n"+"\n*********************** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" +  "\n\n\tGoal State: " + goalState   + result);
+		        	return ("\n********************************** A Star Search Algorithm ****************************** \n"+"\n*********** Shortest Path: " + currentMyQueue.toString().replaceAll("\n","").replaceAll("\t", "") + " ************************" +  "\n\n\tGoal State: " + goalState   + result);
 
 		        }
 		    

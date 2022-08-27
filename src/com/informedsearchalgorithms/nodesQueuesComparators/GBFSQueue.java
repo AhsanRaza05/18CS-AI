@@ -44,8 +44,6 @@ public class GBFSQueue {
 		return heuristicCost;
 	}
 
-	
-
     public Integer getSNo() {
 		return sNo;
 	}
