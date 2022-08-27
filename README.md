@@ -60,9 +60,16 @@
         * <a href = "#GBFS_PDP"> Predefine Problems </a>
           * <a href = "#GBFS_PDP_P1"> Problem # 1 </a>
           * <a href = "#GBFS_PDP_P2"> Problem # 2 </a>
-          * <a href = "#GBFS_PDP_P3"> Problem # 3 </a>
-          * <a href = "#GBFS_PDP_P4"> Problem # 4 </a>
-          * <a href = "#GBFS_PDP_P5"> Problem # 5 </a>
+          
+          
+  * <a href = "#ASS_Head" > A* Search Algorithm </a>
+    * <a href = "#po6" > Program Output </a> 
+        * <a href = "#ASS_UDP" > User Define Problem </a>
+          * <a href = "#ASS_UDP_P1"> Problem # 1 </a>
+        * <a href = "#ASS_PDP"> Predefine Problems </a>
+          * <a href = "#ASS_PDP_P1"> Problem # 1 </a>
+          * <a href = "#ASS_PDP_P2"> Problem # 2 </a>
+        
           
 ## <div id = "Overview_Head"> Overview </div>
 
@@ -571,7 +578,7 @@ However, it runs much quicker than uniform cost search algorithm because it uses
 
 ## <p align = "center" id = "GBFS_UDP"> User Define Problem </p>
 
-### <p align = "center" id = "BFS_UDP_P1"> Problem # 1</p>
+### <p align = "center" id = "GBFS_UDP_P1"> Problem # 1</p>
 
 #### <p align = "center"> Searching </p>
 
@@ -586,7 +593,7 @@ However, it runs much quicker than uniform cost search algorithm because it uses
   <img src = "Screenshots/UI/" alt = "Problem # 1" >
 </p>
 
-<h2 align="center" id = "BFS_PDP_P1"> GBFS Example Problem # 1</h2>
+<h2 align="center" id = "GBFS_PDP_P1"> GBFS Example Problem # 1</h2>
   
 <p align = 'center'>
   <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 1" >
@@ -597,3 +604,87 @@ However, it runs much quicker than uniform cost search algorithm because it uses
   <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
   <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
 </p>
+
+<h2 align="center" id = "GBFS_PDP_P2"> GBFS Example Problem # 2</h2>
+
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 2" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+</p>
+
+
+### <div id = "ASS_Head"> i) A* Search </div>
+
+Greedy Search minimizes a heuristic h(n) which is an estimated cost from a
+node n to the goal state. However, although greedy search can considerably cut
+the search time (efficient), it is neither optimal nor complete.
+
+Uniform Cost Search minimizes the cost g(n) from the initial state to n. UCS is
+optimal and complete but not efficient
+
+** New Strategy: Combine Greedy Search and UCS to get an efficient algorithm
+which is complete and optimal. **
+
+  A search algorithm to find the shortest path through a search space to a goal
+state using a heuristic.
+ * f(n) = g(n) + h(n)
+* f(n) = Function that gives an evaluation of the state.
+* g(n) = The cost of getting from the initial state to the current state.
+* h(n) = The cost of getting from the current state to a goal state.
+
+#### <div id = "" > Features </div>
+
+It is Efficient.
+
+It is complete.
+
+It is Optimal.
+
+<h2 align="center" id = "po6"> <u> Program Output </u> </h2> 
+
+## <p align = "center" id = "ASS_UDP"> User Define Problem </p>
+
+### <p align = "center" id = "ASS_UDP_P1"> Problem # 1</p>
+
+#### <p align = "center"> Searching </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_0">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+</p>
+
+## <p align = "center" id = "ASS_PDP"> Pre Define Problems </p>
+
+<p align = 'center'>
+  <img src = "Screenshots/UI/" alt = "Problem # 1" >
+</p>
+
+<h2 align="center" id = "ASS_PDP_P1"> ASS Example Problem # 1</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 1" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+</p>
+
+<h2 align="center" id = "ASS_PDP_P2"> ASS Example Problem # 2</h2>
+  
+<p align = 'center'>
+  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 2" >
+</p>
+
+<p align = 'center'>
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
+  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+</p>
+
