@@ -62,7 +62,12 @@ public class DefineGraphHeuristic extends javax.swing.JFrame {
         informationJBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
+        
         nodeLbl.setText("Enter Node");
 
         egNodeLbl.setText("Seperate nodes by space e.g. A B C .....");
@@ -227,6 +232,14 @@ public class DefineGraphHeuristic extends javax.swing.JFrame {
         
     }                      
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {                                   
+	
+    	// Creating the Window of operation based on List of Selected Algorithms
+    	UI.createWindow(UI.selectedAlgorithmsList);
+        System.out.println("You are Champion!");
+    }
+    
+    
     private void subButtonActionPerformed(java.awt.event.ActionEvent evt) {        
     	
     	// Updating the List of Nodes and List of NeighbourGroups with latest values

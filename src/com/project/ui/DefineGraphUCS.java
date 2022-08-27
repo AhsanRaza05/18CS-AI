@@ -4,6 +4,7 @@
  */
 package com.project.ui;
 
+import java.io.IOException;
 import java.util.Map;
 
 import javax.swing.JDialog;
@@ -60,7 +61,8 @@ public class DefineGraphUCS extends javax.swing.JFrame {
         goalStateTF = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         subButton = new javax.swing.JButton();
-
+        informationJBtn = new javax.swing.JButton();
+        
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -168,6 +170,13 @@ public class DefineGraphUCS extends javax.swing.JFrame {
                 subButtonActionPerformed(evt);
             }
         });
+        
+        informationJBtn.setText("i");
+        informationJBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                informationJBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -188,17 +197,27 @@ public class DefineGraphUCS extends javax.swing.JFrame {
                                 .addComponent(subButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            
+            
+            .addGroup(layout.createSequentialGroup()
+                .addGap(153, 153, 153)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(informationJBtn)
+                .addGap(39, 39, 39))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(subButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        		layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(24, 24, 24)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(informationJBtn))
+                    .addGap(18, 18, 18)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(subButton, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -238,6 +257,17 @@ public class DefineGraphUCS extends javax.swing.JFrame {
         System.out.println("You are Champion!");
     }  
 
+    private void informationJBtnActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    	
+    	try {
+			java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://github.com/AhsanRaza05/Search-Algorithms-in-Artificial-Intelligence-Java/blob/main/README.md#UCS_Head"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    } 
+    
     // Variables declaration - do not modify                     
     private javax.swing.JTextField childrenGroupTF;
     private javax.swing.JLabel childrenGroupsLbl1;
@@ -254,5 +284,6 @@ public class DefineGraphUCS extends javax.swing.JFrame {
     private javax.swing.JLabel nodeLbl;
     private javax.swing.JTextField nodeTF;
     private javax.swing.JButton subButton;
+    private javax.swing.JButton informationJBtn;
     // End of variables declaration      
 }
