@@ -14,6 +14,7 @@ import javax.swing.JTextArea;
 
 import com.informedsearchalgorithms.astarsearchalgorithm.examples.AStarSearchAlgorithmExamples;
 import com.informedsearchalgorithms.greedybestfirstsearchalgorithm.examples.GreedyBestFirstSearchAlgorithmExamples;
+import com.informedsearchalgorithms.nodesQueuesComparators.HeuristicWeightedNode;
 import com.uninformedsearchalgorithms.breathfirstsearchalgorithm.algorithm.BreadthFirstSearchAlgorithm;
 import com.uninformedsearchalgorithms.breathfirstsearchalgorithm.examples.BreadthFirstSearchAlgoritmExamples;
 import com.uninformedsearchalgorithms.depthfirstsearchalgorithm.algorithm.DepthFirstSearchAlgorithm;
@@ -26,7 +27,7 @@ import com.uninformedsearchalgorithms.uniformcostsearchalgorithm.examples.Unifor
 public class UI extends javax.swing.JFrame {
 
  
-	public static String allNodes, allNeighbourgroups, goalState, depthLimit, allcostGroups = "";
+	public static String allNodes, allNeighbourgroups, goalState, depthLimit, allcostGroups, allHeuristicCosts = "";
 	
 	public static List<String> selectedAlgorithmsList;
 	
@@ -340,7 +341,7 @@ public class UI extends javax.swing.JFrame {
     		
     		if(AStarBox.isSelected()) {
     			
-    			selectedAlgorithmsList.add("A*");
+    			selectedAlgorithmsList.add("AS");
     		}
     		
     		if(BSBox.isSelected()) {
@@ -394,6 +395,16 @@ public class UI extends javax.swing.JFrame {
     			new DefineGraphUCS().setVisible(true);
 
     		}
+        	else if(item.equalsIgnoreCase("GBFS")) {
+    			
+    			new DefineGraphHeuristic("GBFS").setVisible(true);
+    		}
+        	
+			else if(item.equalsIgnoreCase("AS")) {
+				
+				new DefineGraphHeuristic("AS").setVisible(true);
+			}
+        	
     	}
     	
     	
@@ -427,6 +438,22 @@ public class UI extends javax.swing.JFrame {
     	for(String item: nodesList) {
     		
     		allNodes.put(item, new WeightedNode(item));
+    	}
+    	
+    	System.out.println(allNodes);
+    	
+    	return (allNodes);
+    	
+    }
+    
+    // To Convert List of String to List of HeuristicWeightedNode
+    public static Map<String, HeuristicWeightedNode> getNodesListOfHeuristicWeightedNode(String[] nodesList){
+    	
+    	Map <String, HeuristicWeightedNode> allNodes = new HashMap<String, HeuristicWeightedNode>();
+    	
+    	for(String item: nodesList) {
+    		
+    		allNodes.put(item, new HeuristicWeightedNode(item));
     	}
     	
     	System.out.println(allNodes);
@@ -529,6 +556,74 @@ public class UI extends javax.swing.JFrame {
     		
     }
        
+    public static Map<String, HeuristicWeightedNode> setChildrenAndCostAndHeuristciCost( Map<String, HeuristicWeightedNode> nodes, String allNeighbourgroups, String[] getNodes, String allCostGroups, String allHeuristicCostGroups) {
+    	
+    	// Make String Array of Children.
+    	String childrenGroups[] = allNeighbourgroups.split(" ");
+    	System.out.println("Children Groups" + Arrays.toString(childrenGroups));
+    	
+    	
+    	// Make String Array of Cost.
+    	String costGroups[] = allCostGroups.split(" ");
+    	System.out.println("Cost Groups" + Arrays.toString(costGroups));
+    	
+    	// Make String Array of Heuristic Cost.
+    	String HeuristicCostGroups[] = allHeuristicCostGroups.split(" ");
+    	System.out.println("Heuristc Cost Groups" + Arrays.toString(HeuristicCostGroups));
+    	
+    	HeuristicWeightedNode childNodes[] = new HeuristicWeightedNode[0];
+    	String childrenItem[];
+    	
+    	Integer costs[];
+    	
+    	Integer heuristicCost = 0;
+    	
+    	String parentNodeItem = "";
+    	
+    	// Add children to Nodes.
+    	for(int i = 0; i < childrenGroups.length; i++) {
+    		
+    		// Split a child group to its children items array
+    		childrenItem = childrenGroups[i].split(",");
+    		
+    		costs = new Integer[childrenItem.length];
+    		childNodes = new HeuristicWeightedNode[childrenItem.length];
+    		
+    		// Casting Heuristic Cost from String to Integer.
+    		heuristicCost = Integer.parseInt(HeuristicCostGroups[i]);
+    		
+    		for(int j = 0; j < childrenItem.length; j++) {
+    			
+    			// Convert Items(String) to Nodes 
+    			childNodes[j] = nodes.get(childrenItem[j]);	
+    			
+    			// Split a Cost group to its children cost items array and casting each element to Integer
+    			costs[j] = Integer.parseInt(costGroups[i].split(",")[j]);
+    		}
+    		
+    		// Get Items in Parent Node
+    		parentNodeItem = getNodes[i];
+    		
+    		// Add Children array in node
+    		nodes.get(parentNodeItem).setAllchildren(childNodes);
+    		
+    		// Add Cost array in node
+    		nodes.get(parentNodeItem).setCost(costs);
+    		
+    		// Add Cost array in node
+    		nodes.get(parentNodeItem).setHeuristicCost(heuristicCost);
+    		
+    		
+//    		if(getNodes.length > childrenGroups.length) {
+//    			
+//    			nodes.get(getNodes[getNodes.length - 1]).setAllChildren(new Node[] {});
+//    		}
+    	}
+    	
+    	return nodes;
+    		
+    }
+    
     public static void displayResult(String text) {
     	
     	// create a JTextArea
