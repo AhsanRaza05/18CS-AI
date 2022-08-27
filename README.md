@@ -596,25 +596,23 @@ However, it runs much quicker than uniform cost search algorithm because it uses
 <h2 align="center" id = "GBFS_PDP_P1"> GBFS Example Problem # 1</h2>
   
 <p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 1" >
+  <img src = "Screenshots/Problem_Screenshots/I_P_1.png" alt = "Problem # 1" >
 </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+  <img src = "Screenshots/Solution_Screenshots/GBFS/GBF_S_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/GBFS/GBF_S_1_ii.png" alt = "Solution # 1_ii">
 </p>
 
 <h2 align="center" id = "GBFS_PDP_P2"> GBFS Example Problem # 2</h2>
 
 <p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 2" >
+  <img src = "Screenshots/Problem_Screenshots/I_P_2.png" alt = "Problem # 2" >
 </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+  <img src = "Screenshots/Solution_Screenshots/GBFS/GBF_S_2_i.png" alt = "Solution # 2_i">
+  <img src = "Screenshots/Solution_Screenshots/GBFS/GBF_S_2_ii.png" alt = "Solution # 2_ii">
 </p>
 
 
@@ -667,24 +665,24 @@ It is Optimal.
 <h2 align="center" id = "ASS_PDP_P1"> ASS Example Problem # 1</h2>
   
 <p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 1" >
+  <img src = "Screenshots/Problem_Screenshots/I_P_1.png" alt = "Problem # 1" >
 </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_1_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_1_ii.png" alt = "Solution # 1_ii">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_1_iii.png" alt = "Solution # 1_iii">
 </p>
 
 <h2 align="center" id = "ASS_PDP_P2"> ASS Example Problem # 2</h2>
   
 <p align = 'center'>
-  <img src = "Screenshots/Problem_Screenshots/" alt = "Problem # 2" >
+  <img src = "Screenshots/Problem_Screenshots/I_P_2.png" alt = "Problem # 2" >
 </p>
 
 <p align = 'center'>
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_i">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_ii">
-  <img src = "Screenshots/Solution_Screenshots/" alt = "Solution # 1_iii">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_2_i.png" alt = "Solution # 1_i">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_2_ii.png" alt = "Solution # 1_ii">
+  <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_2_iii.png" alt = "Solution # 1_iii">
 </p>
 
