@@ -4,12 +4,12 @@ import java.util.Comparator;
 
 import com.uninformedsearchalgorithms.nodesQueuesComparators.UCSQueue;
 
-public class HeuristicPriorityComparator implements Comparator{
+public class GBFSPriorityComparator implements Comparator{
 
 	 public int compare(Object o1,Object o2){  
 		    
-	        HeuristicQueue n1=(HeuristicQueue)o1;  
-	        HeuristicQueue n2=(HeuristicQueue)o2;  
+	        GBFSQueue n1=(GBFSQueue)o1;  
+	        GBFSQueue n2=(GBFSQueue)o2;  
 
 	        System.out.println(n1.getPath()[0] + " " + n1.getPath()[1] );
 	        System.out.println(n1.getHeuristicCost());

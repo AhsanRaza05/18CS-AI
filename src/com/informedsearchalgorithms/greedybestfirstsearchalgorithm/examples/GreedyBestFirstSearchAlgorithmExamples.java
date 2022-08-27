@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
-import com.informedsearchalgorithms.greedybestfirstsearchalgorithm.algorithm.BestFirstSearchAlgorithm;
+import com.informedsearchalgorithms.greedybestfirstsearchalgorithm.algorithm.GreedyBestFirstSearchAlgorithm;
 import com.informedsearchalgorithms.nodesQueuesComparators.HeuristicWeightedNode;
 
 
@@ -54,7 +54,7 @@ public static void displayExamples(){
         
      
         // Display Result in Dialogue Box
-        textArea.setText(BestFirstSearchAlgorithm.search(a,  "I"));
+        textArea.setText(GreedyBestFirstSearchAlgorithm.search(a,  "I"));
 
         // wrap a scrollpane around it
         scrollPane = new JScrollPane(textArea);
@@ -87,7 +87,7 @@ public static void displayExamples(){
         g.setAllchildren(new HeuristicWeightedNode[]{});
     
         // Display Result in Dialogue Box
-        textArea.setText(BestFirstSearchAlgorithm.search(s,  "g"));
+        textArea.setText(GreedyBestFirstSearchAlgorithm.search(s,  "g"));
 
         // wrap a scrollpane around it
         scrollPane = new JScrollPane(textArea);

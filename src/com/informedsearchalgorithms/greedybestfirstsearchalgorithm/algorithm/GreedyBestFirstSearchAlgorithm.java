@@ -5,22 +5,22 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import com.informedsearchalgorithms.nodesQueuesComparators.HeuristicQueue;
-import com.informedsearchalgorithms.nodesQueuesComparators.HeuristicPriorityComparator;
+import com.informedsearchalgorithms.nodesQueuesComparators.GBFSQueue;
+import com.informedsearchalgorithms.nodesQueuesComparators.GBFSPriorityComparator;
 import com.informedsearchalgorithms.nodesQueuesComparators.HeuristicWeightedNode;
 
-public class BestFirstSearchAlgorithm {
+public class GreedyBestFirstSearchAlgorithm {
 
 	 public static String search(HeuristicWeightedNode rootNode, String goalState){
 
-		    List <HeuristicQueue> priorityQueue = new ArrayList<HeuristicQueue>();
+		    List <GBFSQueue> priorityQueue = new ArrayList<GBFSQueue>();
 
 		    HeuristicWeightedNode currentNode = rootNode;
-		    HeuristicQueue currentMyQueue, temp;
+		    GBFSQueue currentMyQueue, temp;
 		    
 		    int sNo = 1;
 
-		    currentMyQueue = new HeuristicQueue(0, new HeuristicWeightedNode[]{currentNode}, currentNode.getHeuristicCost());
+		    currentMyQueue = new GBFSQueue(0, new HeuristicWeightedNode[]{currentNode}, currentNode.getHeuristicCost());
 		    currentMyQueue.setSNo(sNo);
 		    
 		    // Initialize Queue with Starting Node.
@@ -75,7 +75,7 @@ public class BestFirstSearchAlgorithm {
 		            cost = currentMyQueue.getCost() + currentNode.getCost()[i];
 		            heuristciCost = currentNode.getchildren()[i].getHeuristicCost();
 		            
-		            temp = new HeuristicQueue(cost, path, heuristciCost);
+		            temp = new GBFSQueue(cost, path, heuristciCost);
 		    
 		            if(!isCycle(temp)){
 		            	
@@ -87,9 +87,7 @@ public class BestFirstSearchAlgorithm {
 		            
 		        }
 		    
-		        System.out.println("STEP # " + steps);
-		        System.out.println("Priority Queue Before Sorting: " + priorityQueue);
-		        Collections.sort(priorityQueue,new HeuristicPriorityComparator());
+		        Collections.sort(priorityQueue,new GBFSPriorityComparator());
 
 		        result += "\n\tPriority Queue" + priorityQueue + "\n";
 
@@ -101,7 +99,7 @@ public class BestFirstSearchAlgorithm {
 		    }
 
 		    
-		    static boolean isCycle(HeuristicQueue temp){
+		    static boolean isCycle(GBFSQueue temp){
 
 		        if(temp.getPath()[0] == temp.getPath()[temp.getPath().length-1]){
 

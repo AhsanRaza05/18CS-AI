@@ -2,7 +2,7 @@ package com.informedsearchalgorithms.nodesQueuesComparators;
 
 import com.informedsearchalgorithms.nodesQueuesComparators.HeuristicWeightedNode;
 
-public class HeuristicQueue {
+public class GBFSQueue {
 	
     private Integer cost;
     
@@ -13,7 +13,7 @@ public class HeuristicQueue {
     private Integer sNo;
 
     // Constructor
-    public HeuristicQueue(int cost, HeuristicWeightedNode[] path, int heuristicCost){
+    public GBFSQueue(int cost, HeuristicWeightedNode[] path, int heuristicCost){
         this.cost = cost;
         this.path = path;
         this.heuristicCost = heuristicCost;

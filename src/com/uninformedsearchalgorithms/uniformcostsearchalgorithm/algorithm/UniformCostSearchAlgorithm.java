@@ -96,7 +96,7 @@ public class UniformCostSearchAlgorithm {
     }
 
     
-    static boolean isCycle(UCSQueue temp){
+   static boolean isCycle(UCSQueue temp){
 
         if(temp.getPath()[0] == temp.getPath()[temp.getPath().length-1]){
 
