@@ -35,7 +35,8 @@ public class UI extends javax.swing.JFrame {
     public UI() {
         initComponents();
         
-        yesRButton.setSelected(true);
+        BFSCBox.setSelected(true);
+        noRButton.setSelected(true);
         
     }
 
