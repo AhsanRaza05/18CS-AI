@@ -1,6 +1,7 @@
 package com.project.ui;
 
 import java.util.LinkedList;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -67,7 +68,7 @@ public class UI extends javax.swing.JFrame {
         noRButton = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         subButton = new javax.swing.JButton();
-
+        informationJButton = new javax.swing.JButton();
         
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,20 +105,17 @@ public class UI extends javax.swing.JFrame {
         HCSBox.setText("HCS");
         
 
+        informationJButton.setText("i");
+        informationJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                informationJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout searchPanelLayout = new javax.swing.GroupLayout(searchPanel);
         searchPanel.setLayout(searchPanelLayout);
         searchPanelLayout.setHorizontalGroup(
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(typeLbl)
-                .addGap(163, 163, 163))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
-                .addGap(72, 72, 72)
-                .addComponent(typeLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(typeLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -131,17 +129,34 @@ public class UI extends javax.swing.JFrame {
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(GBFSBox)
                     .addComponent(BSBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AStarBox)
                     .addComponent(HCSBox))
                 .addGap(49, 49, 49))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchPanelLayout.createSequentialGroup()
+                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(searchPanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(typeLbl)
+                        .addGap(81, 81, 81)
+                        .addComponent(informationJButton)
+                        .addGap(9, 9, 9))
+                    .addGroup(searchPanelLayout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(typeLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(typeLbl2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(51, 51, 51))
         );
         searchPanelLayout.setVerticalGroup(
             searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchPanelLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(typeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(searchPanelLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(typeLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(informationJButton))
                 .addGap(18, 18, 18)
                 .addGroup(searchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(typeLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,11 +184,6 @@ public class UI extends javax.swing.JFrame {
 
         questionGroup.add(noRButton);
         noRButton.setText("No. I will use example problem");
-        noRButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                noRButtonActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout questionPanelLayout = new javax.swing.GroupLayout(questionPanel);
         questionPanel.setLayout(questionPanelLayout);
@@ -245,6 +255,7 @@ public class UI extends javax.swing.JFrame {
         );
 
         pack();
+        
         setLocationRelativeTo(null);
         
     }
@@ -254,12 +265,19 @@ public class UI extends javax.swing.JFrame {
 //    }                                       
 // 
     
-    private void noRButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noRButtonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_noRButtonActionPerformed
+    private void informationJButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+    	
+    	
+    	try {
+			java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://github.com/AhsanRaza05/Search-Algorithms-in-Artificial-Intelligence-Java/blob/main/README.md#Overview_Head"));
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+    }
+    
 
-    private void subButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subButtonActionPerformed
+    private void subButtonActionPerformed(java.awt.event.ActionEvent evt) {
     	
     	selectedAlgorithmsList = new ArrayList<String>(4);
     	
@@ -672,6 +690,7 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JLabel typeLbl1;
     private javax.swing.JLabel typeLbl2;
     private javax.swing.JRadioButton yesRButton;
+    private javax.swing.JButton informationJButton;
     // End of variables declaration                   
 }
 
