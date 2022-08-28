@@ -12,7 +12,7 @@
 
 * <a href = "#Uniform_Search_Head" > Uninformed Search </a> 
 
-  * <a href = "#BFS_Head" > Breadth First Search Algorithm </a>
+  * <a href = "#BFS_Head" > Breadth First Search Algorithm (BFS) </a>
     * <a href = "#po1" > Program Output </a> 
         * <a href = "#BFS_UDP" > User Define Problem </a>
           * <a href = "#BFS_UDP_P1"> Problem # 1 </a>
@@ -23,7 +23,7 @@
           * <a href = "#BFS_PDP_P4"> Problem # 4 </a>
           * <a href = "#BFS_PDP_P5"> Problem # 5 </a>
 
-  * <a href = "#DFS_Head" > Depth First Search Algorithm </a>
+  * <a href = "#DFS_Head" > Depth First Search Algorithm (DFS) </a>
     * <a href = "#po2" > Program Output </a> 
         * <a href = "#DFS_UDP" > User Define Problem </a>
           * <a href = "#DFS_UDP_P1"> Problem # 1 </a>
@@ -34,7 +34,7 @@
           * <a href = "#DFS_PDP_P4"> Problem # 4 </a>
           * <a href = "#DFS_PDP_P5"> Problem # 5 </a>
           
-  * <a href = "#DLS_Head" > Depth Limited Search Algorithm </a>
+  * <a href = "#DLS_Head" > Depth Limited Search Algorithm (DLS)</a>
     * <a href = "#po3" > Program Output </a> 
         * <a href = "#DLS_UDP" > User Define Problem </a>
           * <a href = "#DLS_UDP_P1"> Problem # 1 </a>
@@ -42,7 +42,7 @@
           * <a href = "#DLS_PDP_P1"> Problem # 1 </a>
           * <a href = "#DLS_PDP_P2"> Problem # 2 </a>
          
-  * <a href = "#UCS_Head" > Uniform Cost Search Algorithm </a>
+  * <a href = "#UCS_Head" > Uniform Cost Search Algorithm (UCS)</a>
     * <a href = "#po4" > Program Output </a> 
         * <a href = "#UCS_UDP" > User Define Problem </a>
           * <a href = "#UCS_UDP_P1"> Problem # 1 </a>
@@ -53,7 +53,7 @@
 
 * <a href = "#Inform_Search_Head" > Informed Search </a> 
 
-  * <a href = "#GBFS_Head" > Best First Search Algorithm </a>
+  * <a href = "#GBFS_Head" > Greedy Best First Search Algorithm (GBFS)</a>
     * <a href = "#po5" > Program Output </a> 
         * <a href = "#GBFS_UDP" > User Define Problem </a>
           * <a href = "#GBFS_UDP_P1"> Problem # 1 </a>
@@ -62,7 +62,7 @@
           * <a href = "#GBFS_PDP_P2"> Problem # 2 </a>
           
           
-  * <a href = "#ASS_Head" > A* Search Algorithm </a>
+  * <a href = "#ASS_Head" > A* Search Algorithm (ASS) </a>
     * <a href = "#po6" > Program Output </a> 
         * <a href = "#ASS_UDP" > User Define Problem </a>
           * <a href = "#ASS_UDP_P1"> Problem # 1 </a>
