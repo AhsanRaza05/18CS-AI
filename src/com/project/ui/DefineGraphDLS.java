@@ -35,6 +35,14 @@ public class DefineGraphDLS extends javax.swing.JFrame {
         depthLimitTF.setText(UI.depthLimit);
         traversingRadioButton.setSelected(true);
         
+        operationButtonGroup = new javax.swing.ButtonGroup();
+        
+        operationButtonGroup.add(traversingRadioButton);
+        traversingRadioButton.setText("Traversing");
+
+        operationButtonGroup.add(searchinRButton);
+        searchinRButton.setText("Searching");
+        
     }
 
     /**
@@ -195,12 +203,12 @@ public class DefineGraphDLS extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
+                    	.addGap(170, 170, 170)
                         .addComponent(subButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
+            	.addGap(170, 170, 170)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(informationJBtn)
