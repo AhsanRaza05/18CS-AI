@@ -4,6 +4,8 @@
 ## Table of Contents
 * <a href = "#Overview_Head" > Overview </a> 
 
+* <a href = "#Installation" > How to Install and Run the Project </a> 
+
 * <a href = "#Types_Head" > Types Of Searching Algorithms </a> 
 
 * <a href = "#UI" > User Interface </a> 
@@ -81,7 +83,15 @@ spaces from an initial configuration to a goal state.
 The Solution to a search problem is a sequence of actions, called the plan that transforms the start state to the goal state.
 
 This plan is achieved through search algorithms.
-     
+
+## <div id = "Installation"> How to Install and Run the Project </div>
+
+#### <div> Method # 1: Download 'Executable (exe)' file from 'Portable App Folder' (Easy & Portable) </div>
+                No need to install anything but it is for WINDOWS OS  
+                
+#### <div> Method # 2: Load and Execute Project in Eclipse IDE </div>
+                Eclipse IDE & JVM will be required.
+      
 ## <div id = "Types_Head">  Types of Searching Algorithms </div>
 
 ![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
