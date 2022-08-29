@@ -113,14 +113,17 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center"> Fig-A: Selecting Algorithm </figcaption>
  </div>
+ </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Second_Window.png"  alt = "2nd Window" >
  </p>
+ </br>
  
  <div align = "center">
   <figcaption align = "center"> Fig-B: Selecting BFS and Defining the Graph </figcaption>
  </div>
+ </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Third_Window.png"  alt = "3rd Window" >
@@ -129,6 +132,7 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center"> Fig-C: Selecting DFS and Defining the Graph </figcaption>
  </div>
+ </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Fourth_Window.png"  alt = "4th Window" >
@@ -137,6 +141,7 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center"> Fig-D: Selecting DLS and Defining the Graph </figcaption>
  </div>
+ </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Fifth_Window.png"  alt = "5th Window" >
@@ -145,6 +150,9 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center">  Fig-E: Selecting UCS and Defining the Graph  </figcaption>
  </div>
+ </br>
+ 
+ **NOTE: Each window contains a i (information) button to open corresponding topic in github to get some concept.**
 
 ## <div id = "Uniform_Search_Head"> 1) Uninformed Search </d>
 
