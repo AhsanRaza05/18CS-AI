@@ -54,6 +54,8 @@ public class DefineGraphDLS extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+    	setResizable(false);
+    	
     	jPanel1 = new javax.swing.JPanel();
         nodeLbl = new javax.swing.JLabel();
         nodeTF = new javax.swing.JTextField();

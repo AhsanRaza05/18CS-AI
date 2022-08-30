@@ -47,6 +47,8 @@ public class UI extends javax.swing.JFrame {
     
     private void initComponents() {
 
+    	setResizable(false);
+    	
     	questionGroup = new javax.swing.ButtonGroup();
         questionGroup.add(yesRButton);
         questionGroup.add(noRButton);

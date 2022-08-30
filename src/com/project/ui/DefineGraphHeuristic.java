@@ -41,6 +41,8 @@ public class DefineGraphHeuristic extends javax.swing.JFrame {
                             
     private void initComponents() {
 
+    	setResizable(false);
+    	
     	jPanel1 = new javax.swing.JPanel();
         nodeLbl = new javax.swing.JLabel();
         nodeTF = new javax.swing.JTextField();
