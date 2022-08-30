@@ -104,6 +104,13 @@ This plan is achieved through search algorithms.
 
 <p align = 'center' > Assume that above Graph will be used by User. </p>
 
+### <div align = 'center' > Format to insert data to program </div>
+
+<p align = 'center' > Nodes = 0 1 2 3 4 </p>
+<p align = 'center' > Neighbours = 1,2 2 3,4 4 0 </p>
+<p align = 'center' > Costs = 2,7 4 1,4 2 0 </p>
+<p align = 'center' > Heuristic Cost = 10 2 3 1 4 </p>
+
 ## <div id = "UI">  User Interface </div>
 
 <p align = 'center'>
