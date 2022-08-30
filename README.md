@@ -4,8 +4,6 @@
 ## Table of Contents
 * <a href = "#Overview_Head" > Overview </a> 
 
-* <a href = "#Installation" > How to Install and Run the Project </a> 
-
 * <a href = "#Types_Head" > Types Of Searching Algorithms </a> 
 
 * <a href = "#UI" > User Interface </a> 
@@ -83,15 +81,7 @@ spaces from an initial configuration to a goal state.
 The Solution to a search problem is a sequence of actions, called the plan that transforms the start state to the goal state.
 
 This plan is achieved through search algorithms.
-
-## <div id = "Installation"> How to Install and Run the Project </div>
-
-#### <div> Method # 1: Download 'Executable (exe)' file from 'Portable App Folder' (Easy & Portable) </div>
-                No need to install anything but it is for WINDOWS OS  
-                
-#### <div> Method # 2: Load and Execute Project in Eclipse IDE </div>
-                Eclipse IDE & JVM will be required.
-      
+     
 ## <div id = "Types_Head">  Types of Searching Algorithms </div>
 
 ![App Screenshot](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
@@ -104,13 +94,6 @@ This plan is achieved through search algorithms.
 
 <p align = 'center' > Assume that above Graph will be used by User. </p>
 
-### <div align = 'center' > Format to insert data to program </div>
-
-<p align = 'center' > Nodes = 0 1 2 3 4 </p>
-<p align = 'center' > Neighbours = 1,2 2 3,4 4 0 </p>
-<p align = 'center' > Costs = 2,7 4 1,4 2 0 </p>
-<p align = 'center' > Heuristic Cost = 10 2 3 1 4 </p>
-
 ## <div id = "UI">  User Interface </div>
 
 <p align = 'center'>
@@ -120,17 +103,14 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center"> Fig-A: Selecting Algorithm </figcaption>
  </div>
- </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Second_Window.png"  alt = "2nd Window" >
  </p>
- </br>
  
  <div align = "center">
   <figcaption align = "center"> Fig-B: Selecting BFS and Defining the Graph </figcaption>
  </div>
- </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Third_Window.png"  alt = "3rd Window" >
@@ -139,7 +119,6 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center"> Fig-C: Selecting DFS and Defining the Graph </figcaption>
  </div>
- </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Fourth_Window.png"  alt = "4th Window" >
@@ -148,7 +127,6 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center"> Fig-D: Selecting DLS and Defining the Graph </figcaption>
  </div>
- </br>
  
  <p align = 'center'>
   <img src = "Screenshots/UI/Fifth_Window.png"  alt = "5th Window" >
@@ -157,9 +135,6 @@ This plan is achieved through search algorithms.
  <div align = "center">
   <figcaption align = "center">  Fig-E: Selecting UCS and Defining the Graph  </figcaption>
  </div>
- </br>
- 
- **NOTE: Each window contains a i (information) button to open corresponding topic in github to get some concept.**
 
 ## <div id = "Uniform_Search_Head"> 1) Uninformed Search </d>
 
