@@ -70,7 +70,8 @@
           * <a href = "#ASS_PDP_P1"> Problem # 1 </a>
           * <a href = "#ASS_PDP_P2"> Problem # 2 </a>
         
-          
+* <a href = "#Comparision_Head" > Comaprisions of All Algorithms </a> 
+
 ## <div id = "Overview_Head"> Overview </div>
 
 Artificial Intelligence is the study of building agents that act rationally. Most of the time, these agents perform some kind of search algorithm in the background in order to achieve their tasks. 
@@ -688,5 +689,11 @@ It is Optimal.
   <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_2_i.png" alt = "Solution # 1_i">
   <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_2_ii.png" alt = "Solution # 1_ii">
   <img src = "Screenshots/Solution_Screenshots/AStar/AS_S_2_iii.png" alt = "Solution # 1_iii">
+</p>
+
+## <div id = "Comparision_Head"> Comparisions of All Algorithms </d>
+
+<p align = 'center'>
+  <img src = "Screenshots/Algoithms Comparisions/Comparision.png" alt = "Comaprision">
 </p>
 
